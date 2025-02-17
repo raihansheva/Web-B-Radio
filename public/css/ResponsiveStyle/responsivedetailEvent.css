@@ -58,8 +58,8 @@
     }
 
     .area-image-detail-event {
-        height: 450px;
-        font-size: 20px;
+        width: 100%;
+        height: auto;
     }
 
     .area-desk-detail-event {
@@ -130,14 +130,13 @@
         height: fit-content;
         /* border: 1px red solid; */
         padding: 10px;
-        position: absolute;
         z-index: 2;
     }
 
     .tag-news {
         margin: 0px;
         font-family: "Bebas Neue";
-        color: white;
+        /* color: white; */
         font-weight: 200;
         font-size: 28px;
     }
@@ -224,15 +223,15 @@
     }
 
     .box-event {
-        height: 350px;
+        height: 300px;
     }
 
     .area-days-date-right {
-        height: 60px;
+        height: 43px;
     }
 
     .date-month-right {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .year-right {
@@ -421,7 +420,8 @@
     }
 
     .area-image-detail-event {
-        height: 280px;
+        width: 100%;
+        height: auto;
     }
 
     .area-desk-detail-event {
@@ -576,21 +576,21 @@
     }
 
     .box-event {
-        height: 220px;
+        height: 160px;
     }
 
     .area-days-date-right {
-        height: 35px;
+        height: 16px;
     }
 
     .date-month-right {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .year-right {
         font-size: 16px;
     }
-
+    
     .area-see-more {
         margin-top: 10px;
     }
@@ -755,7 +755,8 @@
     }
 
     .area-image-detail-event {
-        height: 240px;
+        width: 100%;
+        height: auto;
     }
 
     .area-desk-detail-event {
@@ -890,17 +891,17 @@
         gap: 15px;
     }
 
-    .box-event {
-        height: 160px;
+.box-event {
+        height: 111px;
     }
 
     .area-days-date-right {
-        height: 28px;
+        height: 12px;
         padding: 8px 10px;
     }
 
     .date-month-right {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .year-right {
@@ -1036,9 +1037,9 @@
     /* ------------- */
 }
 @media (max-width: 600px) {
-    /* Gaya untuk tablet kecil atau phablet */
-}
-/* Mobile Devices */
+
+/* Mobile Devices */}
+
 @media (max-width: 480px) {
     /* page news 1 */
     .page-news-1 {
@@ -1073,6 +1074,11 @@
         height: auto;
         overflow-y: hidden;
     }
+    
+    .area-image-detail-event {
+        width: 100%;
+        height: auto;
+    }
 
     .box-info {
         height: auto;
@@ -1091,8 +1097,10 @@
         height: fit-content;
     }
 
-    .area-image-info {
-        height: 30%;
+
+/* ini image nya pa*/
+    .area-image-detail-info{
+        height: 203px;
     }
 
     .link-url-detail-event,
@@ -1260,15 +1268,15 @@
     }
 
     .box-event {
-        height: 160px;
+        height: 106px;
     }
 
     .area-days-date-right {
-        height: 30px;
+        height: 5px;
     }
 
     .date-month-right {
-        font-size: 18px;
+        font-size: 10px;
     }
 
     .year-right {
@@ -1403,7 +1411,10 @@
     .popUp-desk-berita {
         font-size: 7px;
     }
-
+.image-detail-event {
+        width: 100%;
+        height: auto;
+    }
     /* ----------- */
 
     /* ------------- */
@@ -1460,9 +1471,9 @@
         height: fit-content;
     }
 
-    .area-image-info {
-        height: 30%;
-    }
+    /*.area-image-detail-info {*/
+    /*    height: 150px;*/
+    /*}*/
 
     .area-detail-event {
         margin-top: 15px;
@@ -1653,15 +1664,15 @@
     }
 
     .box-event {
-        height: 140px;
+        height: 94px;
     }
 
     .area-days-date-right {
-        height: 20px;
+        height: 10px;
     }
 
     .date-month-right {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .year-right {
@@ -1850,7 +1861,8 @@
     }
 
     .area-image-detail-event {
-        height: 240px;
+        width: 100%;
+        height: auto;
     }
 
     .area-desk-detail-event {
@@ -2027,16 +2039,16 @@
     }
 
     .box-event {
-        height: 120px;
+        height: 78px;
     }
 
     .area-days-date-right {
-        height: 15px;
+        height: 8px;
         padding: 8px 10px;
     }
 
     .date-month-right {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .year-right {
@@ -2223,9 +2235,9 @@
         font-size: 12px;
     }
 
-    .area-image-detail-event {
-        height: 240px;
-    }
+    /*.area-image-detail-info {*/
+    /*    height: 160px;*/
+    /*}*/
 
     .area-desk-detail-event {
         font-size: 10px;
@@ -2401,16 +2413,16 @@
     }
 
     .box-event {
-        height: 120px;
+        height: 78px;
     }
 
     .area-days-date-right {
-        height: 15px;
+        height: 8px;
         padding: 8px 10px;
     }
 
     .date-month-right {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .year-right {

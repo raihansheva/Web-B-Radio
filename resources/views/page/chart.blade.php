@@ -1,6 +1,15 @@
 @extends('layout.main')
 <link rel="stylesheet" href="{{ asset('css/StyleContent/chart.css?v=' . time()) }}">
 <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsiveChart.css?v=' . time()) }}">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @section('content')
     <section class="page-chart-1">
         <div class="area-chart">
@@ -36,7 +45,7 @@
                                                     data-audio-src="./storage/{{ $chart->link_audio }}"
                                                     data-name="{{ $chart->name }}"
                                                     data-kategori="{{ $kategoriList->nama_kategori }}"
-                                                    data-id="{{ $kategoriList->id }}">
+                                                    data-id="{{ $chart->id }}">
                                                     <span class="material-symbols-rounded">play_arrow</span>
                                                 </div>
                                                 <audio src="" id="audio-chart" class="audio-chart"></audio>
@@ -51,6 +60,19 @@
 
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
+        <div class="area-banner">
+            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
+                autoplay-disable-on-interaction="false" loop="true">
+                @foreach ($banner->where('position', 'middle') as $list)
+                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                @endforeach
+            </swiper-container>
         </div>
     </section>
     <section class="page-chart-2">
@@ -86,13 +108,8 @@
                                     </div>
                                     <div class="area-text-desk-top-info">
                                         <div class="area-tag">
-                                            @if (is_array($topInfoList->tag_info))
-                                                @foreach ($topInfoList->tag_info as $tag)
-                                                    <h2 class="tag-top-info">#{{ $tag }}</h2>
-                                                @endforeach
-                                            @else
-                                                <h2 class="tag-top-info">#-</h2>
-                                            @endif
+                                            <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
+                                            
                                         </div>
                                         <div class="area-text">
                                             <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
@@ -107,6 +124,19 @@
                             </a>
                         @endforeach
                     </div>
+                    <section class="section-banner-small {{ $banner->where('position', 'bottom_topInfo')->count() > 0 ? '' : 'hidden' }}">
+                        <div class="area-banner-small">
+                            <swiper-container class="mySwiper" id="swiper-s" centered-slides="true" autoplay-delay="2000"
+                                autoplay-disable-on-interaction="false" loop="true">
+                                @foreach ($banner->where('position', 'bottom_topInfo') as $list)
+                                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                                @endforeach
+                            </swiper-container>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -114,4 +144,5 @@
 
 
     <script src="{{ asset('js/chart.js?v=' . time()) }}"></script>
+
 @endsection

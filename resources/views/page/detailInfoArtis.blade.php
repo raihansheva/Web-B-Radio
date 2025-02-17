@@ -129,8 +129,20 @@
                             </div>
                         </div>
                         <div class="line-info-artis"></div>
+                        <section class="section-banner-full-small {{ $banner->where('position', 'bottom_detail')->count() > 0 ? '' : 'hidden' }}">
+                            <div class="area-banner-full-small">
+                                <swiper-container class="mySwiper" id="swiper-l" centered-slides="true" autoplay-delay="2000"
+                                    autoplay-disable-on-interaction="false" loop="true">
+                                    @foreach ($banner->where('position', 'bottom_detail') as $list)
+                                        <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                                    @endforeach
+                                </swiper-container>
+                            </div>
+                        </section>
                     </div>
-
                 </div>
 
                 <div class="content-IN-kanan">
@@ -158,17 +170,17 @@
                         <div class="area-box-news">
                             @foreach ($kategoriInfo as $kategoriInfoList)
                                 <div class="box-news">
-                                    <a href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
+                                    <a class="link-news" href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
                                         <div class="area-tag-news">
                                             <h3 class="tag-news">{{ $kategoriInfoList->nama_kategori }}</h3>
                                         </div>
-                                        @if ($kategoriInfoList->info->isNotEmpty())
+                                        {{-- @if ($kategoriInfoList->info->isNotEmpty())
                                             <img class="image-news"
                                                 src="{{ asset('storage/' . $kategoriInfoList->info->first()->image_info) }}"
                                                 alt="">
                                         @else
                                             <p>Tidak ada info untuk tag ini.</p>
-                                        @endif
+                                        @endif --}}
                                     </a>
                                 </div>
                             @endforeach
@@ -213,11 +225,11 @@
                         <div class="area-event-bottom">
                             @foreach ($event_upcoming as $eventUpcomingList)
                                 <div class="box-event"
-                                    style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                                     onclick="showPopupEvent(this)"
                                     data-description="{{ $eventUpcomingList->deskripsi_pendek }}"
                                     data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                                     data-slug="{{ $eventUpcomingList->slug }}" data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
+                                    <img class="image-OV" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
                                     <div class="area-days-date-right">
                                         <div class="content-days-date-right">
                                             <div class="box-days-date-right">
@@ -256,4 +268,13 @@
         
     </section>
     <script src="{{ asset('js/infoArtis.js?v=' . time()) }}"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @endsection

@@ -7,6 +7,15 @@
 @push('Style.css')
     <link rel="stylesheet" href="{{ asset('css/StyleContent/infoArtis.css?v=' . time()) }}">
     <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsiveInfoArtis.css?v=' . time()) }}">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @endpush
 
 @section('title', 'INFO | ARDAN RADIO')
@@ -84,10 +93,26 @@
             <div class="line-info-artis"></div>
         </div>
     </section>
+    <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
+        <div class="area-banner">
+            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
+                autoplay-disable-on-interaction="false" loop="true">
+                @foreach ($banner->where('position', 'middle') as $list)
+                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                @endforeach
+            </swiper-container>
+        </div>
+    </section>
     <section class="page-news-2">
         <div class="area-info-news">
             <div class="content-info-news">
                 <div class="content-IN-kiri" id="style-3">
+                    <div class="area-header-news">
+                        <h2 class="header-news">Info</h2>
+                    </div>
                     @foreach ($info as $infoList)
                         {{-- <div class="box-info">
                             <a class="link-info" href="/info-detail/{{ $infoList->slug }}">
@@ -155,17 +180,17 @@
                         <div class="area-box-news">
                             @foreach ($taginfo as $tagInfoList)
                                 <div class="box-news">
-                                    <a href="/info-tag/{{ $tagInfoList->nama_kategori }}">
+                                    <a class="link-news" href="/info-tag/{{ $tagInfoList->nama_kategori }}">
                                         <div class="area-tag-news">
                                             <h3 class="tag-news">#{{ $tagInfoList->nama_kategori }}</h3>
                                         </div>
-                                        @if ($tagInfoList->info->isNotEmpty())
+                                        {{-- @if ($tagInfoList->info->isNotEmpty())
                                             <img class="image-news"
                                                 src="{{ asset('storage/' . $tagInfoList->info->first()->image_info) }}"
                                                 alt="">
                                         @else
                                             <p>Tidak ada info untuk tag ini.</p>
-                                        @endif
+                                        @endif --}}
                                     </a>
                                 </div>
                             @endforeach
@@ -225,11 +250,11 @@
                         <div class="area-event-bottom">
                             @foreach ($event_upcoming as $eventUpcomingList)
                                 <div class="box-event"
-                                    style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                                     onclick="showPopupEvent(this)"
                                     data-description="{{ $eventUpcomingList->deskripsi_pendek }}"
                                     data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                                     data-slug="{{ $eventUpcomingList->slug }}" data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
+                                    <img class="image-OV" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
                                     <div class="area-days-date-right">
                                         <div class="content-days-date-right">
                                             <div class="box-days-date-right">
@@ -265,4 +290,5 @@
         </div>
     </section>
     <script src="{{ asset('js/infoNews.js?v=' . time()) }}"></script>
+
 @endsection

@@ -7,6 +7,15 @@
 @push('Style.css')
     <link rel="stylesheet" href="{{ asset('css/StyleContent/podcast.css?v=' . time()) }}">
     <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsivePodcast.css?v=' . time()) }}">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @endpush
 @section('title', 'PODCAST | ' . \App\Helpers\Settings::get('site_title', 'Default Site Title'))
 @section('content')
@@ -17,6 +26,19 @@
                 <img class="banner-podcast" src="./storage/{{ $bannerPList->banner_podcast }}" alt="" srcset="">
             </div>
         @endforeach
+    </section>
+    <section class="section-banner {{ $banner->where('position', 'top')->count() > 0 ? '' : 'hidden' }}">
+        <div class="area-banner">
+            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
+                autoplay-disable-on-interaction="false" loop="true">
+                @foreach ($banner->where('position', 'top') as $list)
+                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                @endforeach
+            </swiper-container>
+        </div>
     </section>
     <section class="page-podcast-2" id="podcast">
         <div class="area-card-podcast">
@@ -68,34 +90,32 @@
             <div class="area-header-videoYT">
                 <h2 class="title-videoYT">Video</h2>
             </div>
-            <div class="area-content-videoYT">
+             <div class="area-content-videoYT">
                 <div class="area-contentYT-kiri">
                     @foreach ($videos as $video)
-                        <div class="box-area-videoYT-kiri"
-                            data-video-id="{{ $video['snippet']['resourceId']['videoId'] }}">
-                            <img class="video-thumbnail"
-                                src="https://img.youtube.com/vi/{{ $video['snippet']['resourceId']['videoId'] }}/hqdefault.jpg"
-                                alt="Thumbnail">
-                            <div class="btn-play-videoYT-kiri"
-                                onclick="showPopupYT('{{ $video['snippet']['resourceId']['videoId'] }}')">
-                                <span class="material-symbols-rounded">play_arrow</span>
-                            </div>
+                    <div class="box-area-videoYT-kiri" data-video-id="{{ $video['videoId'] }}">
+                        <img class="video-thumbnail"
+                            src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
+                            alt="Thumbnail">
+                        <div class="btn-play-videoYT-kiri"
+                            onclick="showPopupYT('{{ $video['videoId'] }}')">
+                            <span class="material-symbols-rounded">play_arrow</span>
                         </div>
+                    </div>
                     @break
                 @endforeach
             </div>
             <div class="area-contentYT-kanan">
                 @foreach (collect($videos)->slice(1, 2) as $video)
-                    <div class="box-area-videoYT-kanan"
-                        data-video-id="{{ $video['snippet']['resourceId']['videoId'] }}">
-                        <img class="video-thumbnail"
-                            src="https://img.youtube.com/vi/{{ $video['snippet']['resourceId']['videoId'] }}/hqdefault.jpg"
-                            alt="Thumbnail">
-                        <div class="btn-play-videoYT-kanan"
-                            onclick="showPopupYT('{{ $video['snippet']['resourceId']['videoId'] }}')">
-                            <span class="material-symbols-rounded">play_arrow</span>
-                        </div>
+                <div class="box-area-videoYT-kanan" data-video-id="{{ $video['videoId'] }}">
+                    <img class="video-thumbnail"
+                        src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
+                        alt="Thumbnail">
+                    <div class="btn-play-videoYT-kanan"
+                        onclick="showPopupYT('{{ $video['videoId'] }}')">
+                        <span class="material-symbols-rounded">play_arrow</span>
                     </div>
+                </div>
                 @endforeach
             </div>
             <div class="popup-player-yt" id="popup-player" style="display:none;">
@@ -140,13 +160,7 @@
                                 </div>
                                 <div class="area-text-desk-top-info">
                                     <div class="area-tag">
-                                        @if (is_array($topInfoList->tag_info))
-                                            @foreach ($topInfoList->tag_info as $tag)
-                                                <h2 class="tag-top-info">#{{ $tag }}</h2>
-                                            @endforeach
-                                        @else
-                                            <h2 class="tag-top-info">#-</h2>
-                                        @endif
+                                        <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
                                     </div>
                                     <div class="area-text">
                                         <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
@@ -161,11 +175,25 @@
                         </a>
                     @endforeach
                 </div>
+                <section class="section-banner-small {{ $banner->where('position', 'bottom_topInfo')->count() > 0 ? '' : 'hidden' }}">
+                    <div class="area-banner-small">
+                        <swiper-container class="mySwiper" id="swiper-s" centered-slides="true" autoplay-delay="2000"
+                            autoplay-disable-on-interaction="false" loop="true">
+                            @foreach ($banner->where('position', 'bottom_topInfo') as $list)
+                                <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                            @endforeach
+                        </swiper-container>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 </section>
 <script src="{{ asset('js/podcast.js?v=' . time()) }}"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         // Pilih semua elemen dengan class "card-podcast"

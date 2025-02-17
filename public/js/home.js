@@ -15,30 +15,30 @@ const getScrollAmount = () => {
     }
 };
 
-tombolKiri.addEventListener("click", () => {
-    if (areaContentBox.scrollLeft === 0) {
-        areaContentBox.scrollLeft = areaContentBox.scrollWidth; // Kembali ke akhir
-    } else {
-        areaContentBox.scrollBy({
-            left: -getScrollAmount(),
-            behavior: "smooth",
-        });
-    }
-});
+// tombolKiri.addEventListener("click", () => {
+//     if (areaContentBox.scrollLeft === 0) {
+//         areaContentBox.scrollLeft = areaContentBox.scrollWidth; // Kembali ke akhir
+//     } else {
+//         areaContentBox.scrollBy({
+//             left: -getScrollAmount(),
+//             behavior: "smooth",
+//         });
+//     }
+// });
 
-tombolKanan.addEventListener("click", () => {
-    if (
-        areaContentBox.scrollLeft + areaContentBox.clientWidth >=
-        areaContentBox.scrollWidth
-    ) {
-        areaContentBox.scrollLeft = 0; // Kembali ke awal
-    } else {
-        areaContentBox.scrollBy({
-            left: getScrollAmount(),
-            behavior: "smooth",
-        });
-    }
-});
+// tombolKanan.addEventListener("click", () => {
+//     if (
+//         areaContentBox.scrollLeft + areaContentBox.clientWidth >=
+//         areaContentBox.scrollWidth
+//     ) {
+//         areaContentBox.scrollLeft = 0; // Kembali ke awal
+//     } else {
+//         areaContentBox.scrollBy({
+//             left: getScrollAmount(),
+//             behavior: "smooth",
+//         });
+//     }
+// });
 
 // ---------------------------------------
 
@@ -59,19 +59,19 @@ const getScrollAmountA = () => {
     }
 };
 
-tombolKiriA.addEventListener("click", () => {
-    areaContentBoxA.scrollBy({
-        left: -getScrollAmountA(),
-        behavior: "smooth",
-    });
-});
+// tombolKiriA.addEventListener("click", () => {
+//     areaContentBoxA.scrollBy({
+//         left: -getScrollAmountA(),
+//         behavior: "smooth",
+//     });
+// });
 
-tombolKananA.addEventListener("click", () => {
-    areaContentBoxA.scrollBy({
-        left: getScrollAmountA(),
-        behavior: "smooth",
-    });
-});
+// tombolKananA.addEventListener("click", () => {
+//     areaContentBoxA.scrollBy({
+//         left: getScrollAmountA(),
+//         behavior: "smooth",
+//     });
+// });
 // ----------------------------------------
 
 // card-streaming
@@ -79,10 +79,9 @@ const cardA = document.querySelector(".card-A");
 const cardB = document.querySelector(".card-B");
 const tontonSiaranBtnA = document.querySelector(".card-A .view");
 const tontonSiaranBtnB = document.querySelector(".card-B .view-B");
+const setPlayer = document.getElementById("setPlayer").textContent.trim();
 
-cardA.style.display = "block";
-cardA.classList.add("show");
-
+// Fungsi untuk menampilkan kartu
 function showCard(card) {
     card.style.display = "block";
     setTimeout(() => {
@@ -91,6 +90,7 @@ function showCard(card) {
     }, 10);
 }
 
+// Fungsi untuk menyembunyikan kartu
 function hideCard(card) {
     card.classList.remove("show");
     card.classList.add("hide");
@@ -99,17 +99,31 @@ function hideCard(card) {
     }, 500);
 }
 
-tontonSiaranBtnA.addEventListener("click", function () {
+// **Atur tampilan awal berdasarkan setPlayer**
+if (setPlayer === "video") {
+    showCard(cardB); // Tampilkan video player lebih dulu
+    hideCard(cardA);
+} else {
+    showCard(cardA); // Tampilkan audio player lebih dulu
+    hideCard(cardB);
+}
+
+tontonSiaranBtnA.addEventListener("click", function() {
     hideCard(cardA);
     pauseStreaming();
     setTimeout(() => {
+        player.api("play");
+        // handleUserInteraction();
         showCard(cardB);
     }, 500);
 });
 
-tontonSiaranBtnB.addEventListener("click", function () {
+// Tombol "Dengar Siaran"
+tontonSiaranBtnB.addEventListener("click", function() {
     hideCard(cardB);
-    // playStreaming();
+    // Hentikan video
+    player.api("pause");
+    playStreaming();
     setTimeout(() => {
         showCard(cardA);
     }, 500);
@@ -393,6 +407,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(".tab-chart");
     const tables = document.querySelectorAll(".chart");
 
+    // Fungsi untuk membatasi tampilan maksimal 5 tabel
+    // Fungsi untuk membatasi maksimal 5 baris per tabel
+    function limitRows() {
+        tables.forEach((table) => {
+            const rows = table.querySelectorAll("tbody tr"); // Ambil semua baris dalam tabel
+            rows.forEach((row, index) => {
+                if (index < 5) {
+                    row.classList.remove("hidden");
+                } else {
+                    row.classList.add("hidden");
+                }
+            });
+        });
+    }
+
+    // Batasi jumlah row saat halaman dimuat
+
     // Menambahkan event listener ke setiap tab
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -406,11 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Menampilkan tabel yang sesuai dengan tab yang dipilih
             const selectedTab = tab.getAttribute("data-tab");
-            // console.log('Selected Tab ID:', selectedTab); // Log ID yang dipilih
             const selectedTable = document.getElementById(selectedTab);
-
-            // Debugging log untuk memeriksa
-            // console.log('Selected Table:', selectedTable);
 
             if (selectedTable) {
                 selectedTable.classList.remove("hidden");
@@ -420,71 +447,66 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Secara default, tampilkan tabel pertama
-    const defaultTable = document.querySelector(".chart:not(.hidden)"); // Ambil tabel yang tidak tersembunyi
-    if (defaultTable) {
-        defaultTable.classList.remove("hidden");
-    }
+    // Batasi tampilan hanya 5 tabel saat pertama kali dijalankan
+    limitRows();
 });
 
-var player;
-
-function showPopupYT(videoId) {
-    document.getElementById("popup-player").style.display = "flex";
-
-    if (!player) {
-        player = new YT.Player("player-yt", {
-            height: "360",
-            width: "640",
-            videoId: videoId,
-            events: {
-                onReady: function (event) {
-                    event.target.playVideo();
-                },
-            },
-        });
-    } else {
-        player.loadVideoById(videoId);
-        player.playVideo();
-    }
-}
-
+var playerYT;
 function hidePopup() {
-    document.getElementById("popup-player").style.display = "none";
-    player.stopVideo(); // Hentikan video saat popup ditutup
+    const popupPlayer = document.getElementById("popup-player");
+    popupPlayer.style.display = "none";
+
+    // Hapus iframe agar video benar-benar berhenti
+    const playerContainer = document.getElementById("player-yt");
+    playerContainer.innerHTML = ""; 
 }
 
-// Load YouTube IFrame API
-var tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// Fungsi untuk menampilkan popup player
+function showPopupYT(videoUrl) {
+    const popupPlayer = document.getElementById("popup-player");
+    popupPlayer.style.display = "flex";
 
-function onYouTubeIframeAPIReady() {
-    // IFrame API siap
-}
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
+    // Ambil video ID dari URL YouTube
+    const videoId = extractVideoId(videoUrl);
 
-function hidePopup() {
-    document.getElementById("popup-player").style.display = "none";
-    if (player) {
-        player.stopVideo();
+    if (!videoId) {
+        console.error("Video ID tidak ditemukan dari URL:", videoUrl);
+        return;
     }
+
+    // Buat ulang iframe setiap kali popup dibuka
+    const playerContainer = document.getElementById("player-yt");
+    playerContainer.innerHTML = `<iframe class="frame-yt-home" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 }
+
+// Fungsi untuk mengambil videoId dari URL YouTube
+function extractVideoId(url) {
+    let videoId = null;
+
+    if (url.includes("youtu.be")) {
+        videoId = url.split("/").pop();
+    } else if (url.includes("youtube.com")) {
+        const urlParams = new URLSearchParams(new URL(url).search);
+        videoId = urlParams.get("v");
+    }
+
+    return videoId;
+}
+
+// Event listener untuk menyembunyikan popup saat klik di overlay
+document.getElementById("popup-player").addEventListener("click", hidePopup);
 
 // Menambahkan event listener untuk klik di luar player
-document
-    .getElementById("popup-player")
-    .addEventListener("click", function (event) {
-        var popupContent = document.querySelector(".popup-content");
+document.getElementById("popup-player").addEventListener("click", function (event) {
+    var popupContent = document.querySelector(".popup-content");
 
-        // Jika user klik di luar area .popup-content, tutup popup
-        if (!popupContent.contains(event.target)) {
-            hidePopup();
-        }
-    });
+    // Jika user klik di luar area .popup-content, tutup popup
+    if (!popupContent.contains(event.target)) {
+        hidePopup();
+        
+
+    }
+});
 
 // document.addEventListener("DOMContentLoaded", () => {
 const tabS = document.querySelectorAll(".schedule");
@@ -504,20 +526,37 @@ const dayMapping = [
 // Fungsi untuk menampilkan program sesuai dengan hari yang dipilih
 function showScheduleForDay(day) {
     // Menyembunyikan semua konten schedule
-    scheduleContent.forEach((content) => content.classList.add("hidden"));
+    // scheduleContent.forEach((content) => content.classList.add("hidden"));
+     scheduleContent.forEach((content) => {
+        if (!content.classList.contains("hidden")) {
+            content.classList.add("fade-out");
+            setTimeout(() => {
+                content.classList.add("hidden");
+                content.classList.remove("fade-out");
+            }, 500); // Durasi fade-out sama dengan animasi CSS
+        }
+    });
+
 
     // Menampilkan semua konten yang sesuai dengan hari yang dipilih
     const selectedSchedules = document.querySelectorAll(
-        `.box-schedule[data-day="${day}"]`
+        `.box-schedule[data-day*="${day}"]`
     );
 
-    if (selectedSchedules.length > 0) {
-        selectedSchedules.forEach((schedule) =>
-            schedule.classList.remove("hidden")
-        );
+        if (selectedSchedules.length > 0) {
+        selectedSchedules.forEach((schedule) => {
+            setTimeout(() => {
+                schedule.classList.remove("hidden");
+                schedule.classList.add("fade-in");
+                setTimeout(() => {
+                    schedule.classList.remove("fade-in");
+                }, 500); // Durasi fade-in sama dengan animasi CSS
+            }, 500); // Durasi sinkron dengan fade-out
+        });
     } else {
         console.warn(`No schedules found for day '${day}'.`);
     }
+
 
     // Menandai tab hari sebagai aktif dan menghapus kelas aktif dari tab lainnya
     tabS.forEach((t) => t.classList.remove("active"));
@@ -543,6 +582,7 @@ const currentDayName = dayMapping[currentDayIndex]; // Nama hari dalam bahasa In
 // Secara otomatis tampilkan program untuk hari ini
 showScheduleForDay(currentDayName);
 // });
+
 if (window.matchMedia("(max-width: 480px)").matches) {
     const days = [
         "senin",
@@ -575,6 +615,7 @@ if (window.matchMedia("(max-width: 480px)").matches) {
 
         // Tampilkan jadwal sesuai hari
         scheduleBoxes.forEach((box) => {
+            // Langsung bandingkan data-day dengan selectedDay
             if (box.dataset.day === selectedDay) {
                 box.classList.add("active");
             } else {

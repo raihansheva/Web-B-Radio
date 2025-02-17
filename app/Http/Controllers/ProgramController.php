@@ -3,42 +3,131 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\PopupAds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProgramController extends Controller
 {
-    public function getNextProgramImage()
+       public function getNextProgramImageP()
     {
         // Set Locale ke Bahasa Indonesia
         Carbon::setLocale('id'); // Menggunakan Bahasa Indonesia
-    
+
         // Ambil waktu sekarang dengan zona waktu Jakarta
         $currentTime = Carbon::now('Asia/Jakarta');
-        
+
         // Ambil hari dalam format bahasa Indonesia
-        $currentDay = $currentTime->locale('id')->isoFormat('dddd');
-    
+        $currentDay = strtolower($currentTime->locale('id')->isoFormat('dddd'));
+
         // Query untuk mendapatkan program berikutnya
         $nextProgram = DB::table('schedules')
             ->join('programs', 'schedules.program_id', '=', 'programs.id')
-            ->where('schedules.hari', $currentDay) // Cocokkan hari dalam bahasa Indonesia
+            ->whereRaw('JSON_EXTRACT(schedules.hari, "$") LIKE ?', ['%"' . $currentDay . '"%']) // Cek keberadaan hari
             ->where('schedules.jam_mulai', '>', $currentTime->format('H:i:s')) // Program setelah jam sekarang
             ->orderBy('schedules.jam_mulai', 'asc') // Urutkan berdasarkan jam mulai terdekat
-            ->select('programs.image_program') // Hanya ambil kolom gambar
+            ->select('programs.thumbnail_program', 'programs.judul_program', 'schedules.jam_mulai') // Ambil kolom yang diperlukan
             ->first();
+
+
 
         // Jika tidak ada program berikutnya, kirim gambar placeholder
         if (!$nextProgram) {
-            return response()->json(['image' => asset('storage/default-placeholder.png')], 200);
+            return response()->json([
+                'image' => asset('storage/default-placeholder.png'),
+                'judul_program' => 'ga ada',
+                'jam_mulai' => 'ga ada'
+            ], 200);
         }
-    
-        // Kirim URL gambar program berikutnya
-        return response()->json(['image' => asset('storage/' . $nextProgram->image_program)], 200);
+
+        return response()->json([
+            'image' => asset('storage/' . $nextProgram->thumbnail_program),
+            'judul_program' => $nextProgram->judul_program,
+            'jam_mulai' => $nextProgram->jam_mulai
+        ], 200);
     }
 
 
+    public function getNextThumbnailImageP()
+    {
+        // Set Locale ke Bahasa Indonesia
+        Carbon::setLocale('id');
+
+        // Ambil waktu sekarang dengan zona waktu Jakarta
+        $currentTime = Carbon::now('Asia/Jakarta');
+
+        // Ambil hari dalam format bahasa Indonesia
+        $currentDay = strtolower($currentTime->locale('id')->isoFormat('dddd'));
+
+        // Query untuk mendapatkan program yang sedang berlangsung atau berikutnya
+        $currentOrNextProgram = DB::table('schedules')
+            ->join('programs', 'schedules.program_id', '=', 'programs.id')
+            ->whereRaw('JSON_EXTRACT(schedules.hari, "$") LIKE ?', ['%"' . $currentDay . '"%']) // Cocokkan hari
+            ->where('schedules.jam_mulai', '<=', $currentTime->format('H:i:s')) // Jam mulai <= waktu sekarang
+            ->orderBy('schedules.jam_mulai', 'desc') // Urutkan program yang sudah mulai
+            ->select('programs.thumbnail_program', 'programs.judul_program', 'schedules.jam_mulai')
+            ->first();
+
+        // Jika tidak ada program yang sesuai, kirim placeholder
+        if (!$currentOrNextProgram) {
+            return response()->json([
+                'image' => asset('storage/default-placeholder.png'),
+                'judul_program' => '-',
+                'jam_mulai' => '-',
+            ], 200);
+        }
+
+        // Jika program ditemukan, gunakan thumbnail program tersebut
+        return response()->json([
+            'image' => asset('storage/' . $currentOrNextProgram->thumbnail_program),
+            'judul_program' => $currentOrNextProgram->judul_program,
+            'jam_mulai' => $currentOrNextProgram->jam_mulai,
+        ], 200);
+    }
     
+    public function getPopup(Request $request)
+    {
+        $currentDate = now()->toDateString();
+        $currentTime = now()->toTimeString();
+
+        // Ambil semua popup yang aktif berdasarkan tanggal dan waktu
+        $popup = PopupAds::where('start_date', '<=', $currentDate)
+            ->where('end_date', '>=', $currentDate)
+            ->where(function ($query) use ($currentDate, $currentTime) {
+                $query->where(function ($subQuery) use ($currentTime) {
+                    $subQuery->where('end_time', '>=', $currentTime);
+                })->orWhere(function ($subQuery) use ($currentDate) {
+                    $subQuery->where('end_date', '>', $currentDate);
+                });
+            })
+            ->first();
+
+        if ($popup) {
+            // Logika untuk target audiens
+            if ($popup->target_audience === 'new_users' && $request->cookie('hasVisited')) {
+                // Jika hanya untuk pengguna baru tetapi sudah pernah mengunjungi, jangan tampilkan
+                return response()->json(['showPopup' => false]);
+            }
+
+            // Jika popup ditemukan, set cookie `hasVisited` untuk pengguna baru
+            if ($popup->target_audience === 'new_users') {
+                return response()->json([
+                    'showPopup' => true,
+                    'data' => $popup,
+                ])->cookie('hasVisited', true, 60 * 24); // Cookie aktif selama 1 hari
+            }
+
+            // Untuk `all_users`, tampilkan popup tanpa memeriksa cookie
+            return response()->json([
+                'showPopup' => true,
+                'data' => $popup,
+            ]);
+        }
+
+        // Jika tidak ada popup yang sesuai
+        return response()->json(['showPopup' => false]);
+    }
+
 
     /**
      * Display a listing of the resource.

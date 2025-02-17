@@ -8,6 +8,15 @@
 @push('Style.css')
     <link rel="stylesheet" href="{{ asset('css/StyleContent/event.css?v=' . time()) }}">
     <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsiveEvent.css?v=' . time()) }}">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @endpush
 
 @section('title', 'EVENT | ' . \App\Helpers\Settings::get('site_title', 'Default Site Title'))
@@ -23,10 +32,10 @@
                     <div class="content-event-CD" onclick="showPopupEvent(this)"
                         data-description="{{ $eventSoonList->deskripsi_event }}"
                         data-date="{{ \Carbon\Carbon::parse($eventSoonList->date_event)->format('d F Y') }}"
-                        style="background-image: url('./storage/{{ $eventSoonList->image_event }}')"
                         data-slug="{{ $eventSoonList->slug }}" data-deskShort="{{ $eventSoonList->deskripsi_event }}">
+                        <span id="dataTime" style="display: none">{{ $eventSoonList->time_countdown }}</span>
+                        <img class="image-CD" src="./storage/{{ $eventSoonList->image_event }}" alt="">
                     </div>
-                    <span id="dataTime" style="display: none">{{ $eventSoonList->time_countdown }}</span>
                     <div class="area-countdown">
                         <div class="area-content-countdown">
                             <div class="countdown">
@@ -78,11 +87,11 @@
             <div class="area-content-OV">
                 @foreach ($event_upcoming as $eventUpcomingList)
                     <div class="content-event-OV"
-                        style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                         onclick="showPopupEvent(this)" data-description="{{ $eventUpcomingList->deskripsi_event }}"
                         data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                         data-slug="{{ $eventUpcomingList->slug }}"
                         data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
+                        <img class="image-OV" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
                         <div class="area-days-date-right">
                             <div class="content-days-date-right">
                                 <div class="box-days-date-right">
@@ -98,6 +107,19 @@
             <div class="line-event"></div>
         </div>
     </section>
+    <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
+        <div class="area-banner">
+            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
+                autoplay-disable-on-interaction="false" loop="true">
+                @foreach ($banner->where('position', 'middle') as $list)
+                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                @endforeach
+            </swiper-container>
+        </div>
+    </section>
     <section class="page-event-3">
         <div class="area-programE">
             <div class="header-programE">
@@ -105,12 +127,14 @@
             </div>
             <div class="content-programE">
                 @foreach ($program as $programList)
-                    <div class="box-programE" style="background-image: url('./storage/{{ $programList->image_program }}') "
-                        class="box-program" data-title="{{ $programList->judul_program }}"
+                    <div class="box-programE" class="box-program" data-title="{{ $programList->judul_program }}"
                         data-description="{{ $programList->deskripsi_pendek }}"
                         data-time="{{ $programList->jam_mulai }} - {{ $programList->jam_selesai }}"
                         data-slugP="{{ $programList->slug }}" data-deskP="{{ $programList->deskripsi_program }}"
-                        onclick="showPopup(this)"></div>
+                        onclick="showPopup(this)">
+                        <img class="image-programEE" src="./storage/{{ $programList->image_program }}" alt=""
+                            srcset="">
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -120,7 +144,7 @@
                 <div class="area-info-program">
                     <p class="desk-program">Program Description</p> <!-- Pastikan elemen ini ada -->
                     <h2 class="title-box-program">Program Title</h2> <!-- Pastikan elemen ini ada -->
-                    <p class="jam-program">Program Time</p> 
+                    <p class="jam-program">Program Time</p>
                     <a href="#" class="detail-link-program">
                         <p class="link-program">See detail</p>
                     </a>
@@ -129,4 +153,5 @@
         </div>
     </section>
     <script src="{{ asset('js/event.js?v=' . time()) }}"></script>
+
 @endsection

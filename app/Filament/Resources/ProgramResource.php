@@ -47,7 +47,10 @@ class ProgramResource extends Resource
                                 $set('slug', Str::slug($state));
                                 $set('meta_title', $state);
                             })->required(),
-                        Textarea::make('deskripsi_pendek')->label('Deskripsi Singkat :')->required(),
+                        Textarea::make('deskripsi_pendek')
+                            ->label('Deskripsi Singkat :')
+                            ->required()
+                            ->maxLength(280),
                         TextInput::make('slug')->label('Slug :')
                             ->readOnly()
                             ->required(),
@@ -57,9 +60,30 @@ class ProgramResource extends Resource
                             ->directory('uploads/images_program')
                             ->disk('public')
                             ->preserveFilenames()
-                            ->rules(['required', 'image', 'dimensions:width=322,height=313']) // Ubah format ke array
+                            // ->rules(['required', 'image', 'dimensions:width=286,height=280']) // Ubah format ke array
+                            // ->validationAttribute('Image Event')
+                            // ->helperText('The image must be 286x280 pixels.')
+                            ->rules([
+                                'required',
+                                'image',
+                                
+                            ])
                             ->validationAttribute('Image Event')
-                            ->helperText('The image must be 322x313 pixels.'),
+                            ->helperText('The image max dimensions 1920x1080'),
+                        FileUpload::make('thumbnail_program')
+                            ->label('Program Thumbnail :')
+                            ->image()
+                            ->directory('uploads/thumbnail_program')
+                            ->disk('public')
+                            ->preserveFilenames()
+                            ->rules([
+                               'nullable',
+                                'image',
+                                'dimensions:max_width=1920,max_height=1080', // Atur maksimal width dan height di sini
+                                'dimensions:min_width=800,min_height=450' // Atur maksimal width dan height di sini
+                            ])
+                            ->validationAttribute('Image Event')
+                            ->helperText('The image must have min 800x450 pixel, max dimensions 1920x1080'),
                         TimePicker::make('jam_mulai')
                             ->label('Jam Mulai')
                             ->required()
@@ -135,6 +159,7 @@ class ProgramResource extends Resource
                 TextColumn::make('jam_selesai')
                     ->label('Jam Selesai')->sortable(),
                 ImageColumn::make('image_program'),
+                ImageColumn::make('thumbnail_program'),
                 IconColumn::make('publish_now') // Menggunakan IconColumn
                     ->boolean() // Secara otomatis mendukung true/false atau 1/0
                     ->trueIcon('heroicon-o-check-circle') // Ikon untuk nilai true

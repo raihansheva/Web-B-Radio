@@ -1,6 +1,15 @@
 @extends('layout.main')
 <link rel="stylesheet" href="{{ asset('css/StyleContent/youtube.css?v=' . time()) }}">
 <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsiveYoutube.css?v=' . time()) }}">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @section('content')
     <section class="page-youtube-1">
         <div class="area-thumbnail-youtube">
@@ -74,6 +83,19 @@
             <div class="line-VNS"></div>
         </div>
     </section>
+    <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
+        <div class="area-banner">
+            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
+                autoplay-disable-on-interaction="false" loop="true">
+                @foreach ($banner->where('position', 'middle') as $list)
+                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                @endforeach
+            </swiper-container>
+        </div>
+    </section>
     <section class="page-youtube-3">
         <div class="area-event-news-streaming">
             <div class="area-content-VNS">
@@ -87,9 +109,9 @@
                                 <div class="box-event-mid" onclick="showPopupEvent(this)"
                                     data-description="{{ $eventSoonList->deskripsi_pendek }}"
                                     data-date="{{ \Carbon\Carbon::parse($eventSoonList->date_event)->format('d F Y') }}"
-                                    style="background-image: url('./storage/{{ $eventSoonList->image_event }}')"
                                     data-slug="{{ $eventSoonList->slug }}"
                                     data-deskShort="{{ $eventSoonList->deskripsi_event }}">
+                                    <img class="image-EM" src="./storage/{{ $eventSoonList->image_event }}" alt="">
                                     <span id="dataTime" style="display: none">{{ $eventSoonList->time_countdown }}</span>
                                     <div class="area-countdown">
                                         <div class="countdown">
@@ -124,12 +146,12 @@
                         <div class="area-event-bottom">
                             @foreach ($event_upcoming as $eventUpcomingList)
                                 <div class="box-event"
-                                    style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                                     onclick="showPopupEvent(this)"
                                     data-description="{{ $eventUpcomingList->deskripsi_pendek }}"
                                     data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                                     data-slug="{{ $eventUpcomingList->slug }}"
                                     data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
+                                    <img class="image-EB" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
                                     <div class="area-days-date-right">
                                         <div class="content-days-date-right">
                                             <div class="box-days-date-right">
@@ -171,13 +193,7 @@
                                         </div>
                                         <div class="area-text-desk-top-info">
                                             <div class="area-tag">
-                                                @if (is_array($topInfoList->tag_info))
-                                                    @foreach ($topInfoList->tag_info as $tag)
-                                                        <h2 class="tag-top-info">#{{ $tag }}</h2>
-                                                    @endforeach
-                                                @else
-                                                    <h2 class="tag-top-info">#-</h2>
-                                                @endif
+                                                <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
                                             </div>
                                             <div class="area-text">
                                                 <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
@@ -215,4 +231,5 @@
         </div>
     </section>
     <script src="{{ asset('js/youtube.js?v=' . time()) }}"></script>
+
 @endsection

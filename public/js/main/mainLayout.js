@@ -148,33 +148,33 @@ document.addEventListener("DOMContentLoaded", function () {
         // proggresBarAudio(audioStream);
     };
 
-    if (audioStream) {
-        // Cek status audio dari localStorage
-        const isPaused = localStorage.getItem("audioPaused") === "true";
-        const currentTime =
-            parseFloat(localStorage.getItem("audioCurrentTime")) || 0;
+    // if (audioStream) {
+    //     // Cek status audio dari localStorage
+    //     const isPaused = localStorage.getItem("audioPaused") === "true";
+    //     const currentTime =
+    //         parseFloat(localStorage.getItem("audioCurrentTime")) || 0;
 
-        // Jika audio tidak dalam keadaan pause, lanjutkan pemutaran
-        if (!isPaused) {
-            audioStream.currentTime = currentTime;
-            audioStream
-                .play()
-                .catch((err) => console.error("Gagal memutar audio:", err));
-            isStreamingPlaying = true;
-            // Tentukan nama audio dan artis
-            musicName.innerHTML = "Streaming Audio";
-            musicArtist.innerHTML = "Live Stream";
+    //     // Jika audio tidak dalam keadaan pause, lanjutkan pemutaran
+    //     if (!isPaused) {
+    //         audioStream.currentTime = currentTime;
+    //         audioStream
+    //             .play()
+    //             .catch((err) => console.error("Gagal memutar audio:", err));
+    //         isStreamingPlaying = true;
+    //         // Tentukan nama audio dan artis
+    //         musicName.innerHTML = "Streaming Audio";
+    //         musicArtist.innerHTML = "Live Stream";
 
-            startSpectrumAudio(audioStream);
-        }
+    //         startSpectrumAudio(audioStream);
+    //     }
 
-        // Simpan status audio sebelum halaman ditutup atau berpindah
-        window.addEventListener("beforeunload", () => {
-            // Menyimpan status audio (apakah sedang dipause) dan waktu pemutaran ke localStorage
-            localStorage.setItem("audioPaused", audioStream.paused);
-            localStorage.setItem("audioCurrentTime", audioStream.currentTime);
-        });
-    }
+    //     // Simpan status audio sebelum halaman ditutup atau berpindah
+    //     window.addEventListener("beforeunload", () => {
+    //         // Menyimpan status audio (apakah sedang dipause) dan waktu pemutaran ke localStorage
+    //         localStorage.setItem("audioPaused", audioStream.paused);
+    //         localStorage.setItem("audioCurrentTime", audioStream.currentTime);
+    //     });
+    // }
 
     // Fungsi untuk menjeda audio streaming
     window.pauseStreaming = function () {
@@ -368,6 +368,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const audioSrc = button.getAttribute("data-audio-src");
             const chartName = button.getAttribute("data-name");
             const chartArtist = button.getAttribute("data-kategori");
+            console.log(chartId);
+            
             changeIdPlayPause();
 
             // Hentikan streaming jika sedang berjalan
@@ -477,85 +479,113 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----------------------------
     // Podcast Functions
     // ----------------------------
-    // Load podcast details on page load
+       // Load podcast details on page load
     window.addEventListener("load", () => {
         if (IdP) {
             loadPodcastDetails(IdP);
         }
     });
-    // Status play/pause untuk setiap podcast berdasarkan ID podcast
+    
+    // Status play/pause untuk setiap podcast
     let playPodcastStatus = {};
-    let currentPodcastId = null; // Simpan ID podcast yang sedang dimainkan
-
+    let currentPodcastId = null;
+    
+    // Fungsi untuk mengganti ID tombol Play/Pause
     function changeIdPlayPausePodcast() {
         const playPauseBtn = document.querySelector(".play-pause");
         if (playPauseBtn) {
-            playPauseBtn.id = "BtnPodcast"; // Set ID tombol
+            playPauseBtn.id = "BtnPodcast";
         }
     }
-    function loadPodcastDetails(idP) {
-        fetch(`/podcast/details/${idP}`)
-            .then((response) => response.json())
-            .then((data) => {
-                if (data) {
-                    musicName.innerHTML = data.judul_podcast;
-                    musicArtist.innerHTML = data.genre_podcast;
-                    Playimage.src = "./storage/" + data.image_podcast;
-                    AudioPodcast.src = "./storage/" + data.file;
-                    AudioPodcast.load(); // Load hanya saat pertama kali
-                    playPodcastStatus[idP] = { isPlaying: false }; // Reset status
-                    currentPodcastId = idP; // Set current podcast
-                } else {
-                    console.error("Podcast not found.");
-                }
-            })
-            .catch((error) =>
-                console.error("Failed to load podcast data:", error)
-            );
+    
+    // **🔄 Load Podcast Details Tanpa load()**
+    async function loadPodcastDetails(idP) {
+        try {
+            const response = await fetch(`/podcast/details/${idP}`);
+            if (!response.ok) throw new Error("Gagal mengambil data podcast");
+    
+            const data = await response.json();
+            if (data) {
+                musicName.innerHTML = data.judul_podcast;
+                musicArtist.innerHTML = data.genre_podcast;
+                Playimage.src = `./storage/${data.image_podcast}`;
+                AudioPodcast.src = `./storage/${data.file}`; // Tanpa `load()`
+                playPodcastStatus[idP] = { isPlaying: false };
+                currentPodcastId = idP;
+            } else {
+                console.error("Podcast tidak ditemukan.");
+                alert("Podcast tidak ditemukan. Coba lagi.");
+            }
+        } catch (error) {
+            console.error("Gagal memuat data podcast:", error);
+            alert("Terjadi kesalahan saat memuat podcast.");
+        }
     }
-
-    function loadEpisode(idP, episode, direction) {
-        fetch(`/podcast/${idP}/episode/${episode}/${direction}`)
-            .then((response) => response.json())
-            .then((data) => {
-                if (data) {
-                    musicName.innerHTML = data.judul_podcast;
-                    musicArtist.innerHTML = data.genre_podcast;
-                    Playimage.src = "./storage/" + data.image_podcast;
-                    AudioPodcast.src = "./storage/" + data.file;
-                    AudioPodcast.load();
-                    playPodcastStatus[idP] = { isPlaying: false }; // Reset status
-                } else {
-                    console.error("Episode not found.");
-                }
-            })
-            .catch((error) =>
-                console.error("Failed to load episode data:", error)
-            );
+    
+    // **🔄 Load Episode Tanpa load()**
+    async function loadEpisode(idP, episode, direction) {
+        try {
+            const response = await fetch(`/podcast/${idP}/episode/${episode}/${direction}`);
+            if (!response.ok) throw new Error("Gagal mengambil data episode");
+    
+            const data = await response.json();
+            if (data) {
+                musicName.innerHTML = data.judul_podcast;
+                musicArtist.innerHTML = data.genre_podcast;
+                Playimage.src = `./storage/${data.image_podcast}`;
+                AudioPodcast.src = `./storage/${data.file}`; // Tanpa `load()`
+                playPodcastStatus[idP] = { isPlaying: false };
+            } else {
+                console.error("Episode tidak ditemukan.");
+                alert("Episode tidak ditemukan. Coba lagi.");
+            }
+        } catch (error) {
+            console.error("Gagal memuat data episode:", error);
+            alert("Terjadi kesalahan saat memuat episode.");
+        }
     }
-
-    // Fungsi play podcast
+    
+    // **▶️ Fungsi Play Podcast (Tanpa load)**
     window.playPodcast = function (idP) {
         if (activeAudioSource !== "podcast") {
-            stopActiveAudio(); // Hentikan audio lain
+            stopActiveAudio(); // Stop audio lain
             activeAudioSource = "podcast";
         }
-
+    
         const playPauseBtnP = document.querySelector(".play-pause-podcast");
-        playPauseBtnP.style.display = "block";
-
-        if (!playPodcastStatus[idP]?.isPlaying) {
-            AudioPodcast.play()
-                .then(() => {
-                    playPodcastStatus[idP].isPlaying = true;
-                    currentPodcastId = idP; // Update current podcast ID
-                    updatePodcastPlayButtonState(idP);
-                })
-                .catch((error) => {
-                    console.error("Audio play error:", error);
-                });
+        if (playPauseBtnP) playPauseBtnP.style.display = "block";
+    
+        const playPauseBtnS = document.querySelector(".play-pause-stream");
+        if (playPauseBtnS) playPauseBtnS.style.display = "none";
+    
+        if (!AudioPodcast) {
+            console.error("❌ AudioPodcast tidak ditemukan!");
+            return;
         }
+    
+        // **🔹 SOLUSI UTAMA: Mulai Audio Tanpa load()**
+        AudioPodcast.currentTime = 0;
 
+    const tryPlayAudio = () => {
+        AudioPodcast.play()
+            .then(() => {
+                playPodcastStatus[idP] = { isPlaying: true };
+                currentPodcastId = idP;
+                updatePodcastPlayButtonState(idP);
+                console.log("▶️ Podcast berhasil diputar!");
+            })
+            .catch((error) => {
+                console.error("❌ Error play di iOS:", error);
+            });
+    };
+
+    // 🔹 Solusi: Jika di iOS, tambahkan event listener sekali
+    if (navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad")) {
+        document.addEventListener("click", tryPlayAudio, { once: true });
+    } else {
+        tryPlayAudio();
+    }
+    
         startSpectrumAudio(AudioPodcast);
         proggresBarAudio(AudioPodcast);
     };
@@ -1119,7 +1149,7 @@ if (
             hoursElement.innerText = "00";
             minutesElement.innerText = "00";
             secondsElement.innerText = "00";
-            alert("Countdown selesai!");
+            // alert("Countdown selesai!");
         }
     }
 

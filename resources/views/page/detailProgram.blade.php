@@ -9,6 +9,15 @@
 @push('Style.css')
     <link rel="stylesheet" href="{{ asset('css/StyleContent/detailProgram.css?v=' . time()) }}">
     <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsivedetailProgram.css?v=' . time()) }}">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BHYYVVYF3D');
+</script>
 @endpush
 
 @section('title', $program->meta_title)
@@ -48,7 +57,7 @@
                             </p>
                         </div>
                         <div class="area-image-detail-program">
-                            <img class="image-detail-program" src="../storage/{{ $program->image_program }}" alt="">
+                            <img class="image-detail-program" src="../storage/{{ $program->thumbnail_program }}" alt="">
                         </div>
                         <div class="area-desk-detail-program">
                             {!! str($program->deskripsi_program)->sanitizeHtml() !!}
@@ -67,19 +76,34 @@
                         @endif --}}
                     </div>
                     <div class="line-detail-info"></div>
+                    <section class="section-banner-full-small {{ $banner->where('position', 'bottom_detail')->count() > 0 ? '' : 'hidden' }}">
+                        <div class="area-banner-full-small">
+                            <swiper-container class="mySwiper"  id="swiper-l" centered-slides="true" autoplay-delay="2000"
+                                autoplay-disable-on-interaction="false" loop="true">
+                                @foreach ($banner->where('position', 'bottom_detail') as $list)
+                                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                                @endforeach
+                            </swiper-container>
+                        </div>
+                    </section>
                     <div class="area-programE">
                         <div class="header-programE">
                             <h2 class="title-programE">Program Ardan</h2>
                         </div>
                         <div class="content-programE">
                             @foreach ($programO as $programList)
-                                <div class="box-programE" style="background-image: url('./storage/{{ $programList->image_program }}') "
+                                <div class="box-programE" "
                                     class="box-program" data-title="{{ $programList->judul_program }}"
                                     data-description="{{ $programList->deskripsi_pendek }}"
                                     data-time="{{ $programList->jam_mulai }} - {{ $programList->jam_selesai }}"
                                     data-slugP="{{ $programList->slug }}"
                                     data-deskP="{{ $programList->deskripsi_program }}"
-                                    onclick="showPopup(this)"></div>
+                                    onclick="showPopup(this)">
+                                    <img class="image-programEE" src="./storage/{{ $programList->image_program }}" alt="" srcset="">
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -123,17 +147,17 @@
                         <div class="area-box-news">
                             @foreach ($kategoriInfo as $kategoriInfoList)
                                 <div class="box-news">
-                                    <a href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
+                                    <a class="link-news" href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
                                         <div class="area-tag-news">
                                             <h3 class="tag-news">{{ $kategoriInfoList->nama_kategori }}</h3>
                                         </div>
-                                        @if ($kategoriInfoList->info->isNotEmpty())
+                                        {{-- @if ($kategoriInfoList->info->isNotEmpty())
                                             <img class="image-news"
                                                 src="{{ asset('storage/' . $kategoriInfoList->info->first()->image_info) }}"
                                                 alt="">
                                         @else
                                             <p>Tidak ada info untuk tag ini.</p>
-                                        @endif
+                                        @endif --}}
                                     </a>
                                 </div>
                             @endforeach
@@ -218,6 +242,19 @@
             
         </div>
     </section>
+    <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
+        <div class="area-banner">
+            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
+                autoplay-disable-on-interaction="false" loop="true">
+                @foreach ($banner->where('position', 'middle') as $list)
+                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
+                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
+                                loading="lazy">
+                        </a></swiper-slide>
+                @endforeach
+            </swiper-container>
+        </div>
+    </section>
     <section class="page-news-3">
         <div class="area-info-artis">
             <div class="header-info-artis">
@@ -278,4 +315,5 @@
         </div>
     </section>
     <script src="{{ asset('js/detailProgram.js?v=' . time()) }}"></script>
+
 @endsection

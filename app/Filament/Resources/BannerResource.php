@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\BannerResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BannerResource\RelationManagers;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\ImageColumn;
 
 class BannerResource extends Resource
@@ -35,15 +36,195 @@ class BannerResource extends Resource
                 Card::make()
                     ->schema([
                         TextInput::make('title_banner')->label('Title Banner :'),
+
+                        Select::make('page')
+                            ->options([
+                                'all' => 'All Page',
+                                'home' => 'Home',
+                                'info_news' => 'Info News',
+                                'event' => 'Event',
+                                'chart' => 'Chart',
+                                'youtube' => 'Youtube',
+                                'podcast' => 'Podcast',
+                                'info_artis' => 'Info Artis',
+                                'singlepage_program' => 'SinglePage Program',
+                                'singlepage_event' => 'SinglePage Event',
+                                'singlepage_info' => 'SinglePage Info',
+                                'singlepage_podcast' => 'SinglePage Podcast',
+                                'singlepage_artis' => 'SinglePage Artis',
+                                'singlepage_kategoriInfo' => 'SinglePage KategoriInfo',
+                            ])
+                            ->required()
+                            ->label('Page')
+                            ->reactive(),
+                        Select::make('position')
+                            ->options(function (callable $get) {
+                                $page = $get('page'); // Ambil nilai page yang dipilih
+                                switch ($page) {
+                                    case 'all':
+                                        return [
+                                            'top' => 'Top',
+                                        ];
+                                    case 'home':
+                                        return [
+                                            'top' => 'Top',
+                                            'middle' => 'Middle',
+                                            'bottom_kategori' => 'Bottom Kategori',
+                                            'bottom_podcast' => 'Bottom Podcast',
+                                        ];
+                                    case 'info_news':
+                                        return [
+                                            'bottom_topInfo' => 'bottom_topInfo',
+                                            'middle' => 'middle',
+                                        ];
+                                    case 'event':
+                                        return [
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'youtube':
+                                        return [
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'podcast':
+                                        return [
+                                            'top' => 'Top',
+                                            'bottom_topInfo' => 'Bottom TopInfo',
+                                        ];
+                                    case 'singlepage_info':
+                                        return [
+                                            'bottom_detail' => 'Bottom Detail Info',
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'singlepage_event':
+                                        return [
+                                            'bottom_detail' => 'Bottom Detail Event',
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'singlepage_program':
+                                        return [
+                                            'bottom_detailil' => 'Bottom Detail Program',
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'singlepage_artis':
+                                        return [
+                                            'bottom_detail' => 'Bottom Detail artis',
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'info_artis':
+                                        return [
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'kategori_info':
+                                        return [
+                                            'middle' => 'Middle',
+                                        ];
+                                    case 'chart':
+                                        return [
+                                            'bottom_topInfo' => 'Bottom Top Info',
+                                        ];
+                                    default:
+                                        return [
+                                            'default' => 'Default Position',
+                                        ];
+                                }
+                            })
+                            ->required()
+                            ->label('Position')
+                            ->reactive() // Reacts to changes
+                            ->afterStateUpdated(function (callable $set, $state) {
+                                // Update width_type based on position value
+                                switch ($state) {
+                                    case 'top':
+                                        $set('width_type', 'Full Width');
+                                        break;
+                                    case 'bottom_detail':
+                                        $set('width_type', 'Full Width Large');
+                                        break;
+                                    case 'middle':
+                                        $set('width_type', 'Full Width');
+                                        break;
+                                    case 'bottom_topInfo':
+                                        $set('width_type', 'Large');
+                                        break;
+                                    case 'bottom_podcast':
+                                        $set('width_type', 'Full Width Small');
+                                        break;
+                                    case 'bottom_kategori':
+                                        $set('width_type', 'Small');
+                                        break;
+                                    default:
+                                        $set('width_type', 'Default Position');
+                                }
+                            }),
+
+                        TextInput::make('width_type')
+                            ->label('Width Type')
+                            ->disabled()
+                            ->reactive(), // Make the field readonly
+
                         FileUpload::make('image_banner')
                             ->label('Banner Image :')
                             ->image()
                             ->directory('uploads/images_banner')
                             ->disk('public')
                             ->preserveFilenames()
-                            ->rules(['required', 'image', 'dimensions:width=1350,height=250']) // Ubah format ke array
-                            ->validationAttribute('Stream Image')
-                            ->helperText('The image must be 1350x250 pixels.')
+                            ->rules(function (callable $get) {
+                                $widthType = $get('width_type'); // Ambil nilai dari 'width_type'
+
+                                // Validasi berdasarkan width_type
+                                switch ($widthType) {
+                                    case 'Full Width Large':
+                                        return [
+                                            'required',
+                                            'image',
+                                        ];
+                                    case 'Full Width Small':
+                                        return [
+                                            'required',
+                                            'image',
+                                        ];
+                                    case 'Large':
+                                        return [
+                                            'required',
+                                            'image',
+                                        ];
+                                    case 'Small':
+                                        return [
+                                            'required',
+                                            'image',
+                                        ];
+                                    default: // Default untuk 'Full Width'
+                                        return [
+                                            'required',
+                                            'image',
+                                        ];
+                                }
+                                
+                            })
+                            ->validationAttribute('Banner Image')
+                            ->helperText(function (callable $get) {
+                                $widthType = $get('width_type'); // Ambil nilai dari 'width_type'
+
+                                // Tampilkan pesan helper berdasarkan width_type
+                                switch ($widthType) {
+                                    case 'Full Width Large':
+                                        return 'The image must be exactly 801x120 pixels.';
+                                    case 'Full Width Small':
+                                        return 'The image must be exactly 720x120 pixels.';
+                                    case 'Large':
+                                        return 'The image must be exactly 422x120 pixels.';
+                                    case 'Small':
+                                        return 'The image must be exactly 364x120 pixels.';
+                                    default: // Default untuk 'Full Width'
+                                        return 'The image must be exactly 1350x250 pixels.';
+                                }
+                            })
+                            ->reactive() // Untuk memastikan helper text dan rules berubah saat width_type berubah
+                            ->required(), // FileUpload wajib diisi
+                            TextInput::make('link_ads')
+                            ->label('Link Ads :')
+                            ->required(),
+
                     ])
                     ->columns(2),
             ]);
@@ -62,6 +243,12 @@ class BannerResource extends Resource
                     ->searchable()
                     ->sortable(),
                 ImageColumn::make('image_banner'),
+                TextColumn::make('page')
+                    ->label('Page'),
+                TextColumn::make('position')
+                    ->label('Position'),
+                TextColumn::make('width_type')
+                    ->label('Width Type'),
             ])
             ->filters([
                 //

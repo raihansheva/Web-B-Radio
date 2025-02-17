@@ -1,46 +1,17 @@
-/* area banner */
-
-.section-banner {
-    width: 100%;
-    height: auto;
-    padding-top: 40px;
-}
-
-.area-banner {
-    width: auto;
-    margin: 0px 64px 0px 64px;
-    height: 250px;
-    /* border: 1px red solid; */
-}
-
-.image-banner {
-    width: 100%;
-    height: 100%;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-swiper-slide img {
+/*.player-stream {*/
+/*            pointer-events: none;*/
+/*        }*/
+        
+swiper-slide .image-announcer {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.frame-yt-home{
+    width: 100%;
+    height: 100%;
 }
 
 /* ----------- */
@@ -102,6 +73,7 @@ swiper-slide img {
     width: auto;
     height: 80%;
     display: flex;
+    /* justify-content: space-between; */
 }
 
 .contentS-kiri {
@@ -112,7 +84,7 @@ swiper-slide img {
 
 .card-A {
     width: 100%;
-    display: block;
+    /*display: none;*/
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -133,6 +105,8 @@ swiper-slide img {
     align-items: center;
     gap: 12px;
     border-radius: 10px;
+    border: 3px #D3D3D3 solid;
+
 }
 
 .card-A .card-header .author {
@@ -170,7 +144,7 @@ swiper-slide img {
     align-items: center;
     display: flex;
     height: 30px;
-    width: calc(20% - 2px);
+    width: fit-content;
     background-color: var(--primary-color);
     border-radius: 12px;
     padding: 10px;
@@ -180,6 +154,14 @@ swiper-slide img {
 
 .text-watchS {
     font-family: "Poppins";
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 6px;
+}
+
+.text-watchS i{
+    font-size: 24px;
 }
 
 .btn-play-streaming {
@@ -211,7 +193,7 @@ swiper-slide img {
 /* card B */
 .card-B {
     width: 100%;
-    display: none;
+    /*display: block;*/
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -229,6 +211,8 @@ swiper-slide img {
     overflow: hidden;
     display: flex;
     gap: 12px;
+        border: 3px #D3D3D3 solid;
+    border-radius: 10px;
 }
 
 .card-footer {
@@ -246,7 +230,7 @@ swiper-slide img {
     align-items: center;
     display: flex;
     height: 30px;
-    width: calc(20% - 2px);
+    width: fit-content;
     background-color: var(--primary-color);
     border-radius: 12px;
     padding: 10px;
@@ -256,7 +240,17 @@ swiper-slide img {
 
 .text-watchS-B {
     font-family: "Poppins";
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 4px;
 }
+
+.text-watchS-B i{
+    font-size: 24px;
+    
+}
+
 
 .video-container {
     position: relative;
@@ -265,8 +259,19 @@ swiper-slide img {
     overflow: hidden;
 }
 
+/*.video-container  iframe{
+    width: 100%;
+    height: 100%;
+}*/
+
 .videoPlayer-dimensions.vjs-fluid:not(.vjs-audio-only-mode){
     padding-top: 392px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+}
+
+.vjs-poster img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .video-container .video-js {
@@ -310,13 +315,20 @@ swiper-slide img {
 .area-nextP {
     width: auto;
     height: auto;
-    border: 3px white solid;
     border-radius: 10px;
     padding: 20px;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.area-title-detail{
+    width: fit-content;
+    height: auto;
 }
 
 .area-title-nextP {
-    width: auto;
+    width: fit-content;
+    /* border: 1px white solid; */
 }
 
 .title-nextP {
@@ -324,21 +336,37 @@ swiper-slide img {
     font-family: "Bebas Neue";
     color: white;
     font-weight: 400;
-    font-size: 2rem; /* mengubah satuan dari px ke rem */
+    font-size: 34px; /* mengubah satuan dari px ke rem */
+}
+
+.area-detail-NP{
+    width: auto;
+    height: auto;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 8px;
 }
 
 .area-thumbnail-nextP {
-    width: auto;
-    height: 235px;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Rasio 16:9 */
     background-color: aliceblue;
     border-radius: 10px;
+    overflow: hidden;
+    max-height: 180px; /* Menambahkan max-height untuk memperpendek tinggi */
+    border: 3px #D3D3D3 solid;
 }
+
 
 .image-stream-upcoming {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* filter: brightness(0.5); */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
+
 }
 
 /* ---------------------- */
@@ -424,7 +452,7 @@ swiper-slide img {
     width: auto;
     height: auto;
     /* border: 1px black solid; */
-    margin: 10px 64px 0px 64px;
+    margin: 0px 45px 0px 45px;
     padding-bottom: 20px;
 }
 
@@ -438,14 +466,25 @@ swiper-slide img {
     margin-bottom: 10px;
 }
 
+.image-program{
+    width: 100%; /* Sesuaikan dengan lebar parent */
+    height: 100%; /* Sesuaikan dengan tinggi parent */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0; /* Atur posisi di kiri */
+}
+
 .box-program {
-    flex: 0 0 calc(25% - 15px);
-    height: 280px;
+    /* flex: 0 0 100%; */
+    height: 440px;
     background-color: #f0f0f0;
     border-radius: 20px;
     margin: 0;
     box-sizing: border-box;
     cursor: pointer;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
 }
 
 .popup {
@@ -468,7 +507,7 @@ swiper-slide img {
     text-align: center;
     width: 500px;
     /*Lebarpop-up*/
-    height: 250px;
+    height: fit-content;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
@@ -492,7 +531,7 @@ swiper-slide img {
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .desk-program {
@@ -500,6 +539,10 @@ swiper-slide img {
     font-family: "Poppins";
     margin: 0px;
     font-weight: 300;
+    -webkit-line-clamp: 4; /* Membatasi 3 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Menyembunyikan sisa teks yang tidak muat */
+    text-overflow: ellipsis;
 }
 
 .jam-program {
@@ -527,6 +570,7 @@ swiper-slide img {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
+    text-decoration: underline;
     -o-transition: all 0.3s ease-in-out;
 }
 
@@ -540,8 +584,8 @@ swiper-slide img {
 .page-3 {
     width: 100%;
     height: auto;
-    background-color: #353535;
-    position: relative; /* Tambahkan posisi relatif untuk membuat SVG di belakang bekerja */
+    background-color: #F8F9FA;
+    position: relative; /* Untuk tata letak */
 }
 
 .svg-ornamen {
@@ -564,7 +608,7 @@ swiper-slide img {
 
 .line-info {
     width: 100%;
-    border: 2px white solid;
+    border: 2px var(--primary-color) solid;
     margin-top: 35px;
     border-radius: 5px;
 }
@@ -577,14 +621,23 @@ swiper-slide img {
     margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
 }
+
+.area-kategori-info{
+    width: 30%;
+}
+
 /* ------- */
 
 /* area-content-info */
 .area-content-info {
-    width: 30%;
+    width: 100%;
     height: 100%;
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
     /* border: 1px red solid; */
 }
 
@@ -593,7 +646,7 @@ swiper-slide img {
     height: fit-content;
     /* border: 1px white solid; */
     text-align: left;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .title-info {
@@ -601,7 +654,7 @@ swiper-slide img {
     font-family: "Bebas Neue";
     font-size: 36px;
     font-weight: 200;
-    color: white;
+    /* color: white; */
 }
 
 .content-info {
@@ -611,13 +664,14 @@ swiper-slide img {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 10px;
 }
 
 .box-info {
     flex: 0 0 calc(50% - 6px);
-    height: 80px;
-    /* background-color: #f0f0f0; */
-    /* border-radius: 10px; */
+    height: 90px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
 }
 
 .area-tag-info {
@@ -650,6 +704,8 @@ swiper-slide img {
     transition: all 0.3s ease;
     filter: brightness(0.6);
     -webkit-filter: brightness(0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
+
 }
 
 .box-info:hover .image-info {
@@ -663,42 +719,50 @@ swiper-slide img {
     height: fit-content;
     /* border: 1px white solid; */
     display: flex;
-    /* justify-content: center; */
+    justify-content: end;
 }
 
 .box-title-bottom {
     width: fit-content;
     height: fit-content;
     margin-top: 10px;
+    text-align: end;
 }
 
 .title-bottom-info {
     margin: 0px;
     font-family: "Poppins";
     font-size: 14px;
-    font-weight: 200;
-    color: var(--primary-color);
-    padding: 5px 20px;
+    font-weight: 300;
+    color: black;
+    /* padding: 5px 20px; */
     border-radius: 8px;
-    border: 1px var(--primary-color) solid;
+    /* border: 1px black solid; */
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    display: flex;
+    gap: 3px;
+    align-items: center;
 }
 
-.title-bottom-info:hover {
-    background-color: var(--primary-color);
+.title-bottom-info i{
+    font-size: 20px;
+}
+
+/* .title-bottom-info:hover {
+    background-color: white;
     color: black;
     font-weight: 400;
-}
+} */
 
 /* ------------------ */
 
 /* area-content-news */
 .area-content-news {
-    width: 75%;
+    width: 100%;
     height: auto;
     /* border: 1px green solid; */
 }
@@ -707,14 +771,36 @@ swiper-slide img {
     width: 100%;
     height: fit-content;
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title-news {
     margin: 0px;
     font-family: "Bebas Neue";
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 200;
-    color: white;
+    /* color: white; */
+}
+
+.link-see-all-news{
+    color: black;
+}
+
+.see-all-news{
+    margin: 0px;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+
+.see-all-news i{
+    font-size: 22px;
 }
 
 .content-news {
@@ -724,10 +810,11 @@ swiper-slide img {
     gap: 10px; /* Mengatur jarak antar-elemen */
     box-sizing: border-box; /* Menghindari konflik padding/margin */
     /* border: 1px solid red; */
+    margin-top: 10px;
 }
 
 .link-box-news {
-    width: calc(50% - 5px); /* Setengah kontainer minus setengah gap */
+    width: calc(33.33% - 10px); /* Setengah kontainer minus setengah gap */
     color: black;
 }
 
@@ -735,10 +822,10 @@ swiper-slide img {
     width: 100%;
     height: fit-content;
     max-height: 120px;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     border-radius: 10px;
     display: flex;
-    padding: 10px;
+    /* padding: 10px; */
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
@@ -746,7 +833,7 @@ swiper-slide img {
 }
 
 .area-image {
-    width: 30%;
+    width: 40%;
     /*border: 1px black solid;
     */
     background-color: #333;
@@ -759,7 +846,7 @@ swiper-slide img {
 }
 
 .area-text-desk {
-    width: 70%;
+    width: 60%;
     height: fit-content;
 }
 
@@ -775,7 +862,7 @@ swiper-slide img {
 .desk-news {
     font-family: "Poppins";
     margin: 0px;
-    font-size: 12px;
+    font-size: 16px;
     overflow-wrap: break-word;
     padding: 2px 0;
     font-weight: 700;
@@ -821,9 +908,9 @@ swiper-slide img {
 .title-top-info {
     margin: 0px;
     font-family: "Bebas Neue";
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 200;
-    color: white;
+    /* color: white; */
 }
 
 .content-top-info {
@@ -833,21 +920,22 @@ swiper-slide img {
     gap: 15px; /* Mengatur jarak antar-elemen */
     box-sizing: border-box; /* Menghindari konflik padding/margin */
     /* border: 1px solid red; */
+    margin-top: 10px;
 }
 
 .link-box-top-info {
-    width: calc(33.33% - 10px); /* Setengah kontainer minus setengah gap */
+    width: calc(25% - 10px); /* Setengah kontainer minus setengah gap */
     color: black;
 }
 
 .box-top-info {
     width: 100%;
-    height: 280px;
+    /* height: 340px; */
     /* max-height: 120px; */
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     border-radius: 15px;
     /* display: flex; */
-    padding: 10px;
+    /* padding: 10px; */
     /* justify-content: center;
     align-items: center; */
     box-sizing: border-box;
@@ -859,7 +947,6 @@ swiper-slide img {
     /*border: 1px black solid;
     */
     border-radius: 20px;
-
     background-color: #333;
     /* height: 100%; */
 }
@@ -872,33 +959,41 @@ swiper-slide img {
 }
 
 .area-text-desk-top-info {
-    width: 100%;
+    /* width: 100%; */
     height: fit-content;
     max-height: 50%;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
     margin-top: 10px;
+    /* padding: 10px; */
+    /* border: 1px rgb(40, 40, 40) solid; */
+    border-radius: 8px;
 }
 
 .area-tag {
     display: flex;
     gap: 4px;
+    margin-top: 5px;
 }
 
 .tag-top-info {
     font-family: "Bebas Neue";
     margin: 0px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     overflow-wrap: break-word;
     padding: 2px 0;
 }
 
+.area-text {
+    height: 54px;
+}
+
 .desk-top-info {
     font-family: "Poppins";
     margin: 0px;
-    font-size: 12px;
+    font-size: 16px;
     overflow-wrap: break-word;
     padding: 2px 0;
     display: -webkit-box;
@@ -922,12 +1017,13 @@ swiper-slide img {
     height: 50%;
     object-fit: cover;
     border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
 }
 /* ------------------- */
 
 /* area trending info */
 .area-trending-info {
-    width: auto;
+    width: 70%;
     height: auto;
     /* margin-top: 20px; */
 }
@@ -942,20 +1038,22 @@ swiper-slide img {
     font-family: "Bebas Neue";
     font-size: 36px;
     font-weight: 200;
-    color: white;
+    /* color: white; */
 }
 
 .content-trending-info {
-    width: 100%; /* Pastikan kontainer fleksibel */
+    width: 100%;
     display: flex;
     flex-wrap: wrap; /* Membiarkan elemen turun jika tidak cukup ruang */
     gap: 15px; /* Mengatur jarak antar-elemen */
     box-sizing: border-box; /* Menghindari konflik padding/margin */
     /* border: 1px solid red; */
+    margin-top: 10px;
+    
 }
 
 .link-box-trending-info {
-    width: 100%; /* Setengah kontainer minus setengah gap */
+    width: calc(33.33% - 10px); /* Setengah kontainer minus setengah gap */
     color: black;
 }
 
@@ -963,10 +1061,10 @@ swiper-slide img {
     width: 100%;
     height: fit-content;
     /* max-height: 120px; */
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     border-radius: 10px;
     /* display: flex; */
-    padding: 10px;
+    /* padding: 10px; */
     /* justify-content: center;
     align-items: center; */
     box-sizing: border-box;
@@ -991,19 +1089,22 @@ swiper-slide img {
 }
 
 .area-text-desk-trending-info {
-    width: 100%;
+    /* width: 100%; */
     height: fit-content;
     max-height: 50%;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
     margin-top: 10px;
+    /* padding: 10px; */
+    /* border: 1px rgb(40, 40, 40) solid; */
+    border-radius: 8px;
 }
 
 .tag-trending-info {
     font-family: "Bebas Neue";
     margin: 0px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     overflow-wrap: break-word;
     padding: 2px 0;
@@ -1012,11 +1113,11 @@ swiper-slide img {
 .desk-trending-info {
     font-family: "Poppins";
     margin: 0px;
-    font-size: 12px;
+    font-size: 16px;
     overflow-wrap: break-word;
     padding: 2px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Membatasi 3 baris */
+    -webkit-line-clamp: 2; /* Membatasi 3 baris */
     -webkit-box-orient: vertical;
     overflow: hidden; /* Menyembunyikan sisa teks yang tidak muat */
     text-overflow: ellipsis;
@@ -1036,6 +1137,7 @@ swiper-slide img {
     height: 50%;
     object-fit: cover;
     border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
 }
 /* ------------------- */
 /* area info & news */
@@ -1220,8 +1322,8 @@ swiper-slide img {
     width: 100%;
     height: fit-content;
     /* border: 1px red solid; */
-    text-align: center;
-    margin-top: 30px;
+    text-align: left;
+    /* margin-top: 30px; */
 }
 
 .title-event {
@@ -1234,7 +1336,7 @@ swiper-slide img {
 
 .area-content-event {
     width: 100%;
-    height: 500px;
+    height: auto;
     /* border: 1px blue solid; */
     display: flex;
     gap: 20px;
@@ -1242,10 +1344,23 @@ swiper-slide img {
     /* margin-bottom: 60px; */
 }
 
+.area-group-event{
+    width: 65%;
+}
+
+.area-content-groupE{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+
 /* event kiri */
 .area-content-event-kiri {
-    width: 65%;
-    height: auto;
+    width: 100%;
+    height: 442px;
+    display: flex;
     /* border: 1px greenyellow solid; */
 }
 
@@ -1254,35 +1369,53 @@ swiper-slide img {
     height: 100%;
     background-color: #f0f0f0;
     display: flex;
-    justify-content: end;
-    align-items: end;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: ; */
     cursor: pointer;
+    border-radius: 8px;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
+}
+
+.image-CD{
+    width: 100%; /* Sesuaikan dengan lebar parent */
+    height: 100%; /* Sesuaikan dengan tinggi parent */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: contain; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
+    z-index: 1;
 }
 
 .area-countdown {
-    width: 100%;
     height: 100px;
-    background-color: #333333b9;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, transparent, #333333d1);
     display: flex;
+    justify-content: center;
     padding: 15px;
+    z-index: 2;
 }
 
 .countdown {
-    width: 60%;
+    width: 65%;
     height: 100%;
     /* border: 1px white solid; */
     display: flex;
 }
 
 .area-days-date {
-    width: 40%;
+    /* width: 100%; */
     height: auto;
     /* border: 1px red solid; */
-    text-align: right;
+    background: linear-gradient(to top, transparent, #333333b9);
+    text-align: left;
     display: flex;
-    justify-content: end;
-    align-items: end;
-    padding: 5px 0px;
+    justify-content: start;
+    align-items: start;
+    padding: 15px;
+    z-index: 2;
 }
 
 .time-countdown {
@@ -1318,7 +1451,7 @@ swiper-slide img {
 
 .date-month {
     font-family: "Bebas Neue";
-    font-size: 30px;
+    font-size: 34px;
     color: white;
     font-weight: 200;
     margin: 0px;
@@ -1377,7 +1510,12 @@ swiper-slide img {
 }
 
 .popup-content-event {
-    background-color: var(--primary-color);
+    background: rgba(225, 225, 225, 0.2); /* Warna biru transparan */
+    backdrop-filter: blur(10px); /* Efek blur pada background */
+    -webkit-backdrop-filter: blur(
+        10px
+    ); /* Dukungan untuk browser berbasis Webkit */
+    border: 1px solid rgba(225, 225, 225, 0.3);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
@@ -1432,6 +1570,7 @@ swiper-slide img {
     font-family: "Poppins";
     margin: 0px;
     font-weight: 300;
+    color: white;
 }
 
 .jam-event {
@@ -1439,6 +1578,7 @@ swiper-slide img {
     font-family: "Poppins";
     margin: 0px;
     font-weight: 500;
+    color: white;
 }
 
 .title-box-event {
@@ -1446,6 +1586,7 @@ swiper-slide img {
     font-family: "Bebas Neue";
     font-weight: 200;
     margin: 0px;
+    color: white;
 }
 
 .link-event {
@@ -1454,7 +1595,7 @@ swiper-slide img {
     font-family: "Poppins";
     font-weight: 300;
     margin: 0px;
-    color: black;
+    color: white;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -1468,28 +1609,33 @@ swiper-slide img {
 
 /* event kanan */
 .area-content-event-kanan {
-    width: 35%;
-    height: auto;
+    width: 100%;
+    /* height: 50; */
     /* border: 1px crimson solid; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .content-event {
-    width: 100%;
-    height: 50%;
+    width: 50%;
+    height: 250px;
     background-color: #f0f0f0;
-    display: flex;
+    /* display: flex;
     justify-content: end;
-    align-items: end;
+    align-items: end; */
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .area-days-date-right {
-    width: 100%;
-    height: 40px;
-    background-color: #333333b9;
+    /* width: 100%; */
+    /* height: 40px; */
+    /* background-color: #333333b9; */
+    background: linear-gradient(to top, transparent, #333333b9);
+    border-radius: 8px;
     display: flex;
     padding: 15px;
 }
@@ -1498,10 +1644,10 @@ swiper-slide img {
     width: 100%;
     height: auto;
     /* border: 1px red solid; */
-    text-align: right;
-    display: flex;
+    text-align: left;
+    /* display: flex;
     justify-content: end;
-    align-items: end;
+    align-items: end; */
 }
 
 .box-days-date-right {
@@ -1572,7 +1718,7 @@ swiper-slide img {
     height: auto;
     display: flex;
     gap: 48px;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .line-PV {
@@ -1727,12 +1873,19 @@ swiper-slide img {
     height: 160px;
     background-color: #f0f0f0;
     border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
 }
 
 .image-podcast {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Sesuaikan dengan lebar parent */
+    height: 100%; /* Sesuaikan dengan tinggi parent */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -2426,9 +2579,7 @@ tbody td {
     font-size: 32px;
 }
 
-.hidden {
-    display: none; /* Sembunyikan tabel yang tidak aktif */
-}
+
 .bottom-chart {
     width: 100%;
     height: auto;
@@ -2506,19 +2657,23 @@ tbody td {
 }
 
 .box-artis {
-    position: relative; /* Tambahkan ini agar .area-bio-artis bisa diposisikan relatif terhadap box ini */
     width: 100%;
-    height: 150px;
+    height: 180px;
     background-color: #f0f0f0;
     border-radius: 10px;
-    overflow: hidden;
+    box-sizing: border-box;
     cursor: pointer;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
 }
 
 .image-artis {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -2682,16 +2837,34 @@ tbody td {
 /* ---------------- */
 
 /* area-schedule */
+
+/* style animasi*/
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+
+/*---------------*/
+
 .page-8 {
     width: 100%;
-    height: 100vh;
+    height: fit-content;
 }
 
 .area-schedule {
     width: auto;
-    height: 500px;
+    height: fit-content;
     /* border: 1px #ff004d solid; */
-    margin: 0px 64px 0px 64px;
+    margin: 20px 64px 0px 64px;
 }
 
 .area-content-schedule {
@@ -2768,17 +2941,19 @@ tbody td {
 }
 
 .box-schedule {
-    height: 180px;
+    height: fit-content;
     background-color: #f0f0f0;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     box-sizing: border-box;
     position: relative;
+    overflow: hidden; /* Untuk mencegah konten keluar dari box */
 }
 
 .image-schedule-program {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.8);
 }
 
 .area-bio-schedule {
@@ -2791,14 +2966,22 @@ tbody td {
     display: flex; /* Agar konten bio bisa diatur posisinya dengan mudah */
     justify-content: start;
     align-items: end;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transition: opacity 0.3s ease-in-out; /* Efek transisi kemunculan */
+}
+
+.box-schedule:hover .area-bio-schedule {
+    opacity: 1; /* Muncul saat hover */
 }
 
 .bio-schedule {
-    display: flex; /* Agar konten bio bisa diatur posisinya dengan mudah */
+    display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
     padding: 10px 20px;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, #000);
 }
 
 .nama-programS {
@@ -2812,6 +2995,7 @@ tbody td {
     font-family: "poppins";
     margin: 0px;
 }
+
 
 /* schedule mobile */
 

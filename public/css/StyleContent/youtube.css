@@ -301,15 +301,29 @@
     display: flex;
     justify-content: end;
     align-items: end;
+    box-sizing: border-box;
     cursor: pointer;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
+}
+
+.image-EM{
+    width: 100%; /* Sesuaikan dengan lebar parent */
+    height: 100%; /* Sesuaikan dengan tinggi parent */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
+    z-index: 1;
 }
 
 .area-countdown {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: #333333b9;
     display: flex;
     padding: 15px;
+    z-index: 2;
 }
 
 .countdown {
@@ -498,8 +512,22 @@
     display: flex;
     justify-content: end;
     align-items: end;
+    box-sizing: border-box;
     cursor: pointer;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
 }
+
+.image-EB{
+    width: 100%; /* Sesuaikan dengan lebar parent */
+    height: 100%; /* Sesuaikan dengan tinggi parent */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
+    z-index: 1;
+}
+
 
 .area-days-date-right {
     width: 100%;
@@ -507,6 +535,7 @@
     background-color: #333333b9;
     display: flex;
     padding: 10px 15px;
+    z-index: 2;
 }
 
 .content-days-date-right {
@@ -597,18 +626,24 @@
 }
 
 .area-image {
-    width: 30%;
+    width: 40%;
     /*border: 1px black solid;
     */
     background-color: #333;
     border-radius: 10px;
     height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
 }
 
-.image-top-info{
+.image-top-info {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

@@ -1,22 +1,30 @@
 /* Desktop dan Laptop */
-/* @media (width: 2560px) {
+@media (width: 2560px) {
+
+    .card-A .card-body,
+    .video-container,
+    .videoPlayer-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+        all: unset; /* Reset semua gaya */
+    }
+    .card-A .card-body {
+        height: 680px !important;
+    }
     .video-container {
         position: relative;
-        padding-bottom: 50.25%;
+        height: 680px !important;
         overflow: hidden;
         width: 100%;
-        background-color: rgb(
-            0,
-            0,
-            0
-        );
+        background-color: rgb(0, 0, 0);
     }
-} */
-@media (min-width: 1960px) {
-    .area-banner {
-        margin: 0px 128px 0px 128px;
-        height: 300px;
+    .videoPlayer-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 680px !important;
     }
+
+}
+
+
+@media (min-width: 1920px) {
+   
 
     .page-1 {
         /* height: 100vh; */
@@ -98,7 +106,7 @@
     .video-container {
         position: relative;
         /* padding-bottom: 50.25%; */
-        height: 514px;
+        height: 495px;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -130,12 +138,12 @@
     }
 
     .area-nextP {
-        height: auto;
+        height: 55%;
     }
 
-    .area-thumbnail-nextP {
+    /* .area-thumbnail-nextP {
         height: 350px;
-    }
+    } */
 
     /* area-program */
     .area-content-program {
@@ -188,10 +196,10 @@
     }
 
     /* pop up program */
-
+    
     .popup-content {
         width: 850px;
-        height: 400px;
+        height: fit-content;
         padding: 50px;
     }
 
@@ -284,8 +292,8 @@
 
     .box-top-info {
         width: 100%;
-        height: 100%;
-        max-height: 530px;
+        height: 385px;
+        /* max-height: 530px; */
         background-color: #f0f0f0;
         border-radius: 25px;
         /* display: flex; */
@@ -361,7 +369,7 @@
 
     .image-top-info {
         width: 100%;
-        height: 60%;
+        height: 100%;
         object-fit: cover;
         border-radius: 15px;
     }
@@ -613,7 +621,11 @@
     }
 
     .area-content-event {
-        height: 750px;
+        height: 584px;
+    }
+
+    .area-content-event-kiri{
+        width: 63%;
     }
 
     .area-countdown {
@@ -780,9 +792,9 @@
         font-size: 3.6rem;
     }
 
-    .box-video {
-        height: 300px;
-    }
+    /*.box-video {*/
+    /*    height: 300px;*/
+    /*}*/
 
     .btn-play-video {
         height: 80px;
@@ -1033,7 +1045,7 @@
     /* area-schedule */
 
     .page-8 {
-        height: 100vh;
+        height: auto;
     }
     .area-schedule {
         width: auto;
@@ -1078,10 +1090,12 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 15px;
         margin-top: 20px;
+        height: fit-content;
+        margin-bottom: 20px;
     }
 
     .box-schedule {
-        height: 280px;
+        height: fit-content;
     }
 
     .nama-programS {
@@ -1106,7 +1120,7 @@
 
 
     .card-A .card-body {
-        height: 370px;
+        height: 363px;
         /* padding: 25px; */
         /* border: 1px red solid; */
     }
@@ -1114,7 +1128,7 @@
     .video-container {
         position: relative;
         /* padding-bottom: 52.25%; */
-        height: 370px;
+        height: 363px;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -1165,9 +1179,9 @@
 }
 
 @media (max-width: 1024px) {
-    .area-banner {
-        margin: 0px 32px 0px 32px;
-    }
+    /*.area-banner {*/
+    /*    margin: 0px 32px 0px 32px;*/
+    /*}*/
 
     .page-1 {
         padding: 0px 32px 0px;
@@ -1224,7 +1238,7 @@
     }
 
     .card-A .card-body {
-        height: 280px;
+        height: 283px;
         /* padding: 25px; */
         /* border: 1px red solid; */
     }
@@ -1241,14 +1255,14 @@
     }
     .card-B .view-B {
         height: 20px;
-        width: 28%;
+        width: fit-content;
         /* margin-top: 0px; */
     }
 
     .video-container {
         position: relative;
         /* padding-bottom: 47.15%; */
-        height: 280px;
+        height: 283px;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -1275,17 +1289,36 @@
         font-size: 2rem;
     }
 
+
+
     .title-nextP {
         font-size: 1.6rem;
     }
 
-    .area-nextP {
-        height: auto;
+    .next-program-name{
+        margin: 0px;
+        font-family: "Poppins";
+        /* color: white; */
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .next-program-time{
+        margin: 0px;
+        font-family: "Poppins";
+        /* color: white; */
+        font-weight: 500;
+        font-size: 14px;
     }
 
-    .area-thumbnail-nextP {
-        height: 150px;
+    .area-nextP {
+        height: auto;
+
     }
+
+    /* .area-thumbnail-nextP {
+        width: 186px;
+        height: 180px;
+    } */
 
     /* area-program */
     .page-2 {
@@ -1319,7 +1352,7 @@
 
     .popup-content {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -1603,7 +1636,7 @@
 
     .image-top-info {
         width: 100%;
-        height: 50%;
+        height: 100%;
         object-fit: cover;
         border-radius: 15px;
     }
@@ -1795,16 +1828,22 @@
     }
 
     .area-content-event {
-        height: 350px;
+        height: 339px;
     }
 
     .area-countdown {
         height: 50px;
     }
+    
+    
+    .area-content-event-kanan{
+        width: 30%;
+    }
+
 
     .area-days-date-right {
         /* padding: 10px; */
-        height: 30px;
+        height: 20px;
     }
 
     .title-event {
@@ -2262,16 +2301,16 @@
     }
 
     .box-schedule {
-        height: 150px;
+        height: fit-content;
     }
     /* ---------------- */
 }
 /* Tablet */
 @media (max-width: 768px) {
-    .area-banner {
-        margin: 0px 20px 0px 20px;
-        height: 200px;
-    }
+    /*.area-banner {*/
+    /*    margin: 0px 20px 0px 20px;*/
+    /*    height: 200px;*/
+    /*}*/
 
     .page-1 {
         padding: 0px 20px 0px;
@@ -2304,7 +2343,7 @@
     }
 
     .card-A .card-body {
-        height: 329px;
+        height: 397px;
         /* padding: 20px; */
     }
 
@@ -2324,6 +2363,14 @@
         width: 60px;
         height: 60px;
     }
+    
+        .card-A .card-header .view{
+        width: 20%;
+    }
+
+    .text-watchS i{
+        font-size: 20px;
+    }
 
     .card-B .card-body-B {
         height: 100%;
@@ -2333,14 +2380,23 @@
 
     .card-B .view-B {
         height: 20px;
-        width: 28%;
+        width: fit-content;
         /* margin-top: 0px; */
     }
+    
+    .text-watchS-B{
+        padding: 1px 10px;
+        gap: 4px;
+    }
+
+    .text-watchS-B i{
+            font-size: 20px;
+        }
 
     .video-container {
         position: relative;
         /* padding-bottom: 47.6%; */
-        height: 329px;
+        height: 397px;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -2368,13 +2424,18 @@
         font-size: 1.8rem;
     }
 
-    .area-nextP {
-        height: 40%;
+    .contentS-kanan{
+        width: 100%;
     }
 
-    .area-thumbnail-nextP {
-        height: 200px;
+    .area-nextP {
+        width: 55%;
     }
+
+    /* .area-thumbnail-nextP {
+        width: 206px;
+        height: 200px;
+    } */
 
     /* area-program */
     .page-2 {
@@ -2391,7 +2452,7 @@
 
     .box-program {
         flex: 0 0 calc(50% - 10px); /* Mengubah lebar box menjadi 50% untuk tablet */
-        height: 250px; /* Mengurangi tinggi box */
+        height: 325px; /* Mengurangi tinggi box */
     }
 
     .tombol-kiri,
@@ -2401,7 +2462,7 @@
     /* pop up program */
     .popup-content {
         width: 400px;
-        height: 180px;
+        height: fit-content;
         padding: 25px;
         border-radius: 8px;
         -webkit-border-radius: 8px;
@@ -2674,7 +2735,7 @@
 
     .image-top-info {
         width: 100%;
-        height: 50%;
+        height: 100%;
         object-fit: cover;
         border-radius: 15px;
     }
@@ -3405,7 +3466,7 @@
     }
 
     .box-schedule {
-        height: 150px;
+        height: fit-content;
     }
 
     .nama-programs {
@@ -3423,10 +3484,10 @@
 }
 /* Mobile Devices */
 @media (max-width: 480px) {
-    .area-banner {
-        margin: 0px 8px 0px 8px;
-        height: 100px;
-    }
+    /*.area-banner {*/
+    /*    margin: 0px 8px 0px 8px;*/
+    /*    height: 100px;*/
+    /*}*/
 
     .page-1 {
         padding: 0px 8px 0px;
@@ -3450,13 +3511,13 @@
     }
 
     .contentS-kiri,
-    .contentS-kanan {
+    .contentS-kana {
         width: 100%;
         margin: 0px 0px 8px 0px;
     }
 
     .card-A .card-body {
-        height: 211px;
+        height: 198px;
         /* padding: 15px; */
     }
 
@@ -3478,6 +3539,14 @@
     .btn-play-streaming span {
         font-size: 26px;
     }
+    
+        .text-watchS{
+        font-size: 12px;
+    }
+    
+    .text-watchS i{
+        font-size: 16px;
+    }
 
     .card-B .card-body-B {
         height: auto;
@@ -3486,21 +3555,24 @@
     }
     .card-B .view-B {
         height: 20px;
-        width: 28%;
-        /* margin-top: 0px; */
+        width: fit-content;
+        margin-top: 10px;
+        /* border-radius: 8px; */
     }
-
-    .text-watchS {
-        font-size: 12px;
-    }
+    
     .text-watchS-B {
         font-size: 12px;
+        padding: 1px 6px;
     }
+    
+    .text-watchS-B i{
+            font-size: 16px;
+        }
 
     .video-container {
         position: relative;
         /* padding-bottom: 56.25%; */
-        height: 211px;
+        height: auto;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -3519,18 +3591,39 @@
         font-size: 1.5rem;
     }
 
+    .contentS-kanan{
+        width: 100%;
+    }
+
     .title-nextP {
         font-size: 1.5rem;
     }
 
+    .next-program-name{
+        margin: 0px;
+        font-family: "Poppins";
+        /* color: white; */
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .next-program-time{
+        margin: 0px;
+        font-family: "Poppins";
+        /* color: white; */
+        font-weight: 500;
+        font-size: 12px;
+    }
+
     .area-nextP {
+        width: auto;
         height: auto;
         padding: 10px;
     }
 
-    .area-thumbnail-nextP {
+    /* .area-thumbnail-nextP {
+        width: 156px;
         height: 150px;
-    }
+    } */
     /* area-program */
 
     .page-2 {
@@ -3547,7 +3640,7 @@
 
     .box-program {
         flex: 0 0 100%; /* Mengubah lebar box menjadi 50% untuk tablet */
-        height: 250px; /* Mengurangi tinggi box */
+        height: 335px; /* Mengurangi tinggi box */
     }
 
     .tombol-kiri,
@@ -3557,9 +3650,14 @@
     }
 
     /* pop up program */
+
+    .area-info-program{
+        gap: 5px;
+    }
+
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
         border-radius: 8px;
         -webkit-border-radius: 8px;
@@ -3570,6 +3668,8 @@
 
     .desk-program {
         font-size: 8px;
+        -webkit-line-clamp: 4;
+        text-overflow: ellipsis;
     }
 
     .jam-program {
@@ -3838,7 +3938,7 @@
 
     .image-top-info {
         width: 100%;
-        height: 50%;
+        height: 100%;
         object-fit: cover;
         border-radius: 15px;
     }
@@ -3985,8 +4085,8 @@
         padding: 30px;
         border-radius: 15px;
         text-align: center;
-        width: 450px;
-        height: 200px;
+        width: 200px;
+        height: 110px;
         -webkit-border-radius: 15px;
         -moz-border-radius: 15px;
         -ms-border-radius: 15px;
@@ -4058,9 +4158,9 @@
         margin-top: 25px;
     }
 
-    .area-content-event-kiri {
+.area-content-event-kiri {
         width: 100%;
-        height: 240px;
+        height: 200px;
         /* border: 1px red solid; */
     }
 
@@ -4073,11 +4173,12 @@
 
     .content-event {
         width: 50%;
-        height: 140px;
+        height: 100px;
     }
 
     .area-countdown {
-        height: 40px;
+        padding: 10px;
+        height: 20px;
     }
 
     .area-days-date-right {
@@ -4090,16 +4191,16 @@
     }
 
     .timer {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .title-timer {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .date-month,
     .year {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .box-days-date-right {
@@ -4308,7 +4409,7 @@
 
     .area-content-announcer {
         /* width: ; */
-        height: 300px;
+        height: fit-content;
         padding: 0px 0px 30px 0px;
     }
 
@@ -4343,12 +4444,13 @@
 
     .area-content-box-announcer {
         gap: 15px;
+        margin: 0px 45px;
         /* border: 1px red solid; */
     }
 
     .box-announcer {
-        flex: 0 0 calc(50% - 7.5px);
-        height: 200px;
+        flex: 0 0 100%;
+        height: 350px;
     }
 
     .line-announcer {
@@ -4597,7 +4699,7 @@
     }
 
     .box-schedule {
-        height: 120px;
+        height: fit-content;
     }
 
     .nama-programs {
@@ -4638,12 +4740,13 @@
     }
 
     .content-schedule-mobile {
-        grid-template-columns: repeat(2, 1fr);
+        /*grid-template-columns: repeat(2, 1fr);*/
         gap: 10px;
         margin-top: 10px;
         margin-bottom: 40px;
-        height: auto;
+        height: fit-content;
         display: flex;
+        flex-wrap: wrap;
     }
 
     .box-schedule-mobile {
@@ -4658,19 +4761,22 @@
 
     .box-schedule-mobile.active {
         display: block;
-        width: 50%;
-        height: 100px;
+        width: calc(50% - 5px);
+        height: 180px;
         background-color: #f0f0f0;
         border-radius: 10px;
         box-sizing: border-box;
         position: relative;
     }
 }
+
+
+
 @media (max-width: 375px) {
-    .area-banner {
-        margin: 0px 8px 0px 8px;
-        height: 100px;
-    }
+    /*.area-banner {*/
+    /*    margin: 0px 8px 0px 8px;*/
+    /*    height: 100px;*/
+    /*}*/
 
     .page-1 {
         padding: 0px 8px 0px;
@@ -4701,7 +4807,7 @@
     }
 
     .card-A .card-body {
-        height: 200px;
+        height: 190px;
         /* padding: 15px; */
     }
 
@@ -4726,7 +4832,7 @@
 
     .card-A .card-header .view {
         height: 18px;
-        width: 26%;
+        width: fit-content;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -4737,26 +4843,37 @@
     .text-watchS {
         font-size: 12px;
     }
+    
+      .text-watchS i{
+        font-size: 16px;
+    }
 
     .card-B .card-body-B {
         height: auto;
         /* padding: 25px; */
         /* border: 1px red solid; */
     }
+    
     .card-B .view-B {
         height: 20px;
-        width: 28%;
-        margin-top: 8px;
+        width: fit-content;
+        margin-top: 10px;
+        border-radius: 8px;
     }
-
+    
     .text-watchS-B {
         font-size: 12px;
+        padding: 1px 6px;
     }
+    
+    .text-watchS-B i{
+            font-size: 16px;
+        }
 
     .video-container {
         position: relative;
         /* padding-bottom: 60.5%; */
-        height: 200px;
+        height: auto;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -4779,14 +4896,20 @@
         font-size: 1.5rem;
     }
 
+    .contentS-kanan{
+        width: 100%;
+    }
+
     .area-nextP {
+        width: auto;
         height: auto;
         padding: 10px;
     }
 
-    .area-thumbnail-nextP {
+    /* .area-thumbnail-nextP {
+        width: 156px;
         height: 150px;
-    }
+    } */
     /* area-program */
 
     .page-2 {
@@ -4803,7 +4926,7 @@
 
     .box-program {
         flex: 0 0 100%; /* Mengubah lebar box menjadi 50% untuk tablet */
-        height: 250px; /* Mengurangi tinggi box */
+        height: 280px; /* Mengurangi tinggi box */
     }
 
     .tombol-kiri,
@@ -4815,7 +4938,7 @@
     /* pop up program */
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
         border-radius: 8px;
         -webkit-border-radius: 8px;
@@ -4986,12 +5109,12 @@
 
     .box-top-info {
         width: 100%;
-        height: 100%;
-        max-height: 235px;
+        height: 240px;
+        /* max-height: 235px; */
         background-color: #f0f0f0;
         border-radius: 10px;
         /* display: flex; */
-        padding: 10px;
+        padding: 8px;
         /* justify-content: center;
     align-items: center; */
         box-sizing: border-box;
@@ -5005,7 +5128,7 @@
         border-radius: 20px;
 
         background-color: #333;
-        /* height: 100%; */
+        height: 50%;
     }
 
     .line-top-info {
@@ -5063,7 +5186,7 @@
 
     .image-top-info {
         width: 100%;
-        height: 45%;
+        height: 100%;
         object-fit: cover;
         border-radius: 15px;
     }
@@ -5213,8 +5336,8 @@
         padding: 30px;
         border-radius: 15px;
         text-align: center;
-        width: 450px;
-        height: 200px;
+        width: 200px;
+        height: 110px;
         -webkit-border-radius: 15px;
         -moz-border-radius: 15px;
         -ms-border-radius: 15px;
@@ -5288,7 +5411,7 @@
 
     .area-content-event-kiri {
         width: 100%;
-        height: 240px;
+        height: 193px;
         /* border: 1px red solid; */
     }
 
@@ -5301,11 +5424,12 @@
 
     .content-event {
         width: 50%;
-        height: 140px;
+        height: 94px;
     }
 
     .area-countdown {
-        height: 40px;
+        padding: 10px;
+        height: 20px;
     }
 
     .area-days-date-right {
@@ -5318,16 +5442,16 @@
     }
 
     .timer {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .title-timer {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .date-month,
     .year {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .box-days-date-right {
@@ -5824,7 +5948,7 @@
     }
 
     .box-schedule {
-        height: 100px;
+        height: fit-content;
         /* padding: 5px; */
     }
 
@@ -5876,6 +6000,8 @@
         margin-bottom: 40px;
         height: auto;
         display: flex;
+        flex-wrap: wrap;
+        height: fit-content;
     }
 
     .box-schedule-mobile {
@@ -5890,8 +6016,8 @@
 
     .box-schedule-mobile.active {
         display: block;
-        width: 50%;
-        height: 100px;
+        width: calc(50% - 5px);
+        height: 160px;
         background-color: #f0f0f0;
         border-radius: 10px;
         box-sizing: border-box;
@@ -5899,10 +6025,10 @@
     }
 }
 @media (max-width: 344px) {
-    .area-banner {
-        margin: 0px 8px 0px 8px;
-        height: 100px;
-    }
+    /*.area-banner {*/
+    /*    margin: 0px 8px 0px 8px;*/
+    /*    height: 100px;*/
+    /*}*/
 
     .page-1 {
         padding: 0px 8px 0px;
@@ -5932,7 +6058,7 @@
     }
 
     .card-A .card-body {
-        height: 162px;
+        height: 158px;
         /* padding: 15px; */
     }
 
@@ -5957,7 +6083,7 @@
 
     .card-A .card-header .view {
         height: 15px;
-        width: 26%;
+        width: fit-content;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -5967,26 +6093,37 @@
     .text-watchS {
         font-size: 10px;
     }
+    
+    .text-watchS i{
+        font-size: 16px;
+    }
 
     .card-B .card-body-B {
         height: auto;
         /* padding: 25px; */
         /* border: 1px red solid; */
     }
+    
     .card-B .view-B {
         height: 15px;
-        width: 28%;
+        width: fit-content;
         margin-top: 10px;
+        border-radius: 8px;
     }
-
+    
     .text-watchS-B {
         font-size: 10px;
+        padding: 1px 6px;
     }
+    
+    .text-watchS-B i{
+            font-size: 16px;
+        }
 
     .video-container {
         position: relative;
         /* padding-bottom: 58%; */
-        height: 162px;
+        height: auto;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -6014,9 +6151,9 @@
         padding: 10px;
     }
 
-    .area-thumbnail-nextP {
+    /* .area-thumbnail-nextP {
         height: 150px;
-    }
+    } */
     /* area-program */
 
     .page-2 {
@@ -6033,7 +6170,7 @@
 
     .box-program {
         flex: 0 0 100%; /* Mengubah lebar box menjadi 50% untuk tablet */
-        height: 220px; /* Mengurangi tinggi box */
+        height: 250px; /* Mengurangi tinggi box */
     }
 
     .tombol-kiri,
@@ -6045,7 +6182,7 @@
     /* pop up program */
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
         border-radius: 8px;
         -webkit-border-radius: 8px;
@@ -6247,12 +6384,12 @@
 
     .box-top-info {
         width: 100%;
-        /* height: 280px; */
+        height: 240px;
         /* max-height: 120px; */
         background-color: #f0f0f0;
         border-radius: 10px;
         /* display: flex; */
-        padding: 10px;
+        padding: 8px;
         /* justify-content: center;
 align-items: center; */
         box-sizing: border-box;
@@ -6266,7 +6403,7 @@ align-items: center; */
         border-radius: 20px;
 
         background-color: #333;
-        height: 40%;
+        height: 50%;
     }
 
     .line-top-info {
@@ -6549,7 +6686,7 @@ align-items: center; */
 
     .area-content-event-kiri {
         width: 100%;
-        height: 240px;
+        height: 221px;
         /* border: 1px red solid; */
     }
 
@@ -6562,16 +6699,16 @@ align-items: center; */
 
     .content-event {
         width: 50%;
-        height: 140px;
+        height: 108px;
     }
 
     .area-countdown {
-        height: 40px;
-        padding: 8px;
+        padding: 10px;
+        height: 20px;
     }
 
     .area-days-date-right {
-        padding: 8px;
+        /* padding: 10px; */
         height: 18px;
     }
 
@@ -6580,7 +6717,7 @@ align-items: center; */
     }
 
     .timer {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .title-timer {
@@ -6589,7 +6726,7 @@ align-items: center; */
 
     .date-month,
     .year {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .box-days-date-right {
@@ -7092,7 +7229,7 @@ align-items: center; */
     }
 
     .box-schedule {
-        height: 100px;
+        height: fit-content;
         /* padding: 5px; */
     }
 
@@ -7142,8 +7279,9 @@ align-items: center; */
         gap: 10px;
         margin-top: 10px;
         margin-bottom: 40px;
-        height: auto;
+        height: fit-content;
         display: flex;
+        flex-wrap: wrap;
     }
 
     .box-schedule-mobile {
@@ -7158,8 +7296,8 @@ align-items: center; */
 
     .box-schedule-mobile.active {
         display: block;
-        width: 50%;
-        height: 100px;
+        width: calc(50% - 5px);
+        height: 180px;
         background-color: #f0f0f0;
         border-radius: 10px;
         box-sizing: border-box;
@@ -7167,10 +7305,10 @@ align-items: center; */
     }
 }
 @media (max-width: 320px) {
-    .area-banner {
-        margin: 0px 8px 0px 8px;
-        height: 100px;
-    }
+    /*.area-banner {*/
+    /*    margin: 0px 8px 0px 8px;*/
+    /*    height: 100px;*/
+    /*}*/
 
     .page-1 {
         padding: 0px 8px 0px;
@@ -7200,7 +7338,7 @@ align-items: center; */
     }
 
     .card-A .card-body {
-        height: 162px;
+        height: 158px;
         /* padding: 15px; */
     }
 
@@ -7225,7 +7363,7 @@ align-items: center; */
 
     .card-A .card-header .view {
         height: 15px;
-        width: 26%;
+        width: fit-content;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -7234,6 +7372,11 @@ align-items: center; */
     }
     .text-watchS {
         font-size: 10px;
+            gap: 4px;
+    }
+
+    .text-watchS i{
+        font-size: 16px;
     }
 
     .card-B .card-body-B {
@@ -7241,20 +7384,28 @@ align-items: center; */
         /* padding: 25px; */
         /* border: 1px red solid; */
     }
+    
     .card-B .view-B {
         height: 15px;
-        width: 28%;
+        width: fit-content;
         /* margin-top: 0px; */
+        border-radius: 8px;
     }
 
     .text-watchS-B {
         font-size: 10px;
+        gap: 4px;
+        padding: 1px 6px;
+    }
+
+    .text-watchS-B i{
+        font-size: 16px;
     }
 
     .video-container {
         position: relative;
         /* padding-bottom: 58%; */
-        height: 162px;
+        height: auto;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -7274,7 +7425,7 @@ align-items: center; */
     }
 
     .title-nextP {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .area-nextP {
@@ -7282,9 +7433,10 @@ align-items: center; */
         padding: 10px;
     }
 
-    .area-thumbnail-nextP {
+    /* .area-thumbnail-nextP {
+        width: 156px;
         height: 150px;
-    }
+    } */
     /* area-program */
 
     .page-2 {
@@ -7301,7 +7453,7 @@ align-items: center; */
 
     .box-program {
         flex: 0 0 100%; /* Mengubah lebar box menjadi 50% untuk tablet */
-        height: 220px; /* Mengurangi tinggi box */
+        height: 230px;  /* Mengurangi tinggi box */
     }
 
     .tombol-kiri,
@@ -7313,7 +7465,7 @@ align-items: center; */
     /* pop up program */
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
         border-radius: 8px;
         -webkit-border-radius: 8px;
@@ -7515,12 +7667,12 @@ align-items: center; */
 
     .box-top-info {
         width: 100%;
-        /* height: 280px; */
+        height: 240px;
         /* max-height: 120px; */
         background-color: #f0f0f0;
         border-radius: 10px;
         /* display: flex; */
-        padding: 10px;
+        padding: 8px;
         /* justify-content: center;
 align-items: center; */
         box-sizing: border-box;
@@ -7534,7 +7686,7 @@ align-items: center; */
         border-radius: 20px;
 
         background-color: #333;
-        height: 40%;
+        height: 50%;
     }
 
     .line-top-info {
@@ -7817,7 +7969,7 @@ align-items: center; */
 
     .area-content-event-kiri {
         width: 100%;
-        height: 240px;
+        height: 221px;
         /* border: 1px red solid; */
     }
 
@@ -7830,16 +7982,16 @@ align-items: center; */
 
     .content-event {
         width: 50%;
-        height: 140px;
+        height: 108px;
     }
 
     .area-countdown {
-        height: 40px;
-        padding: 8px;
+        padding: 10px;
+        height: 20px;
     }
 
     .area-days-date-right {
-        padding: 8px;
+        /* padding: 10px; */
         height: 18px;
     }
 
@@ -7848,7 +8000,7 @@ align-items: center; */
     }
 
     .timer {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .title-timer {
@@ -7857,7 +8009,7 @@ align-items: center; */
 
     .date-month,
     .year {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .box-days-date-right {
@@ -8360,7 +8512,7 @@ align-items: center; */
     }
 
     .box-schedule {
-        height: 100px;
+        height: fit-content;
         /* padding: 5px; */
     }
 
@@ -8412,6 +8564,8 @@ align-items: center; */
         margin-bottom: 40px;
         height: auto;
         display: flex;
+        flex-wrap: wrap;
+        height: fit-content;
     }
 
     .box-schedule-mobile {
@@ -8426,11 +8580,12 @@ align-items: center; */
 
     .box-schedule-mobile.active {
         display: block;
-        width: 50%;
-        height: 100px;
+        width: calc(50% - 5px);
+        height: 140px;
         background-color: #f0f0f0;
         border-radius: 10px;
         box-sizing: border-box;
         position: relative;
     }
 }
+

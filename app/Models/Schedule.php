@@ -11,6 +11,10 @@ class Schedule extends Model
 
     protected $fillable = ['program_id', 'nama_program', 'jam_mulai' , 'jam_selesai', 'hari', 'deskripsi'];
     
+    protected $casts = [
+        'hari' => 'array', // Konversi JSON ke array
+    ];
+    
     public function getJamMulaiAttribute($value)
     {
         return \Carbon\Carbon::createFromFormat('H:i:s', $value)->format('H:i');

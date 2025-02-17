@@ -7,6 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Untuk memastikan halaman merespons layar iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Mencegah highlight biru pada elemen klik -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
     {{-- <meta name="apple-mobile-web-app-capable" content="yes"> --}}
     <link rel="icon" href="./storage/{{ \App\Helpers\Settings::get('site_icon', 'Default Site Title') }}">
     <title>@yield('title')</title>
@@ -17,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('css/StyleMain/responsiveMain.css?v=' . time()) }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
     <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
@@ -26,11 +35,23 @@
 
     {{-- Style Page Content --}}
     @stack('Style.css')
-    @livewireStyles
 
 </head>
 
 <body>
+    <!--pop up ads-->
+     <div id="popup-ads" class="popup-ads-container">
+        <div id="imageAds" class="popup-content-ads">
+            <a id="linkAds" href="">
+                <img id="image-ads" class="image-ads" src="" alt="Popup Ads">
+            </a>
+            <button id="btn-link" class="btn-link" style="display: none;"><a id="linkAdsBtn" href="">Click
+                    Me</a></button>
+        </div>
+        <!-- Ikon close -->
+        <div id="close-icon" class="close-icon" style="display: none;">&times;</div>
+    </div>
+    <!--------------------->
     {{-- navbar area --}}
     <nav class="navbar">
         <div class="area-kiri-navbar">
@@ -197,8 +218,16 @@
         @yield('content')
     </main>
     {{-- ------- --}}
-    <div id="scrollToTopBtn"><i onclick="scrollToTop()" class='bx bx-up-arrow-alt'></i>
-    </div>
+    <div id="floatingButtons">
+        <div id="scrollToTopBtn" onclick="scrollToTop()">
+            <i class='bx bx-up-arrow-alt'></i>
+        </div>
+        <div id="promoteUMKMBtn" onclick="promoteUMKM()">
+            <span>Promosikan UMKM</span>
+        </div>
+    </div>  
+    {{-- <div id="scrollToTopBtn"><i onclick="scrollToTop()" class='bx bx-up-arrow-alt'></i>
+    </div> --}}
     {{-- audio player --}}
     <div class="audio-player-container">
 
@@ -219,8 +248,8 @@
                         <span class="btn-play material-symbols-rounded">play_arrow</span>
                     </div>
                     <span class="material-symbols-rounded" id="next">skip_next</span>
-                    <span class="icon-menu" id="show-hide-player"><i class='bx bx-menu'></i></span>
-                    <!-- <span class="material-symbols-rounded" id="shuffle">shuffle</span> -->
+                    <p class="icon-menu" id="show-hide-player"><i class='bx bx-menu'></i></span>
+                        <!-- <span class="material-symbols-rounded" id="shuffle">shuffle</span> -->
                 </div>
             </div>
             <div class="area-control-progres">
@@ -341,12 +370,14 @@
 {{-- <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.14.0/dist/videojs-contrib-hls.min.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelement-and-player.min.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" defer></script>
 <script>
     const urlCek = window.location.pathname;
     console.log("Current Path:", urlCek);
     if (!urlCek.includes("detail-podcast") && !urlCek.includes("chart")) {
         document.addEventListener("DOMContentLoaded", () => {
             const btnPlayStream = document.querySelector(".btn-play-streaming");
+            const btnPlayChart = document.querySelector(".btn-play-chart");
             const audioPlayerContainer = document.querySelector(".audio-player-container");
 
             // Pastikan audio player tersembunyi di awal
@@ -367,19 +398,16 @@
 
             // Fungsi untuk mengatur visibilitas Audio Player
             function updateAudioPlayerVisibility() {
-                if (btnPlayStream) {
-                    console.log("BtnStream Found. Checking visibility...");
-                    if (isElementInViewport(btnPlayStream)) {
-                        // console.log("BtnStream is in viewport. Hiding audio player.");
-                        audioPlayerContainer.style.opacity = "0";
-                        audioPlayerContainer.style.visibility = "hidden";
-                    } else {
-                        // console.log("BtnStream is not in viewport. Showing audio player.");
-                        audioPlayerContainer.style.opacity = "1";
-                        audioPlayerContainer.style.visibility = "visible";
-                    }
+                if (btnPlayChart && isElementInViewport(btnPlayChart)) {
+                    console.log("🎵 BtnChart terlihat, menampilkan audio player.");
+                    audioPlayerContainer.style.opacity = "1";
+                    audioPlayerContainer.style.visibility = "visible";
+                } else if (btnPlayStream && isElementInViewport(btnPlayStream)) {
+                    console.log("⛔ BtnStream terlihat, menyembunyikan audio player.");
+                    audioPlayerContainer.style.opacity = "0";
+                    audioPlayerContainer.style.visibility = "hidden";
                 } else {
-                    // console.log("BtnStream not found. Showing audio player.");
+                    console.log("✅ Audio player tetap terlihat.");
                     audioPlayerContainer.style.opacity = "1";
                     audioPlayerContainer.style.visibility = "visible";
                 }
@@ -393,6 +421,265 @@
             window.addEventListener("scroll", updateAudioPlayerVisibility);
         });
     }
+    document.addEventListener("DOMContentLoaded", function() {
+        const swiperContainers = [
+            'swiper-xl',
+            'swiper-xl-bottom',
+            'swiper-l',
+            'swiper-s'
+        ];
+
+        swiperContainers.forEach((id) => {
+            const swiperContainer = document.getElementById(id);
+            if (swiperContainer) {
+                swiperContainer.classList.add('loaded');
+            }
+        });
+        // ----------------------
+        
+         // Fungsi untuk mendapatkan nama halaman saat ini
+        function getCurrentPage() {
+            const path = window.location.pathname; // Mendapatkan path URL
+            const page = path.split('/').pop(); // Mendapatkan bagian terakhir dari path
+            return page || 'home'; // Default ke 'home' jika path kosong
+        }
+
+       // Fetch data popup
+        fetch('/api/popup')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.showPopup && data.data) {
+                    const popupData = data.data;
+                    const currentPage = getCurrentPage(); // Halaman saat ini
+
+                    if (popupData.page.includes(currentPage) || popupData.page.includes(
+                            'all')) { // Cek apakah halaman ada dalam daftar
+                        console.log(popupData);
+
+                        // Set properti popup berdasarkan rasio gambar
+                        const popupElement = document.getElementById('popup-ads');
+                        const imageAdsElement = document.getElementById('imageAds');
+                        // Logika has_button
+                        const hasButton = popupData.has_button;
+                        const anchorElement = document.getElementById('linkAds');
+                        const buttonElement = document.getElementById('btn-link');
+                        const anchorElementBtn = document.getElementById('linkAdsBtn');
+                        document.getElementById('image-ads').src = './storage/' + popupData.images_ads;
+
+                        const getTopLandscapeValue = () => {
+                            if (window.matchMedia("(max-width: 320px)").matches) {
+                                return '114%';
+                            } else if (window.matchMedia("(max-width: 375px)").matches) {
+                                return '112%';
+                            } else if (window.matchMedia("(max-width: 480px)").matches) {
+                                return '112%';
+                            } else if (window.matchMedia("(max-width: 768px)").matches) {
+                                return '109%';
+                            } else if (window.matchMedia("(max-width: 1024px)").matches) {
+                                return '108%';
+                            } else {
+                                return '110%';
+                            }
+                        };
+
+                        const getTopPortraitValue = () => {
+                            if (window.matchMedia("(max-width: 320px)").matches) {
+                                return '109%';
+                            } else if (window.matchMedia("(max-width: 375px)").matches) {
+                                return '110%';
+                            } else if (window.matchMedia("(max-width: 480px)").matches) {
+                                return '109%';
+                            } else if (window.matchMedia("(max-width: 768px)").matches) {
+                                return '110%';
+                            } else if (window.matchMedia("(max-width: 1024px)").matches) {
+                                return '108%';
+                            } else {
+                                return '107%';
+                            }
+                        };
+
+                        const topValueLandscape = getTopLandscapeValue();
+                        const topValuePortrait = getTopPortraitValue();
+
+                        if (popupData.image_ratio === "landscape") {
+                            imageAdsElement.classList.add('landscape');
+                            imageAdsElement.classList.remove('portrait');
+                            buttonElement.style.top = topValueLandscape;
+                        } else if (popupData.image_ratio === "portrait") {
+                            imageAdsElement.classList.add('portrait');
+                            buttonElement.style.top = topValuePortrait;
+                            imageAdsElement.classList.remove('landscape');
+                        }
+
+                        // Definisikan fungsi di cakupan global
+                        const getTRLandscapeValues = () => {
+                            if (window.matchMedia("(max-width: 320px)").matches) {
+                                return {
+                                    topIconLandscape: '34%',
+                                    rightIconLandscape: '3%'
+                                };
+                            } else if (window.matchMedia("(max-width: 375px)").matches) {
+                                return {
+                                    topIconLandscape: '31%',
+                                    rightIconLandscape: '3%'
+                                };
+                            } else if (window.matchMedia("(max-width: 480px)").matches) {
+                                return {
+                                    topIconLandscape: '31%',
+                                    rightIconLandscape: '8%'
+                                };
+                            } else if (window.matchMedia("(max-width: 768px)").matches) {
+                                return {
+                                    topIconLandscape: '21%',
+                                    rightIconLandscape: '14%'
+                                };
+                            } else if (window.matchMedia("(max-width: 1024px)").matches) {
+                                return {
+                                    topIconLandscape: '20%',
+                                    rightIconLandscape: '22%'
+                                };
+                            } else {
+                                return {
+                                    topIconLandscape: '23%',
+                                    rightIconLandscape: '28%'
+                                };
+                            }
+                        };
+
+                        const getTRPortraitValues = () => {
+                            if (window.matchMedia("(max-width: 320px)").matches) {
+                                return {
+                                    topIconPortrait: '30%',
+                                    rightIconPortrait: '10%'
+                                };
+                            } else if (window.matchMedia("(max-width: 375px)").matches) {
+                                return {
+                                    topIconPortrait: '29%',
+                                    rightIconPortrait: '14%'
+                                };
+                            } else if (window.matchMedia("(max-width: 480px)").matches) {
+                                return {
+                                    topIconPortrait: '27%',
+                                    rightIconPortrait: '16%'
+                                };
+                            } else if (window.matchMedia("(max-width: 768px)").matches) {
+                                return {
+                                    topIconPortrait: '23%',
+                                    rightIconPortrait: '28%'
+                                };
+                            } else if (window.matchMedia("(max-width: 1024px)").matches) {
+                                return {
+                                    topIconPortrait: '19%',
+                                    rightIconPortrait: '31%'
+                                };
+                            } else {
+                                return {
+                                    topIconPortrait: '16%',
+                                    rightIconPortrait: '32%'
+                                };
+                            }
+                        };
+
+                        // Tampilkan popup
+                        popupElement.style.display = 'flex';
+                        console.log(getTRPortraitValues);
+
+                        // Tentukan metode penutupan berdasarkan checkbox
+                        const closeWithIcon = popupData.close_with_icon;
+                        const closeWithClickAnywhere = popupData.close_with_click_anywhere;
+
+                        if (closeWithClickAnywhere) {
+                            popupElement.onclick = function(event) {
+                                if (event.target === popupElement) {
+                                    closePopup();
+                                }
+                            };
+                        } else {
+                            popupElement.onclick = null; // Nonaktifkan klik di luar
+                        }
+                        if (popupData.image_ratio === "landscape") {
+                            if (closeWithIcon) {
+                                const closeIcon = document.getElementById('close-icon');
+                                if (!closeIcon) {
+                                    console.error("Element with ID 'close-icon' not found");
+                                    return;
+                                }
+
+                                const {
+                                    topIconPortrait,
+                                    rightIconPortrait
+                                } = getTRPortraitValues();
+                                const {
+                                    topIconLandscape,
+                                    rightIconLandscape
+                                } = getTRLandscapeValues();
+
+                                closeIcon.style.display = 'block';
+                                closeIcon.style.top = topIconLandscape;
+                                closeIcon.style.right = rightIconLandscape;
+                                closeIcon.onclick = closePopup;
+                            } else {
+                                document.getElementById('close-icon').style.display = 'none';
+                            }
+                        } else if (popupData.image_ratio === "portrait") {
+                            if (closeWithIcon) {
+                                const closeIcon = document.getElementById('close-icon');
+                                if (!closeIcon) {
+                                    console.error("Element with ID 'close-icon' not found");
+                                    return;
+                                }
+
+                                const {
+                                    topIconPortrait,
+                                    rightIconPortrait
+                                } = getTRPortraitValues();
+                                const {
+                                    topIconLandscape,
+                                    rightIconLandscape
+                                } = getTRLandscapeValues();
+
+                                closeIcon.style.display = 'block';
+                                closeIcon.style.top = topIconPortrait;
+                                closeIcon.style.right = rightIconPortrait;
+                                closeIcon.onclick = closePopup;
+                            } else {
+                                document.getElementById('close-icon').style.display = 'none';
+                            }
+                        }
+
+
+
+
+                        if (hasButton) {
+                            // imageAdsElement.style.display = 'none';
+                            anchorElement.removeAttribute('href'); // Hilangkan link pada anchor
+                            buttonElement.style.display = 'inline-block'; // Tampilkan tombol
+                            anchorElementBtn.href = popupData.link_ads; // Set href ke link_ads
+                        } else {
+                            imageAdsElement.style.display = 'inline-block'; // Tampilkan gambar dalam anchor
+                            anchorElement.href = popupData.link_ads; // Set href ke link_ads
+                            buttonElement.style.display = 'none'; // Sembunyikan tombol
+                            console.log(popupData.link_ads);
+
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching popup data:', error);
+            });
+
+        // Fungsi untuk menutup popup
+        function closePopup() {
+            document.getElementById('popup-ads').style.display = 'none';
+        }
+            // ----------------
+    });
 </script>
 
 </html>

@@ -42,6 +42,12 @@ class StreamResource extends Resource
                             ->image()
                             ->directory('uploads/images_stream')
                             ->disk('public')
+                            ->rules([
+                                'required',
+                                'image',
+                            ])
+                            ->validationAttribute('Image Event')
+                            ->helperText('max dimensions 1920x1800')
                             ->preserveFilenames(),
                     ])
                     ->columns(2),
