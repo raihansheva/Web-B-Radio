@@ -471,6 +471,14 @@
     }
     /* -------- */
     
+    #floatingButtons{
+        bottom: 70px;
+    }
+
+    #promoteUMKMBtn{
+        font-size: 12px;
+    }
+
     #scrollToTopBtn {
         bottom: 65px;
         right: 15px;
@@ -688,7 +696,13 @@
         font-size: 44px;
     }
 
-    
+    #floatingButtons{
+        bottom: 10px;
+    }
+
+    #promoteUMKMBtn{
+        font-size: 12px;
+    }
     
     #scrollToTopBtn {
         bottom: 20px;
@@ -712,7 +726,7 @@
 
     .area-banner {
         margin: 0px 20px 0px 20px;
-        height: 200px;
+        height: 132px;
     }
     
     .area-banner-small{

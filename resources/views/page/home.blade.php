@@ -207,7 +207,7 @@
                 <div class="area-content-news">
                     <div class="area-top-info">
                         <div class="header-top-info">
-                            <h1 class="title-top-info">Trending Info</h1>
+                            <h1 class="title-top-info">Top Info</h1>
                         </div>
                         <div class="content-top-info">
                             @foreach ($top_info as $topInfoList)
@@ -545,11 +545,11 @@
                     <div class="header-podcast">
                         <div class="area-title-podcast">
                             <h1 class="title-podcast">Podcast</h1>
-                            <img class="logo-podcast" src="image/podcast.png" alt="">
+                            {{-- <img class="logo-podcast" src="image/podcast.png" alt=""> --}}
                         </div>
                         <div class="area-text-podcast">
                             <a href="/podcast">
-                                <h1 class="text-podcast">Other podcast</h1>
+                                <h1 class="text-podcast">Other podcast <i class='bx bx-right-arrow-alt'></i></h1>
                             </a>
                         </div>
                     </div>
@@ -557,28 +557,28 @@
                         @foreach ($podcast as $podcastList)
                             <div class="card-podcast" data-slug="{{ $podcastList->slug }}">
                                 <div class="card-body-podcast">
-                                    {{-- <a class="link-podcast" href="/detail-podcast/{{ $podcastList->slug }}"> --}}
-                                    <div class="head-body-podcast">
-                                        <div class="genre">
-                                            @if (is_array($podcastList->genre_podcast))
-                                                @foreach ($podcastList->genre_podcast as $genre)
-                                                    <h1 class="title-genre">{{ $genre }}</h1>
-                                                @endforeach
-                                            @else
-                                                <h1 class="title-genre">-</h1>
-                                            @endif
-                                        </div>
-                                        <div class="area-card-text">
-                                            <h1 class="card-text-podcast">{{ $podcastList->judul_podcast }}</h1>
-                                        </div>
-                                    </div>
-                                    <div class="card-image-podcast">
-                                        <img src="./storage/{{ $podcastList->image_podcast }}" alt=""
+                                    <a class="link-podcast" href="/detail-podcast/{{ $podcastList->slug }}">
+                                        <div class="card-image-podcast">
+                                            <img src="./storage/{{ $podcastList->image_podcast }}" alt=""
                                             class="image-podcast">
-                                    </div>
-                                    {{-- </a> --}}
+                                        </div>
+                                        <div class="head-body-podcast">
+                                            <div class="area-card-text">
+                                                <h1 class="card-text-podcast">{{ $podcastList->judul_podcast }}</h1>
+                                            </div>
+                                            <div class="genre">
+                                                @if (is_array($podcastList->genre_podcast))
+                                                    @foreach ($podcastList->genre_podcast as $genre)
+                                                        <h1 class="title-genre">{{ $genre }}</h1>
+                                                    @endforeach
+                                                @else
+                                                    <h1 class="title-genre">-</h1>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="card-header-podcast">
+                                {{-- <div class="card-header-podcast">
                                     <div class="author-podcast">
                                     </div>
                                     <a class="link-podcast" href="/detail-podcast/{{ $podcastList->slug }}">
@@ -586,56 +586,17 @@
                                             <p class="text-watch-podcast">View Podcast</p>
                                         </div>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         @endforeach
                     </div>
-                    <section
-                        class="section-banner-full-small {{ $banner->where('position', 'bottom_podcast')->count() > 0 ? '' : 'hidden' }}">
-                        <div class="area-banner-full-small">
-                            <swiper-container class="mySwiper " id="swiper-l" centered-slides="true"
-                                autoplay-delay="1800" autoplay-disable-on-interaction="false" loop="true">
-                                @foreach ($banner->where('position', 'bottom_podcast') as $list)
-                                    <swiper-slide> <a class="link-ads-banner" href="{{ $list->link_ads }}">
-                                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}"
-                                                alt="" loading="lazy">
-                                        </a></swiper-slide>
-                                @endforeach
-                            </swiper-container>
-                        </div>
-                    </section>
                 </div>
-                <div class="line-PV"></div>
-                <div class="area-content-video">
-                    <div class="area-header-video">
-                        <h1 class="title-video">Youtube Video</h1>
-                    </div>
-                    <div class="content-video" id="content-video">
-                        @foreach ($videos as $video)
-                            <div class="box-video" data-video-url="{{ $video['videoUrl'] }}">
-                                <img class="video-thumbnail"
-                                    src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
-                                    alt="Thumbnail">
-                                <div class="btn-play-video" onclick="showPopupYT('{{ $video['videoUrl'] }}')">
-                                    <span class="material-symbols-rounded">play_arrow</span>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="popup-player-yt" id="popup-player" style="display:none;">
-                        <div class="popup-content-yt">
-                            <div id="player-yt"></div>
-                        </div>
-                    </div>
-                    <div class="link-text-video">
-                        <a href="/ardan-youtube">
-                            <h1 class="text-video">See more</h1>
-                        </a>
-                    </div>
-                </div>
+                {{-- <div class="line-PV"></div> --}}
+                
             </div>
         </div>
     </section>
+    {{-- --}}
     {{-- <br> --}}
     <section class="page-6" id="announcer">
         <div class="area-announcer">
@@ -864,45 +825,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="area-content-artis">
-                    <div class="header-artis">
-                        <h1 class="title-artis">INFO ARTIS</h1>
+                <div class="area-content-video">
+                    <div class="area-header-video">
+                        <h1 class="title-video">Youtube Video</h1>
                     </div>
-                    <div class="content-artis">
-                        @foreach ($artis as $artisList)
-                            <a href="/detail-info-artis/{{ $artisList->slug }}">
-                                <div class="box-artis">
-                                    <img class="image-artis" src="./storage/{{ $artisList->image_artis }}"
-                                        alt="">
-                                    <div class="area-bio-artis">
-                                        <div class="artis-name">
-                                            <p class="nama">{{ $artisList->judul_berita }}</p>
-                                        </div>
-                                        {{-- <div class="artis-bio">
-                                            <p class="bio">{{ $artisList->bio }}</p>
-                                        </div> --}}
-                                    </div>
+                    <div class="content-video" id="content-video">
+                        @foreach ($videos as $video)
+                            <div class="box-video" data-video-url="{{ $video['videoUrl'] }}">
+                                <img class="video-thumbnail"
+                                    src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
+                                    alt="Thumbnail">
+                                <div class="btn-play-video" onclick="showPopupYT('{{ $video['videoUrl'] }}')">
+                                    <span class="material-symbols-rounded">play_arrow</span>
                                 </div>
-                            </a>
+                            </div>
                         @endforeach
-                        <div class="area-bottom-artis">
-                            <div class="box-title-bottom-artis">
-                                <a href="/info-artis">
-                                    <h1 class="title-bottom-artis">See More</h1>
-                                </a>
-                            </div>
-                        </div>
-                        {{-- <div id="popupArtis" class="popup-artis" style="display: none;"
-                            onclick="closePopupOutsideArtis(event)">
-                            <div class="popup-content-artis">
-                                <span class="close" onclick="closePopupArtis()">&times;</span>
-                                <div class="area-info-artis">
-
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
-                </div>
+                    <div class="popup-player-yt" id="popup-player" style="display:none;">
+                        <div class="popup-content-yt">
+                            <div id="player-yt"></div>
+                        </div>
+                    </div>
+                    <div class="link-text-video">
+                        <a href="/ardan-youtube">
+                            <h1 class="text-video">See more</h1>
+                        </a>
+                    </div>
+                </div> 
             </div>
         </div>
     </section>

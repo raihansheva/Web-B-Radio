@@ -77,7 +77,7 @@ swiper-slide .image-announcer {
 }
 
 .contentS-kiri {
-    width: 55%;
+    width: 69%;
     height: auto;
     margin-right: 10px;
 }
@@ -98,7 +98,7 @@ swiper-slide .image-announcer {
 }
 
 .card-A .card-body {
-    height: 392px;
+    height: 488px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -145,7 +145,7 @@ swiper-slide .image-announcer {
     display: flex;
     height: 30px;
     width: fit-content;
-    background-color: var(--primary-color);
+    background-color: white;
     border-radius: 12px;
     padding: 10px;
     margin-top: 10px;
@@ -168,7 +168,7 @@ swiper-slide .image-announcer {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: white;
     cursor: pointer;
     margin-top: 15px;
     display: flex;
@@ -231,7 +231,7 @@ swiper-slide .image-announcer {
     display: flex;
     height: 30px;
     width: fit-content;
-    background-color: var(--primary-color);
+    background-color: white;
     border-radius: 12px;
     padding: 10px;
     margin-top: 10px;
@@ -255,7 +255,7 @@ swiper-slide .image-announcer {
 .video-container {
     position: relative;
     width: 100%;
-    height: 392px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+    height: 488px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     overflow: hidden;
 }
 
@@ -307,7 +307,7 @@ swiper-slide .image-announcer {
 
 /* konten streaming kanan */
 .contentS-kanan {
-    width: 45%;
+    width: 31%;
     height: auto;
     margin-left: 10px;
 }
@@ -452,7 +452,7 @@ swiper-slide .image-announcer {
     width: auto;
     height: auto;
     /* border: 1px black solid; */
-    margin: 0px 45px 0px 45px;
+    /* margin: 0px 45px 0px 45px; */
     padding-bottom: 20px;
 }
 
@@ -477,7 +477,7 @@ swiper-slide .image-announcer {
 
 .box-program {
     /* flex: 0 0 100%; */
-    height: 440px;
+    height: 400px;
     background-color: #f0f0f0;
     border-radius: 20px;
     margin: 0;
@@ -531,7 +531,7 @@ swiper-slide .image-announcer {
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    /* gap: 8px; */
 }
 
 .desk-program {
@@ -816,6 +816,7 @@ swiper-slide .image-announcer {
 .link-box-news {
     width: calc(33.33% - 10px); /* Setengah kontainer minus setengah gap */
     color: black;
+    height: fit-content;
 }
 
 .box-news {
@@ -926,6 +927,7 @@ swiper-slide .image-announcer {
 .link-box-top-info {
     width: calc(25% - 10px); /* Setengah kontainer minus setengah gap */
     color: black;
+    height: fit-content;
 }
 
 .box-top-info {
@@ -987,7 +989,7 @@ swiper-slide .image-announcer {
 }
 
 .area-text {
-    height: 54px;
+    height: fit-content;
 }
 
 .desk-top-info {
@@ -1055,6 +1057,7 @@ swiper-slide .image-announcer {
 .link-box-trending-info {
     width: calc(33.33% - 10px); /* Setengah kontainer minus setengah gap */
     color: black;
+    height: fit-content;
 }
 
 .box-trending-info {
@@ -1345,7 +1348,7 @@ swiper-slide .image-announcer {
 }
 
 .area-group-event{
-    width: 65%;
+    width: 60%;
 }
 
 .area-content-groupE{
@@ -1718,7 +1721,7 @@ swiper-slide .image-announcer {
     height: auto;
     display: flex;
     gap: 48px;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 .line-PV {
@@ -1731,7 +1734,7 @@ swiper-slide .image-announcer {
 
 /* area-podcast */
 .area-content-podcast {
-    width: 65%;
+    width: 100%;
     height: 100%;
     /* border: 1px white solid; */
 }
@@ -1779,21 +1782,29 @@ swiper-slide .image-announcer {
     font-size: 18px;
     font-weight: 200;
     font-family: "Poppins";
-    padding: 5px 10px;
-    color: var(--primary-color);
-    border: 1px var(--primary-color) solid;
+    /* padding: 5px 10px; */
+    color: white;
+    /* border: 1px white solid; */
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
-.text-podcast:hover {
-    background-color: var(--primary-color);
-    color: black;
+.text-podcast i{
+    font-size: 26 px;
+    color: white;
 }
+
+/* .text-podcast:hover {
+    background-color: white;
+    color: black;
+} */
 
 .content-podcast {
     width: 100%;
@@ -1806,9 +1817,9 @@ swiper-slide .image-announcer {
 
 .card-podcast {
     width: calc(
-        50% - 10px
+        25% - 15px
     ); /* Membuat card mengambil 50% lebar, dengan margin antar card */
-    height: 400px;
+    height: fit-content;
     cursor: pointer;
 }
 
@@ -1828,10 +1839,11 @@ swiper-slide .image-announcer {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    border-bottom-right-radius: 10px;
+    /* gap: 8px; */
+    /* border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 10px; */
+    border-radius: 10px;
     padding: 15px;
 }
 
@@ -1839,6 +1851,7 @@ swiper-slide .image-announcer {
     width: 100%;
     height: auto;
     /* border: 1px black solid; */
+    margin-top: 8px;
 }
 
 .genre {
@@ -1850,10 +1863,10 @@ swiper-slide .image-announcer {
 }
 
 .title-genre {
-    font-size: 18px;
+    font-size: 14px;
     font-family: "Bebas Neue";
     font-weight: 200;
-    margin: 5px 25px;
+    margin: 2px 15px;
 }
 
 .area-card-text {
@@ -1862,7 +1875,7 @@ swiper-slide .image-announcer {
 }
 
 .card-text-podcast {
-    font-size: 34px;
+    font-size: px;
     margin: 0px;
     font-weight: 200;
     font-family: "Bebas Neue";
@@ -1873,19 +1886,12 @@ swiper-slide .image-announcer {
     height: 160px;
     background-color: #f0f0f0;
     border-radius: 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: relative; /* Dibutuhkan untuk child position: absolute */
-    overflow: hidden;
 }
 
 .image-podcast {
-    width: 100%; /* Sesuaikan dengan lebar parent */
-    height: 100%; /* Sesuaikan dengan tinggi parent */
-    position: absolute; /* Untuk menempel pada parent */
-    object-fit: cover; /* Menjaga proporsi gambar */
-    top: 0; /* Atur posisi di atas */
-    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1923,14 +1929,14 @@ swiper-slide .image-announcer {
 
 .card-podcast .card-header-podcast .view-podcast {
     font-weight: 600;
-    color: rgb(48, 48, 48);
+    color: white;
     font-family: "Poppins";
     justify-content: center;
     align-items: center;
     display: flex;
     height: 30px;
     width: 85%;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     border-radius: 12px;
     padding: 10px;
     margin-top: 10px;
@@ -1939,14 +1945,12 @@ swiper-slide .image-announcer {
 }
 
 .card-podcast .card-header-podcast .view-podcast:hover {
-    background-color: #dbac00;
+    background-color: white;
+    color: black;
 }
 
 .link-podcast {
-    width: 42%;
-    /* border: 1px red solid; */
-    z-index: 10;
-    text-decoration: none;
+    color: black;
 }
 
 /* .text-watch-podcast {
@@ -1957,15 +1961,17 @@ swiper-slide .image-announcer {
 
 /* area-video */
 .area-content-video {
-    width: 35%;
+    width: 31%;
     height: 100%;
     /* border: 1px rgb(248, 0, 0) solid; */
+   
 }
 
 .area-header-video {
     width: 100%;
     height: fit-content;
     /* border: 1px lightseagreen solid; */
+    margin-top: 25px;
 }
 
 .title-video {
@@ -1981,7 +1987,7 @@ swiper-slide .image-announcer {
     height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     gap: 15px;
 }
 
@@ -2013,7 +2019,7 @@ swiper-slide .image-announcer {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -2037,8 +2043,8 @@ swiper-slide .image-announcer {
     font-family: "Poppins";
     margin: 0px;
     padding: 5px 10px;
-    color: var(--primary-color);
-    border: 1px var(--primary-color) solid;
+    color: white;
+    border: 1px white solid;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -2052,7 +2058,7 @@ swiper-slide .image-announcer {
 }
 
 .text-video:hover {
-    background-color: var(--primary-color);
+    background-color: white;
     color: black;
 }
 
@@ -2088,6 +2094,7 @@ swiper-slide .image-announcer {
     width: 100%;
     height: 100%;
 }
+/* -------------- */
 
 /* --------------- */
 
@@ -2130,7 +2137,8 @@ swiper-slide .image-announcer {
 .area-content-announcer {
     width: 100%;
     height: fit-content;
-    background-color: #353535;
+    background-color: white;
+    /* border: 1px white solid; */
     position: relative;
     /* top: 85px; */
     /* padding: 0px 64px 0px 64px; */
@@ -2156,11 +2164,11 @@ swiper-slide .image-announcer {
 }
 
 .title-announcer {
-    font-size: 40px;
+    font-size: 48px;
     font-family: "Bebas Neue";
     font-weight: 200;
     margin: 30px 0px 5px 0px;
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 .content-announcer {
@@ -2220,31 +2228,32 @@ swiper-slide .image-announcer {
 .area-content-box-announcer {
     width: auto;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     overflow: hidden;
     box-sizing: border-box;
     padding: 0 0px;
     margin: 0px 64px;
-    padding-bottom: 20px;
+    padding-bottom: 54px;
 }
 
 .box-announcer {
     flex: 0 0 calc(20% - 16px);
     /* max-width: calc(25% - 15px); */
-    height: 300px;
+    height: 325px;
     /* background-color: #f0f0f0; */
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    /* border-radius: 50%; */
     margin: 0;
+    border-radius: 9999px;
     box-sizing: border-box;
 }
 
 .image-announcer {
     object-fit: cover;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-radius: 9999px;
+    /* border: 1px black solid; */
     transition: 0.3s ease;
     cursor: pointer;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .image-announcer:hover {
@@ -2443,7 +2452,7 @@ swiper-slide .image-announcer {
 .area-chart-artis {
     width: auto;
     height: fit-content;
-    /* margin: 20px 64px 0px 64px; */
+    margin: 20px 64px 0px 64px;
     margin-top: 30px;
 }
 
@@ -2452,7 +2461,7 @@ swiper-slide .image-announcer {
     height: 100%;
     /* border: 1px red solid; */
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .area-top-chart {
@@ -2466,8 +2475,9 @@ swiper-slide .image-announcer {
 .tab-chart {
     flex: 1 1 calc(33.33% - 20px);
     height: 50px;
-    border: 3px var(--primary-color) solid;
+    border: 2px white solid;
     color: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2486,7 +2496,7 @@ swiper-slide .image-announcer {
 
 .tab-chart:hover {
     background-color: var(--primary-color);
-    color: black;
+    color: white;
 }
 
 .text-tab {
@@ -2498,7 +2508,7 @@ swiper-slide .image-announcer {
 
 .active {
     background-color: var(--primary-color); /* Warna aktif tab */
-    color: black;
+    color: white;
 }
 
 /* area chart */
@@ -2508,7 +2518,7 @@ swiper-slide .image-announcer {
     /* background-color: var(--primary-color); */
     display: flex;
     /* justify-content: center; */
-    padding: 0px 30px 0px 64px;
+    /* padding: 0px 64px 0px 64px; */
 }
 
 .content-chart {
@@ -2579,13 +2589,15 @@ tbody td {
     font-size: 32px;
 }
 
-
+.hidden {
+    display: none; /* Sembunyikan tabel yang tidak aktif */
+}
 .bottom-chart {
     width: 100%;
     height: auto;
     /* border: 1px red solid; */
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
 }
 
 /* .area-btn-chart {
@@ -2599,13 +2611,13 @@ tbody td {
 } */
 
 .text-btn-chart {
-    border: 1px var(--primary-color) solid;
+    border: 1px white solid;
     font-size: 18px;
     font-family: "Poppins";
     padding: 5px 20px;
     font-weight: 500;
     border-radius: 5px;
-    color: var(--primary-color);
+    color: white;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -2616,8 +2628,8 @@ tbody td {
 }
 
 .text-btn-chart:hover {
-    border: 1px var(--secondary-color) solid;
-    background-color: var(--secondary-color);
+    border: 1px white solid;
+    background-color: white;
     color: black;
 }
 

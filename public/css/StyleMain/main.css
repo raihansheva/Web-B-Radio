@@ -854,8 +854,8 @@ swiper-container {
 .footer {
     width: auto;
     height: 450px;
-    background-color: #333333;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
 }
 
@@ -1047,7 +1047,7 @@ swiper-container {
 /* bottom footer */
 .bottom-footer {
     width: 100%;
-    background-color: #333;
+    background-color: white;
     height: 20%;
     text-align: center;
     display: flex;
@@ -1065,7 +1065,7 @@ swiper-container {
 .name-owners{
     font-size: 18px;
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: 500;
     font-family: "Poppins";
 
