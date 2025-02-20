@@ -1571,6 +1571,11 @@
     .close-icon{
         font-size: 35px;
     }
+
+    #promoteUMKMBtn{
+        font-size: 8px;
+        padding: 6px 12px;
+    }
     
     #scrollToTopBtn {
         bottom: 15px;
@@ -1579,8 +1584,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 15px;
-        width: 15px;
+        height: 10px;
+        width: 10px;
     }
 
     #scrollToTopBtn:hover {
@@ -1589,7 +1594,7 @@
     }
 
     #scrollToTopBtn i {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .area-banner {
