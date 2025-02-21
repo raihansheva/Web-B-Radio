@@ -382,7 +382,7 @@
 
     /* content kiri */
     .content-IN-kiri {
-        width: 65%;
+        width: 100%;
     }
 
     .link-url-info {
@@ -425,8 +425,34 @@
         font-size: 12px;
     }
 
-    /* area trending info */
+    /* area top info */
 
+    .area-image-more-info{
+        width: 60%;
+    }
+
+    .title-top-info{
+        font-size: 28px;
+    }
+
+    .box-info{
+        height: 100px;
+    }
+
+    .tag-more-info{
+        font-size: 16px;
+    }
+
+    .desk-more-info{
+        font-size: 14px;
+    }
+
+    .date-more-info{
+        font-size: 12px;
+    }
+    /* --------------- */
+
+    /* area trending info */
     .title-trending-info {
         font-size: 28px;
     }
@@ -436,6 +462,7 @@
     }
 
     .desk-trending-info {
+        font-size: 14px;
         -webkit-line-clamp: 2; /* Membatasi 3 baris */
     }
 
@@ -448,16 +475,16 @@
 
     /* content kanan */
     .content-IN-kanan {
-        width: 35%;
+        width: 100%;
     }
     /* area-news */
     .header-news {
-        font-size: 34px;
+        font-size: 28px;
     }
 
     .box-news {
         flex: 0 0 calc(50% - 5px);
-        height: 100px;
+        height: 80px;
         /* background-color: #f0f0f0; */
         /* border-radius: 10px; */
     }
@@ -476,7 +503,7 @@
         font-family: "Bebas Neue";
         color: white;
         font-weight: 200;
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .image-news {
@@ -492,35 +519,9 @@
         transition: all 0.3s ease;
     }
     /* ----------- */
-
-    /* area streaming */
-
-    .title-streaming {
-        font-size: 34px;
-    }
-
-    .area-thumbnail {
-        height: 120px;
-    }
-
-    .text-streaming {
-        font-size: 14px;
-    }
-
-    .btn-play-streaming {
-        width: 45px;
-        height: 45px;
-    }
-
-    .btn-play-streaming span {
-        font-size: 28px;
-    }
-
-    /* ------------- */
-
     /* area news */
     .title-top-news {
-        font-size: 34px;
+        font-size: 28px;
     }
 
     .content-top-news {
@@ -544,6 +545,12 @@
         font-size: 10px;
     }
     /* ------------- */
+
+    /* page news 3 */
+
+    .area-stream-event {
+        margin: 20px 32px 20px 32px;
+    }
 
     /* area event */
 
@@ -599,22 +606,35 @@
         font-size: 16px;
     }
     /* -------------- */
+    /* area streaming */
 
+    .title-streaming {
+        font-size: 34px;
+    }
+
+    .area-thumbnail {
+        height: 165px;
+    }
+
+    .text-streaming {
+        font-size: 14px;
+    }
+
+    .btn-play-streaming {
+        width: 45px;
+        height: 45px;
+    }
+
+    .btn-play-streaming span {
+        font-size: 28px;
+    }
+
+    /* ------------- */
     /* ------------- */
 
     /* ------------ */
 
     /* -------------- */
-
-    /* page news 3 */
-
-    .area-info-artis {
-        margin: 0px 32px 20px 32px;
-    }
-
-    .title-info-artis {
-        font-size: 40px;
-    }
 
     /* area box */
 
@@ -704,7 +724,7 @@
 
     /* content kiri */
     .content-IN-kiri {
-        width: 60%;
+        width: 100%;
     }
 
     .link-url-info {
@@ -746,6 +766,41 @@
     .tagar-info {
         font-size: 12px;
     }
+    /* ---------------- */
+
+    /* area top info */
+
+    .content-more-info{
+        margin-top: 0px;
+    }
+
+    .area-image-more-info{
+        width: 45%;
+        height: 66px;
+    }
+
+    .title-top-info{
+        font-size: 28px;
+    }
+
+    .box-info{
+        height: 100px;
+        gap: 5px;
+    }
+
+    .tag-more-info{
+        font-size: 14px;
+        padding-top: 5px;
+    }
+
+    .desk-more-info{
+        font-size: 12px;
+    }
+
+    .date-more-info{
+        font-size: 10px;
+    }
+    /* --------------- */
 
     /* area trending info */
 
@@ -774,7 +829,7 @@
 
     /* content kanan */
     .content-IN-kanan {
-        width: 40%;
+        width: 100%;
     }
 
     /* area-news */
@@ -783,7 +838,7 @@
     }
 
     .box-news {
-        flex: 0 0 calc(50% - 5px);
+        flex: 0 0 100%;
         height: 85px;
     }
 
@@ -800,30 +855,6 @@
     }
     /* ----------- */
 
-    /* area streaming */
-
-    .title-streaming {
-        font-size: 26px;
-    }
-
-    .area-thumbnail {
-        height: 100px;
-    }
-
-    .text-streaming {
-        font-size: 10px;
-    }
-
-    .btn-play-streaming {
-        width: 35px;
-        height: 35px;
-    }
-
-    .btn-play-streaming span {
-        font-size: 26px;
-    }
-
-    /* ------------- */
 
     /* area news */
     .title-top-news {
@@ -852,6 +883,12 @@
     }
     /* ------------- */
 
+     /* page news 3 */
+
+    .area-stream-event {
+        margin: 20px 20px 20px 20px;
+    }
+
     /* area event */
 
     .title-event {
@@ -859,16 +896,17 @@
     }
 
     .area-event-bottom {
-        height: 440px;
+        height: 330px;
         gap: 15px;
     }
 
     .area-days-date-right {
-        height: 30px;
+        height: 18px;
+        padding: 10px;
     }
 
     .date-month-right {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .year-right {
@@ -880,53 +918,61 @@
     }
 
     .see-more {
-        font-size: 16px;
+        font-size: 14px;
     }
-
-    /* ------------- */
 
     /* pop up event */
     .popup-content-event {
-        width: 400px;
-        height: 180px;
+        width: 450px;
+        height: 200px;
         padding: 25px;
     }
 
-    .area-info-event {
-        gap: 6px;
-    }
-
     .desk-event {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .jam-event {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .title-box-event {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .link-event {
-        font-size: 14px;
+        font-size: 16px;
     }
     /* -------------- */
+    /* area streaming */
+
+    .title-streaming {
+        font-size: 26px;
+    }
+
+    .area-thumbnail {
+        height: 165px;
+    }
+
+    .text-streaming {
+        font-size: 14px;
+    }
+
+    .btn-play-streaming {
+        width: 45px;
+        height: 45px;
+    }
+
+    .btn-play-streaming span {
+        font-size: 28px;
+    }
+
+    /* ------------- */
+    /* ------------- */
 
     /* ------------ */
 
     /* -------------- */
-
-    /* page news 3 */
-
-    .area-info-artis {
-        margin: 0px 20px 20px 20px;
-    }
-
-    .title-info-artis {
-        font-size: 30px;
-    }
-
     /* area box */
 
     .area-box-info-artis {
@@ -1030,11 +1076,23 @@
         margin-top: 0px;
     }
 
+    .area-info{
+        flex-direction: column;
+    }
+
+    .area-detail-kiri{
+        width: 100%;
+    }
+
+    .area-detail-kanan{
+        width: 100%;
+    }
+
     /* content kiri */
     .content-IN-kiri {
         width: 100%;
         height: auto;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
     }
 
     .box-info {
@@ -1043,7 +1101,7 @@
     }
 
     .box-info.visible {
-        display: block; /* Tampilkan box yang memiliki kelas "visible" */
+        display: flex; /* Tampilkan box yang memiliki kelas "visible" */
     }
     .toggle-btn {
         display: block; /* Tampilkan tombol "See More / See Less" */
@@ -1063,7 +1121,7 @@
     }
 
     .tagar-info {
-        font-size: 22px;
+        font-size: 14px;
     }
 
     .title-info {
@@ -1093,6 +1151,38 @@
 
     /* ------------ */
 
+
+    .area-trending-kategori{
+        flex-direction: column;
+    }
+
+    /* area trending info */
+
+    .area-trending-info{
+        width: 100%;
+    }
+
+    .title-trending-info {
+        font-size: 26px;
+    }
+
+    .link-box-trending-info {
+        width: calc(50% - 10px);
+    }
+
+    .tag-trending-info {
+        font-size: 16px;
+    }
+
+    .desk-trending-info {
+        -webkit-line-clamp: 2; /* Membatasi 3 baris */
+    }
+
+    .date-trending-info {
+        font-size: 10px;
+    }
+    /* ------------------ */
+
     #style-3::-webkit-scrollbar-track {
         border-radius: 15px;
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -1120,12 +1210,12 @@
         /* cursor: pointer; */
     }
 
-    /* content kanan */
-    .content-IN-kanan {
-        width: 100%;
-    }
 
     /* area-news */
+
+    .area-kategori{
+        width: 100%;
+    }
 
     .header-news {
         font-size: 30px;
@@ -1149,31 +1239,6 @@
     }
 
     /* ----------- */
-
-    /* area streaming */
-
-    .title-streaming {
-        font-size: 30px;
-    }
-
-    .area-thumbnail {
-        height: 100px;
-    }
-
-    .text-streaming {
-        font-size: 10px;
-    }
-
-    .btn-play-streaming {
-        height: 35px;
-        width: 35px;
-    }
-
-    .btn-play-streaming span {
-        font-size: 22px;
-    }
-
-    /* ------------- */
 
     /* area news */
     .title-top-news {
@@ -1202,7 +1267,84 @@
     }
     /* ------------- */
 
+    /* area top info */
+
+    .content-more-info{
+        margin-top: 0px;
+    }
+
+    .area-image-more-info{
+        width: 45%;
+        height: 90px;
+    }
+
+    .title-top-info{
+        font-size: 28px;
+    }
+
+    .box-info{
+        height: 100px;
+        gap: 5px;
+    }
+
+    .tag-more-info{
+        font-size: 14px;
+        padding-top: 5px;
+    }
+
+    .desk-more-info{
+        font-size: 12px;
+    }
+
+    .date-more-info{
+        font-size: 10px;
+    }
+    /* --------------- */
+
+    /* content kanan */
+    .content-IN-kanan {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .area-content-stream-event{
+        flex-direction: column;
+    }
+
+    /* area streaming */
+
+    .area-streaming{
+        width: 100%;
+    }
+
+    .title-streaming {
+        font-size: 30px;
+    }
+
+    .area-thumbnail {
+        height: 140px;
+    }
+
+    .text-streaming {
+        font-size: 10px;
+    }
+
+    .btn-play-streaming {
+        height: 35px;
+        width: 35px;
+    }
+
+    .btn-play-streaming span {
+        font-size: 22px;
+    }
+
+    /* ------------- */
+
     /* area event */
+
+    .area-event{
+        width: 100%;
+    }
 
     .title-event {
         font-size: 30px;
@@ -1269,7 +1411,7 @@
 
     /* page news 3 */
 
-    .area-info-artis {
+    .area-stream-event {
         margin: 0px 8px 20px 8px;
     }
 
@@ -1380,7 +1522,7 @@
     .content-IN-kiri {
         width: 100%;
         height: auto;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
     }
 
     .box-info {
@@ -1389,7 +1531,7 @@
     }
 
     .box-info.visible {
-        display: block; /* Tampilkan box yang memiliki kelas "visible" */
+        display: flex; /* Tampilkan box yang memiliki kelas "visible" */
     }
     .toggle-btn {
         display: block; /* Tampilkan tombol "See More / See Less" */
@@ -1401,7 +1543,7 @@
     }
 
     .area-image-info {
-        height: 30%;
+        height: auto;
     }
 
     .area-info {
@@ -1409,7 +1551,7 @@
     }
 
     .tagar-info {
-        font-size: 22px;
+        font-size: 14px;
     }
 
     .title-info {
@@ -1436,6 +1578,40 @@
         /* padding-top: 20px; */
         font-size: 16px;
     }
+
+    /* area top info */
+
+    .content-more-info{
+        margin-top: 0px;
+    }
+
+    .area-image-more-info{
+        width: 45%;
+        height: 68px;
+    }
+
+    .title-top-info{
+        font-size: 28px;
+    }
+
+    .box-info{
+        height: 100px;
+        gap: 5px;
+    }
+
+    .tag-more-info{
+        font-size: 14px;
+        padding-top: 5px;
+    }
+
+    .desk-more-info{
+        font-size: 10px;
+    }
+
+    .date-more-info{
+        font-size: 8px;
+    }
+    /* --------------- */
 
     /* area trending info */
     .title-trending-info {
@@ -1573,7 +1749,51 @@
     }
     /* ------------- */
 
+    .area-content-stream-event{
+        flex-direction: column;
+    }
+
+    
+    /* area news */
+    .title-top-news {
+        font-size: 28px;
+    }
+
+    .content-top-news {
+        gap: 8px;
+    }
+
+    .link-box-top-info{
+        width: calc(50% - 7px);
+    }
+
+    .box-top-info {
+        height: 60px;
+        padding: 6px;
+    }
+
+    .area-top-image{
+        height: 107px;
+    }
+
+    .tag-top-info {
+        font-size: 14px;
+    }
+
+    .desk-top-info {
+        font-size: 12px;
+    }
+
+    .date-top-info {
+        font-size: 10px;
+    }
+    /* ------------- */
+
     /* area event */
+
+    .area-event{
+        width: 100%;
+    }
 
     .title-event {
         font-size: 30px;
@@ -1640,9 +1860,10 @@
 
     /* page news 3 */
 
-    .area-info-artis {
-        margin: 0px 8px 15px 8px;
+    .area-stream-event{
+        margin: 20px 8px 20px 8px;
     }
+
 
     .title-info-artis {
         font-size: 32px;
@@ -1751,7 +1972,7 @@
     .content-IN-kiri {
         width: 100%;
         height: auto;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
     }
 
     .link-url-info {
@@ -1775,7 +1996,7 @@
     }
 
     .area-image-info {
-        height: 240px;
+        height: auto;
     }
 
     .area-desk-info {
@@ -2119,7 +2340,7 @@
     .content-IN-kiri {
         width: 100%;
         height: auto;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
     }
 
     .link-url-info {
@@ -2143,7 +2364,7 @@
     }
 
     .area-image-info {
-        height: 240px;
+        height: auto;
     }
 
     .area-desk-info {
@@ -2315,7 +2536,7 @@
     }
 
     .area-event-bottom {
-        height: 440px;
+        height: 365px;
         gap: 15px;
     }
 
