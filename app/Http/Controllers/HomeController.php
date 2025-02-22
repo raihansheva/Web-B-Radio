@@ -305,7 +305,7 @@ class HomeController extends Controller
                     $query->where('publish_now', false)
                         ->where('tanggal_publikasi', '<=', now());
                 });
-        })->limit(4)->get();
+        })->get();
         $streamAudio = Streaming::where('type_url', 'Audio')->first();
         $event_soon = Event::where(function ($query) {
             // Tampilkan jika publish_sekarang true

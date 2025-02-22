@@ -1,21 +1,21 @@
 /* Desktop dan Laptop */
 @media (min-width: 1920px) {
-        .area-event {
+    .area-event {
         width: auto;
         margin: 0px 128px 0px 128px;
     }
     .title-event {
-        font-size: 34px;
+        font-size: 42px;
     }
     .content-event {
         width: auto;
         /* border: 1px red solid; */
     }
     .content-event-CD {
-        height: 948px;
+        height: 926px;
     }
     .area-countdown {
-        height: 80px;
+        height: 140px;
     }
 
     .countdown {
@@ -23,13 +23,13 @@
     }
 
     .timer {
-        font-size: 32px;
+        font-size: 40px;
     }
     .title-timer {
-        font-size: 22px;
+        font-size: 36px;
     }
     .date-month {
-        font-size: 30px;
+        font-size: 44px;
     }
     .year {
         font-size: 28px;
@@ -37,7 +37,7 @@
     /* pop up event */
     .popup-content-event {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -65,7 +65,7 @@
         margin-top: 30px;
     }
     .title-event-other {
-        font-size: 34px;
+        font-size: 42px;
     }
 
     .area-content-OV {
@@ -78,34 +78,40 @@
     }
     .area-days-date-right {
         height: 35px;
+        padding: 20px;
     }
     .date-month-right {
-        font-size: 22px;
+        font-size:38px;
     }
     .year-right {
         font-size: 18px;
     }
     /* -------------- */
+
+    .section-banner{
+        padding-top: 20px;
+    }
+    
     /* area program page event */
     .area-programE {
-        margin: 0px 128px 0px 128px;
+        margin: 30px 128px 0px 128px;
         padding-bottom: 60px;
     }
     .title-programE {
-        font-size: 38px;
+        font-size: 42px;
     }
     .content-programE {
-        margin-top: 10px;
+        margin-top: 5px;
         gap: 15px;
     }
     .box-programE {
-        height: 400px;
+        height: 530px;
     }
     /* pop up program */
 
     .popup-content {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -226,7 +232,7 @@
     /* -------------- */
     /* area program page event */
     .area-programE {
-        margin: 0px 32px 0px 32px;
+        margin: 35px 32px 0px 32px;
         padding-bottom: 30px;
     }
     .title-programE {
@@ -237,7 +243,7 @@
         gap: 15px;
     }
     .box-programE {
-        height: 220px;
+        height: 300px;
     }
     /* pop up program */
 
@@ -358,12 +364,17 @@
         font-size: 16px;
     }
     /* -------------- */
+
+    .section-banner {
+        padding-top: 0px;
+    }
+
     /* area program page event */
     .page-event-3 {
         height: auto;
     }
     .area-programE {
-        margin: 0px 20px 0px 20px;
+        margin: 30px 20px 0px 20px;
         padding-bottom: 30px;
     }
     .title-programE {
@@ -375,12 +386,12 @@
         margin-bottom: 60px;
     }
     .box-programE {
-        height: 170px;
+        height: 230px;
     }
     /* pop up program */
     .popup-content {
         width: 400px;
-        height: 180px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -421,13 +432,14 @@
     }
     .content-event-CD {
         margin-top: 10px;
-        height: 203px;
+        height: 221px;
     }
     .area-content-countdown {
         width: 100%;
     }
     .area-countdown {
-        height: 70px;
+        height: 50px;
+        padding: 10px;
     }
 
     .countdown {
@@ -435,21 +447,21 @@
     }
 
     .timer {
-        font-size: 28px;
+        font-size: 24px;
     }
     .title-timer {
-        font-size: 12px;
+        font-size: 10px;
     }
     .date-month {
-        font-size: 20px;
+        font-size: 18px;
     }
     .year {
-        font-size: 20px;
+        font-size: 18px;
     }
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -485,12 +497,12 @@
     }
     .area-content-OV {
         flex-direction: column;
-        height: 453px;
+        height: auto;
         gap: 10px;
         /* border: 1px red solid; */
     }
     .content-event-OV {
-        height: 400px;
+        height: 221px;
     }
     .area-days-date-right {
         height: 20px;
@@ -502,30 +514,33 @@
         font-size: 12px;
     }
     /* -------------- */
+    .section-banner {
+        padding-top: 0px;
+    }
     /* area program page event */
     .page-event-3 {
         height: auto;
     }
     .area-programE {
-        margin: 0px 8px 0px 8px;
+        margin: 25px 8px 0px 8px;
     }
     .title-programE {
         font-size: 28px;
     }
     .content-programE {
-        margin-top: 20px;
+        margin-top: 10px;
         gap: 10px;
         margin-bottom: 60px;
         flex-wrap: wrap;
     }
     .box-programE {
-        flex: 1 1 calc(50% - 10px);
-        height: 190px;
+        width: 100%;
+        height: 390px;
     }
     /* pop up program */
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -546,151 +561,6 @@
     }
 
     .link-program {
-        font-size: 16px;
-    }
-
-    /* -------------- */
-    /* ------------------ */
-}
-@media (max-width: 375px) {
-    .area-event {
-        width: auto;
-        margin: 0px 8px 0px 8px;
-    }
-    .title-event {
-        font-size: 26px;
-    }
-    .content-event {
-        width: auto;
-        /* border: 1px red solid; */
-    }
-    .content-event-CD {
-        margin-top: 10px;
-        height: 225px;
-    }
-    .area-content-countdown {
-        width: 100%;
-    }
-    .area-countdown {
-        height: 70px;
-    }
-
-    .countdown {
-        gap: 10px;
-    }
-
-    .timer {
-        font-size: 28px;
-    }
-    .title-timer {
-        font-size: 12px;
-    }
-    .date-month {
-        font-size: 20px;
-    }
-    .year {
-        font-size: 20px;
-    }
-    /* pop up event */
-    .popup-content-event {
-        width: 200px;
-        height: 110px;
-        padding: 15px;
-    }
-
-    .area-info-event {
-        gap: 3px;
-    }
-
-    .desk-event {
-        font-size: 8px;
-    }
-
-    .jam-event {
-        font-size: 10px;
-    }
-
-    .title-box-event {
-        font-size: 18px;
-    }
-
-    .link-event {
-        font-size: 10px;
-    }
-    /* -------------- */
-    /* area other upcoming event */
-    .area-other-event {
-        margin: 0px 8px 0px 8px;
-    }
-    .header-other-event {
-        margin-top: 30px;
-    }
-    .title-event-other {
-        font-size: 28px;
-    }
-    .area-content-OV {
-        flex-direction: column;
-        height: 396px;
-        gap: 10px;
-        /* border: 1px red solid; */
-    }
-    .content-event-OV {
-        height: 180px;
-    }
-    .area-days-date-right {
-        height: 20px;
-    }
-    .date-month-right {
-        font-size: 18px;
-    }
-    .year-right {
-        font-size: 12px;
-    }
-    /* -------------- */
-    /* area program page event */
-    .page-event-3 {
-        height: auto;
-    }
-    .area-programE {
-        margin: 0px 8px 0px 8px;
-    }
-    .title-programE {
-        font-size: 28px;
-    }
-    .content-programE {
-        margin-top: 20px;
-        gap: 10px;
-        margin-bottom: 60px;
-        flex-wrap: wrap;
-    }
-    .box-programE {
-        flex: 1 1 calc(50% - 10px);
-        height: 165px;
-    }
-    /* pop up program */
-    .popup-content {
-        width: 200px;
-        height: 110px;
-        padding: 15px;
-    }
-
-    .area-info-program {
-        gap: 0px;
-    }
-
-    .desk-program {
-        font-size: 8px;
-    }
-
-    .jam-program {
-        font-size: 10px;
-    }
-
-    .title-box-program {
-        font-size: 18px;
-    }
-
-    .link-program {
         font-size: 10px;
     }
 
@@ -703,153 +573,7 @@
         margin: 0px 8px 0px 8px;
     }
     .title-event {
-        font-size: 26px;
-    }
-    .content-event {
-        width: auto;
-        /* border: 1px red solid; */
-    }
-    .content-event-CD {
-        margin-top: 10px;
-        height: 225px;
-    }
-    .area-content-countdown {
-        width: 100%;
-    }
-    .area-countdown {
-        height: 70px;
-    }
-
-    .countdown {
-        gap: 10px;
-    }
-
-    .timer {
-        font-size: 28px;
-    }
-    .title-timer {
-        font-size: 12px;
-    }
-    .date-month {
-        font-size: 20px;
-    }
-    .year {
-        font-size: 20px;
-    }
-    /* pop up event */
-    .popup-content-event {
-        width: 200px;
-        height: fit-content;
-        padding: 15px;
-    }
-
-    .area-info-event {
-        gap: 3px;
-    }
-
-    .desk-event {
-        font-size: 8px;
-    }
-
-    .jam-event {
-        font-size: 10px;
-    }
-
-    .title-box-event {
-        font-size: 18px;
-    }
-
-    .link-event {
-        font-size: 10px;
-    }
-    /* -------------- */
-    /* area other upcoming event */
-    .area-other-event {
-        margin: 0px 8px 0px 8px;
-    }
-    .header-other-event {
-        margin-top: 30px;
-    }
-    .title-event-other {
-        font-size: 28px;
-    }
-    .area-content-OV {
-        flex-direction: column;
-        height: 500px;
-        gap: 10px;
-        /* border: 1px red solid; */
-    }
-    .content-event-OV {
-        height: 180px;
-    }
-    .area-days-date-right {
-        height: 20px;
-    }
-    .date-month-right {
-        font-size: 18px;
-    }
-    .year-right {
-        font-size: 12px;
-    }
-    /* -------------- */
-    /* area program page event */
-    .page-event-3 {
-        height: auto;
-    }
-    .area-programE {
-        margin: 0px 8px 0px 8px;
-    }
-    .title-programE {
-        font-size: 28px;
-    }
-    .content-programE {
-        margin-top: 20px;
-        gap: 10px;
-        margin-bottom: 60px;
-        flex-wrap: wrap;
-    }
-    .box-programE {
-        /*flex: 1 1 calc(50% - 10px);*/
-        width: calc(50% - 10px);
-        height: 155px;
-    }
-    /* pop up program */
-    .popup-content {
-        width: 200px;
-        height: fit-content;
-        padding: 15px;
-    }
-
-    .area-info-program {
-        gap: 0px;
-    }
-
-    .desk-program {
-        font-size: 8px;
-    }
-
-    .jam-program {
-        font-size: 10px;
-    }
-
-    .title-box-program {
-        font-size: 18px;
-    }
-
-    .link-program {
-        font-size: 10px;
-    }
-
-    /* -------------- */
-    /* ------------------ */
-}
-@media (max-width: 344px) {
-    .area-event {
-        width: auto;
-        margin: 0px 8px 0px 8px;
-    }
-    .title-event {
-        font-size: 26px;
+        font-size: 24px;
     }
     .content-event {
         width: auto;
@@ -863,8 +587,8 @@
         width: 100%;
     }
     .area-countdown {
-        height: 70px;
-        padding: 5px;
+        height: 45px;
+        padding: 8px;
     }
 
     .countdown {
@@ -875,18 +599,18 @@
         font-size: 24px;
     }
     .title-timer {
-        font-size: 10px;
+        font-size: 8px;
     }
     .date-month {
-        font-size: 20px;
+        font-size: 16px;
     }
     .year {
-        font-size: 20px;
+        font-size: 16px;
     }
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -918,16 +642,16 @@
         margin-top: 30px;
     }
     .title-event-other {
-        font-size: 28px;
+        font-size: 24px;
     }
     .area-content-OV {
         flex-direction: column;
-        height: 332px;
+        height: auto;
         gap: 10px;
         /* border: 1px red solid; */
     }
     .content-event-OV {
-        height: 140px;
+        height: 193px;
     }
     .area-days-date-right {
         height: 20px;
@@ -938,31 +662,191 @@
     .year-right {
         font-size: 12px;
     }
+
+    .line-event {
+        margin-bottom: 30px;
+    }
+    /* -------------- */
+    .section-banner {
+        padding-top: 0px;
+    }
+    /* area program page event */
+    .page-event-3 {
+        height: auto;
+    }
+    .area-programE {
+        margin: 20px 8px 0px 8px;
+    }
+    .title-programE {
+        font-size: 24px;
+    }
+    .content-programE {
+        margin-top: 8px;
+        gap: 10px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    .box-programE {
+        width: 100%;
+        height: 342px;
+    }
+    /* pop up program */
+    .popup-content {
+        width: 200px;
+        height: fit-content;
+        padding: 15px;
+    }
+
+    .area-info-program {
+        gap: 0px;
+    }
+
+    .desk-program {
+        font-size: 8px;
+    }
+
+    .jam-program {
+        font-size: 10px;
+    }
+
+    .title-box-program {
+        font-size: 18px;
+    }
+
+    .link-program {
+        font-size: 10px;
+    }
+
+    /* -------------- */
+    /* ------------------ */
+}
+
+@media (max-width: 344px) {
+    .area-event {
+        width: auto;
+        margin: 0px 8px 0px 8px;
+    }
+    .title-event {
+        font-size: 22px;
+    }
+    .content-event {
+        width: auto;
+        /* border: 1px red solid; */
+    }
+    .content-event-CD {
+        margin-top: 8px;
+        height: 162px;
+    }
+    .area-content-countdown {
+        width: 100%;
+    }
+    .area-countdown {
+        height: 40px;
+        padding: 5px;
+    }
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .timer {
+        font-size: 16px;
+    }
+    .title-timer {
+        font-size: 8px;
+    }
+    .date-month {
+        font-size: 16px;
+    }
+    .year {
+        font-size: 16px;
+    }
+    /* pop up event */
+    .popup-content-event {
+        width: 200px;
+        height: fit-content;
+        padding: 15px;
+    }
+
+    .area-info-event {
+        gap: 3px;
+    }
+
+    .desk-event {
+        font-size: 8px;
+    }
+
+    .jam-event {
+        font-size: 10px;
+    }
+
+    .title-box-event {
+        font-size: 18px;
+    }
+
+    .link-event {
+        font-size: 10px;
+    }
+    /* -------------- */
+    /* area other upcoming event */
+    .area-other-event {
+        margin: 0px 8px 0px 8px;
+    }
+    .header-other-event {
+        margin-top: 30px;
+    }
+    .title-event-other {
+        font-size: 22px;
+    }
+    .area-content-OV {
+        flex-direction: column;
+        height: fit-content;
+        gap: 10px;
+        /* border: 1px red solid; */
+    }
+    .content-event-OV {
+        height: 162px;
+    }
+    .area-days-date-right {
+        height: 20px;
+        padding: 8px;
+    }
+    .date-month-right {
+        font-size: 18px;
+    }
+    .year-right {
+        font-size: 12px;
+    }
+
+    .line-event{
+        margin-bottom: 20px;
+    }
+
     /* -------------- */
     /* area program page event */
     .page-event-3 {
         height: auto;
     }
     .area-programE {
-        margin: 0px 8px 0px 8px;
+        margin: 15px 8px 0px 8px;
     }
     .title-programE {
         font-size: 28px;
     }
     .content-programE {
-        margin-top: 10px;
+        margin-top: 5px;
         gap: 10px;
-        margin-bottom: 60px;
+        margin-bottom: 5px;
         flex-wrap: wrap;
     }
     .box-programE {
-        flex: 1 1 calc(50% - 10px);
-        height: 140px;
+        width: 100%;
+        height: 286px;
     }
     /* pop up program */
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -995,21 +879,21 @@
         margin: 0px 8px 0px 8px;
     }
     .title-event {
-        font-size: 26px;
+        font-size: 22px;
     }
     .content-event {
         width: auto;
         /* border: 1px red solid; */
     }
     .content-event-CD {
-        margin-top: 10px;
-        height: 160px;
+        margin-top: 8px;
+        height: 162px;
     }
     .area-content-countdown {
         width: 100%;
     }
     .area-countdown {
-        height: 70px;
+        height: 40px;
         padding: 5px;
     }
 
@@ -1018,21 +902,21 @@
     }
 
     .timer {
-        font-size: 24px;
+        font-size: 16px;
     }
     .title-timer {
-        font-size: 10px;
+        font-size: 8px;
     }
     .date-month {
-        font-size: 20px;
+        font-size: 16px;
     }
     .year {
-        font-size: 20px;
+        font-size: 16px;
     }
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -1064,19 +948,20 @@
         margin-top: 30px;
     }
     .title-event-other {
-        font-size: 28px;
+        font-size: 22px;
     }
     .area-content-OV {
         flex-direction: column;
-        height: 332px;
+        height: fit-content;
         gap: 10px;
         /* border: 1px red solid; */
     }
     .content-event-OV {
-        height: 140px;
+        height: 162px;
     }
     .area-days-date-right {
         height: 20px;
+        padding: 8px;
     }
     .date-month-right {
         font-size: 18px;
@@ -1084,31 +969,36 @@
     .year-right {
         font-size: 12px;
     }
+
+    .line-event{
+        margin-bottom: 20px;
+    }
+
     /* -------------- */
     /* area program page event */
     .page-event-3 {
         height: auto;
     }
     .area-programE {
-        margin: 0px 8px 0px 8px;
+        margin: 15px 8px 0px 8px;
     }
     .title-programE {
         font-size: 28px;
     }
     .content-programE {
-        margin-top: 10px;
+        margin-top: 5px;
         gap: 10px;
-        margin-bottom: 60px;
+        margin-bottom: 5px;
         flex-wrap: wrap;
     }
     .box-programE {
-        flex: 1 1 calc(50% - 10px);
-        height: 140px;
+        width: 100%;
+        height: 286px;
     }
     /* pop up program */
     .popup-content {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 

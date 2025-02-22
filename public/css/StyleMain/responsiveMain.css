@@ -233,16 +233,23 @@
         height: 450px;
     }
     /* ------- */
-    
+    #floatingButtons{
+        bottom: 90px;
+    }
+
+    #promoteUMKMBtn{
+        font-size: 18px;
+    }
+
     #scrollToTopBtn {
         bottom: 65px;
         right: 15px;
-        /* font-size: 20px; */
+        font-size: 28px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 15px;
-        width: 15px;
+        height: 55px;
+        width: 55px;
     }
 
     #scrollToTopBtn:hover {
@@ -251,7 +258,7 @@
     }
 
     #scrollToTopBtn i {
-        font-size: 16px;
+        font-size: 28px;
     }
 
     .area-banner {
@@ -486,8 +493,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 15px;
-        width: 15px;
+        height: 40px;
+        width: 40px;
     }
 
     #scrollToTopBtn:hover {
@@ -697,11 +704,12 @@
     }
 
     #floatingButtons{
+        right: 8px;
         bottom: 10px;
     }
 
     #promoteUMKMBtn{
-        font-size: 12px;
+        font-size: 10px;
     }
     
     #scrollToTopBtn {
@@ -711,8 +719,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 15px;
-        width: 15px;
+        height: 35px;
+        width: 35px;
     }
 
     #scrollToTopBtn:hover {
@@ -1049,6 +1057,15 @@
     .close-icon{
         font-size: 38px;
     }
+
+    #floatingButtons{
+        right: 8px;
+    }
+
+    #promoteUMKMBtn{
+        font-size: 8px;
+        padding: 6px 12px;
+    }
     
     #scrollToTopBtn {
         bottom: 15px;
@@ -1057,9 +1074,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 15px;
-        width: 15px;
+        height: 30px;
+        width: 30px;
     }
+    
 
     #scrollToTopBtn:hover {
         background-color: var(--primary-color);
@@ -1311,6 +1329,15 @@
     .close-icon{
         font-size: 35px;
     }
+
+    #floatingButtons{
+        right: 8px;
+    }
+
+    #promoteUMKMBtn{
+        font-size: 8px;
+        padding: 6px 12px;
+    }
     
     #scrollToTopBtn {
         bottom: 15px;
@@ -1319,8 +1346,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 15px;
-        width: 15px;
+        height: 25px;
+        width: 25px;
     }
 
     #scrollToTopBtn:hover {
@@ -1572,6 +1599,10 @@
         font-size: 35px;
     }
 
+    #floatingButtons{
+        right: 8px;
+    }
+
     #promoteUMKMBtn{
         font-size: 8px;
         padding: 6px 12px;
@@ -1579,13 +1610,13 @@
     
     #scrollToTopBtn {
         bottom: 15px;
-        right: 15px;
+        right: 10px;
         /* font-size: 20px; */
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 10px;
-        width: 10px;
+        height: 30px;
+        width: 30px;
     }
 
     #scrollToTopBtn:hover {
