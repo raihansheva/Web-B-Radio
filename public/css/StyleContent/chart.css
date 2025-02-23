@@ -45,11 +45,12 @@
     gap: 20px;
 }
 
-.tab-chart{
+.tab-chart {
     flex: 1 1 calc(33.33% - 20px);
     height: 50px;
-    border: 3px var(--primary-color) solid;
+    border: 2px white solid;
     color: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,14 +67,21 @@
     -o-transition: all 0.3s ease-in-out;
 }
 
-.tab-chart:hover{
+.tab-chart:hover {
     background-color: var(--primary-color);
-    color: black;
+    color: white;
+}
+
+.text-tab {
+    font-size: 24px;
+    font-weight: 200;
+    font-family: "Bebas Neue";
+    margin: 20px 0px;
 }
 
 .active {
     background-color: var(--primary-color); /* Warna aktif tab */
-    color: black;
+    color: white;
 }
 
 .text-tab{
@@ -136,11 +144,11 @@ tbody tr {
     padding: 10px 20px;
     font-size: 18px;
     background-color: transparent;
-    color: var(--primary-color);
+    color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px var(--primary-color) solid;
+    border: 1px white solid;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -149,7 +157,7 @@ tbody tr {
 }
 
 .btn-see-more:hover {
-    background-color: var(--primary-color);
+    background-color: white;
     color: black;
 }
 
@@ -160,10 +168,19 @@ tbody tr {
 
 
 
-/* ------------ */
+/* area streaming news */
+
+.page-chart-2 {
+    width: 100%;
+    height: auto;
+    background-color: #F8F9FA;
+    margin-top: 50px;
+}
+
 .area-streaming-news{
     width: auto;
-    margin: 20px 64px 0px 64px;
+    margin: 0px 64px 0px 64px;
+    padding-bottom: 30px;
     height: auto;
     /* border: 1px red solid; */
 }
@@ -172,18 +189,20 @@ tbody tr {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     gap: 15px;
     /* margin-top: ; */
-    /* padding-top: 10px; */
-    margin-bottom: 100px;
+    padding-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* area content kiri */
 
 .area-content-SN-kiri{
-    width: 65%;
+    width: 100%;
     height: auto;
     /* border: 1px pink solid; */
+    margin-top: 20px;
 }
 
 .header-SN-kiri{
@@ -193,34 +212,33 @@ tbody tr {
 }
 
 .title-SN-kiri{
-    font-size: 34px;
+    font-size: 38px;
     font-family: "Bebas Neue";
     font-weight: 200;
-    color: white;
+    /* color: white; */
     margin: 0px;
 }
 
 .content-SN-kiri{
     width: 100%;
     height: auto;
-    /* margin-top: 8px; */
+    margin-top: 10px;
 }
 
 .box-streaming{
     width: 100%;
-    height: 200px;
+    height: 220px;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
 .btn-play-streaming{
     height: 65px;
     width: 65px;
     border-radius: 50%;
-    background-color: rgb(22, 22, 22);
+    background-color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -235,25 +253,29 @@ tbody tr {
     object-fit: cover;
     position: relative;
     filter: brightness(0.5);
+    border-radius: 8px;
 }
 
-.btn-play-streaming:hover{
+/* .btn-play-streaming:hover{
     background-color: rgb(49, 49, 49);
-}
+} */
 
 .btn-play-streaming span {
-    color: var(--primary-color);
+    color: black;
     font-size: 30px;
 }
 /* -------------------- */
 
-
+.line-SN{
+    width: 100%;
+    border: 1px black solid;
+}
 
 
 /* area content kanan */
 
 .area-content-SN-kanan{
-    width: 35%;
+    width: 100%;
     height: auto;
     /* border: 1px salmon solid; */
 }
@@ -261,116 +283,138 @@ tbody tr {
 .header-news {
     width: 100%;
     height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title-news {
     margin: 0px;
     font-family: "Bebas Neue";
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 200;
-    color: white;
+    /* color: white; */
+}
+
+.link-box-news {
+    width: calc(25% - 10px); /* Setengah kontainer minus setengah gap */
+    color: black;
+}
+
+.more-news{
+    margin: 0px;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 200;
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+
+.more-news i{
+    font-size: 22px;
 }
 
 .content-news {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* margin-top: 10px; */
+    flex-direction: row;
+    gap: 14px;
+    margin-top: 10px;
 }
 
 .box-news {
-    width: auto;
-    height: 66px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    /* height: 340px; */
+    /* max-height: 120px; */
+    /* background-color: #f0f0f0; */
+    border-radius: 15px;
+    /* display: flex; */
+    /* padding: 10px; */
+    /* justify-content: center;
+    align-items: center; */
+    box-sizing: border-box;
+    gap: 8px;
 }
 
 .area-image {
-    width: 40%;
+    width: 100%;
     /*border: 1px black solid;
     */
-    background-color: #333;
-    border-radius: 10px;
-    height: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: relative; /* Dibutuhkan untuk child position: absolute */
-    overflow: hidden;
+    border-radius: 20px;
+    /* background-color: #333; */
+    /* height: 100%; */
 }
 
-.image-top-info {
+.line-top-info {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Menjaga proporsi gambar */
-    top: 0; /* Atur posisi di atas */
-    left: 0;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin-top: 10px;
 }
 
-.area-text {
-    width: 100%;
-    /* border: 1px black solid; */
+.area-text-desk-top-info {
+    /* width: 100%; */
     height: fit-content;
-}
-
-.area-text-desk-top-info{
-    width: 100%;
-    height: 100%;
-    /* max-height: 100%; */
+    max-height: 50%;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    /* margin-top: 10px; */
+    margin-top: 5px;
+    /* padding: 10px; */
+    /* border: 1px rgb(40, 40, 40) solid; */
+    border-radius: 8px;
 }
 
-.area-tag{
+.area-tag {
     display: flex;
     gap: 4px;
+    margin-top: 5px;
 }
 
-.tag-top-info{
+.tag-top-info {
     font-family: "Bebas Neue";
     margin: 0px;
     font-size: 16px;
     font-weight: 500;
     overflow-wrap: break-word;
     padding: 2px 0;
-    color: black;
 }
+
+/* .area-text {
+    height: 54px;
+} */
 
 .desk-top-info {
     font-family: "Poppins";
     margin: 0px;
-    font-size: 14px;
+    font-size: 16px;
     overflow-wrap: break-word;
-    /* padding: 2px 0; */
+    padding: 2px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* Membatasi 3 baris */
+    -webkit-line-clamp: 2; /* Membatasi 3 baris */
     -webkit-box-orient: vertical;
     overflow: hidden; /* Menyembunyikan sisa teks yang tidak muat */
     text-overflow: ellipsis;
     font-weight: 700;
-    color: black;
 }
 
-.date-top-info{
+.date-top-info {
     font-family: "Poppins";
     margin: 0px;
     font-size: 12px;
     overflow-wrap: break-word;
     padding: 2px 0;
-    font-weight: 500;
-    color: black;
+}
+
+.image-top-info {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
 }
 /* -------------------- */
 

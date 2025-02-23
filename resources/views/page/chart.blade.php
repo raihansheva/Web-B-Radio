@@ -11,136 +11,114 @@
   gtag('config', 'G-BHYYVVYF3D');
 </script>
 @section('content')
-    <section class="page-chart-1">
-        <div class="area-chart">
-            <div class="header-chart">
-                <h2 class="title-chart">Ardan Chart</h2>
-            </div>
-            <div class="content-chart">
-                <div class="area-top-chart">
-                    @foreach ($kategori as $kategoriList)
-                        <div class="tab-chart {{ $loop->first ? 'active' : '' }}" data-tab="{{ $kategoriList->id }}">
-                            <h3 class="text-tab">{{ strtoupper($kategoriList->nama_kategori) }}</h3>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="area-bottom-chart">
-                    <div class="table-container">
-                        @foreach ($kategori as $kategoriList)
-                            <table class="chart {{ $loop->first ? '' : 'hidden' }}" id="{{ $kategoriList->id }}">
-                                <thead>
-                                    <tr>
-                                        <th>NO</th>
-                                        <th>ARTIST</th>
-                                        <th>-</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($kategoriList->charts as $index => $chart)
-                                        <tr>
-                                            <td>{{ $index + 1 }}</td>
-                                            <td>{{ $chart->name }}</td>
-                                            <td>
-                                                <div class="btn-play-chart"
-                                                    data-audio-src="./storage/{{ $chart->link_audio }}"
-                                                    data-name="{{ $chart->name }}"
-                                                    data-kategori="{{ $kategoriList->nama_kategori }}"
-                                                    data-id="{{ $chart->id }}">
-                                                    <span class="material-symbols-rounded">play_arrow</span>
-                                                </div>
-                                                <audio src="" id="audio-chart" class="audio-chart"></audio>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        @endforeach
-                        <button id="toggle-button" class="btn-see-more" onclick="toggleTable()">See More</button>
-                    </div>
-
-                </div>
-            </div>
+<section class="page-chart-1">
+    <div class="area-chart">
+        <div class="header-chart">
+            <h2 class="title-chart">B-Radio Chart</h2>
         </div>
-    </section>
-    <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
-        <div class="area-banner">
-            <swiper-container class="mySwiper" id="swiper-xl" centered-slides="true" autoplay-delay="2000"
-                autoplay-disable-on-interaction="false" loop="true">
-                @foreach ($banner->where('position', 'middle') as $list)
-                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
-                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
-                                loading="lazy">
-                        </a></swiper-slide>
+        <div class="content-chart">
+            <div class="area-top-chart">
+                @foreach ($kategori as $kategoriList)
+                    <div class="tab-chart {{ $loop->first ? 'active' : '' }}" data-tab="{{ $kategoriList->id }}">
+                        <h3 class="text-tab">{{ strtoupper($kategoriList->nama_kategori) }}</h3>
+                    </div>
                 @endforeach
-            </swiper-container>
-        </div>
-    </section>
-    <section class="page-chart-2">
-        <div class="area-streaming-news">
-            <div class="area-content-SN">
-                <div class="area-content-SN-kiri">
-                    <div class="header-SN-kiri">
-                        <h2 class="title-SN-kiri">Streaming</h2>
-                    </div>
-                    <div class="content-SN-kiri">
-                        <div class="box-streaming">
-                            <img class="image-streaming" src="./storage/{{ $streamAudio->image_stream }}">
-                            <div class="btn-play-streaming" id="BtnStream" data-audio-src="{{ $streamAudio->stream_url }}">
-                                <span class="material-symbols-rounded">play_arrow</span>
-                            </div>
-                            {{-- <audio class="audio-streaming" id="audio-streaming" preload="auto">
-                                <source type="audio/mpeg" src="{{ $stream->stream_audio_url }}" />
-                            </audio> --}}
-                        </div>
-                    </div>
+            </div>
+            <div class="area-bottom-chart">
+                <div class="table-container">
+                    @foreach ($kategori as $kategoriList)
+                        <table class="chart {{ $loop->first ? '' : 'hidden' }}" id="{{ $kategoriList->id }}">
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>ARTIST</th>
+                                    <th>-</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($kategoriList->charts as $index => $chart)
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $chart->name }}</td>
+                                        <td>
+                                            <div class="btn-play-chart"
+                                                data-audio-src="./storage/{{ $chart->link_audio }}"
+                                                data-name="{{ $chart->name }}"
+                                                data-kategori="{{ $kategoriList->nama_kategori }}"
+                                                data-id="{{ $kategoriList->id }}">
+                                                <span class="material-symbols-rounded">play_arrow</span>
+                                            </div>
+                                            <audio src="" id="audio-chart" class="audio-chart"></audio>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endforeach
+                    <button id="toggle-button" class="btn-see-more" onclick="toggleTable()">See More</button>
                 </div>
-                <div class="area-content-SN-kanan">
-                    <div class="header-news">
-                        <h1 class="title-news">Top Info</h1>
-                    </div>
-                    <div class="content-news">
-                        @foreach ($top_info as $topInfoList)
-                            <a class="link-box-news" href="/info-detail/{{ $topInfoList->slug }}">
-                                <div class="box-news">
-                                    <div class="area-image">
-                                        <img class="image-top-info" src="./storage/{{ $topInfoList->image_info }}"
-                                            alt="">
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-chart-2">
+    <div class="area-streaming-news">
+        <div class="area-content-SN">
+            <div class="area-content-SN-kanan">
+                <div class="header-news">
+                    <h1 class="title-news">Top Info</h1>
+                    <a class="link-more-news" href="/info-news">
+                        <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
+                    </a>
+                </div>
+                <div class="content-news">
+                    @foreach ($top_info as $topInfoList)
+                        <a class="link-box-news" href="/info-detail/{{ $topInfoList->slug }}">
+                            <div class="box-news">
+                                <div class="area-image">
+                                    <img class="image-top-info" src="./storage/{{ $topInfoList->image_info }}"
+                                        alt="">
+                                </div>
+                                <div class="area-text-desk-top-info">
+                                    <div class="area-tag">
+                                        <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
                                     </div>
-                                    <div class="area-text-desk-top-info">
-                                        <div class="area-tag">
-                                            <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
-                                            
-                                        </div>
-                                        <div class="area-text">
-                                            <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
-                                        </div>
-                                        <div class="area-date">
-                                            <p class="date-top-info">
-                                                {{ \Carbon\Carbon::parse($topInfoList->date_info)->translatedFormat('l, d F Y') }}
-                                            </p>
-                                        </div>
+                                    <div class="area-text">
+                                        <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
+                                    </div>
+                                    <div class="area-date">
+                                        <p class="date-top-info">
+                                            {{ \Carbon\Carbon::parse($topInfoList->date_info)->translatedFormat('l, d F Y') }}
+                                        </p>
                                     </div>
                                 </div>
-                            </a>
-                        @endforeach
-                    </div>
-                    <section class="section-banner-small {{ $banner->where('position', 'bottom_topInfo')->count() > 0 ? '' : 'hidden' }}">
-                        <div class="area-banner-small">
-                            <swiper-container class="mySwiper" id="swiper-s" centered-slides="true" autoplay-delay="2000"
-                                autoplay-disable-on-interaction="false" loop="true">
-                                @foreach ($banner->where('position', 'bottom_topInfo') as $list)
-                                    <swiper-slide><a class="link-ads-banner" href="{{ $list->link_ads }}">
-                            <img class="image-banner" src="{{ asset('storage/' . $list->image_banner) }}" alt=""
-                                loading="lazy">
-                        </a></swiper-slide>
-                                @endforeach
-                            </swiper-container>
-                        </div>
-                    </section>
+                            </div>
+                        </a>
+                    @endforeach
                 </div>
             </div>
+            <div class="line-SN"></div>
+            <div class="area-content-SN-kiri">
+                <div class="header-SN-kiri">
+                    <h2 class="title-SN-kiri">Streaming</h2>
+                </div>
+                <div class="content-SN-kiri">
+                    <div class="box-streaming">
+                        <img class="image-streaming" src="./storage/{{ $streamAudio->image_stream }}">
+                        <div class="btn-play-streaming" id="BtnStream" data-audio-src="{{ $streamAudio->stream_url }}">
+                            <span class="material-symbols-rounded">play_arrow</span>
+                        </div>
+                        {{-- <audio class="audio-streaming" id="audio-streaming" preload="auto">
+                            <source type="audio/mpeg" src="{{ $stream->stream_audio_url }}" />
+                        </audio> --}}
+                    </div>
+                </div>
+            </div>
+            
         </div>
-    </section>
+    </div>
+</section>
 
 
     <script src="{{ asset('js/chart.js?v=' . time()) }}"></script>
