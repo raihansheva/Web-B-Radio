@@ -1,7 +1,6 @@
-
 @media (min-width: 1920px) {
     .area-thumbnail-youtube {
-        margin: 30px 32px 0px 32px;
+        margin: 30px 128px 0px 128px;
     }
 
     .area-image-thumbnail {
@@ -59,16 +58,16 @@
         margin: 4px 0;
         font-family: "Poppins";
         font-size: 20px;
-        color: white;
+        /* color: white; */
     }
 
     .video--details__meta-data {
         display: flex;
         gap: 10px;
-        font-size: 1.1rem;
-        color: #ffffff;
+        font-size: 14px;
+        /* color: #ffffff; */
         font-family: "Poppins";
-        font-weight: 200;
+        font-weight: 400;
     }
 
     .modal-content {
@@ -82,14 +81,14 @@
 
     /* page youtube 3 */
 
-    .page-youtube-3{
+    .page-youtube-3 {
         height: fit-content;
     }
 
     .line-VNS {
         width: 100%;
         border: 1px white solid;
-        margin: 100px 0px;
+        margin: 80px 0px 30px 0px;
     }
 
     .area-event-news-streaming {
@@ -103,60 +102,69 @@
     /* content kiri */
 
     .area-content-VNS-kiri {
-        width: 55%;
+        width: 100%;
     }
-    
+
     .title-event {
         font-size: 44px;
     }
-    
+
     .content-kiri-event {
         gap: 15px;
-        height: 924px;
+        height: fit-content;
         /* height: auto; */
     }
 
+    .area-event-mid{
+        height: 927px;
+    }
+
     .area-countdown {
-        height: 105px;
+        height: 125px;
     }
 
     .timer {
-        font-size: 34px;
+        font-size: 38px;
     }
 
     .title-timer {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .date-month {
-        font-size: 34px;
+        font-size: 42px;
     }
 
     .year {
-        font-size: 22px;
+        font-size: 42px;
     }
 
     .area-event-bottom {
-        height: 30%;
+        height: fit-content;
         gap: 15px;
+    }
+
+    .box-event{
+        height: 400px;
     }
 
     .area-days-date-right {
         height: 65px;
+        padding: 20px;
     }
 
     .date-month-right {
-        font-size: 28px;
+        font-size: 34px;
     }
 
     .year-right {
-        font-size: 18px;
+        font-size: 24px;
     }
     /* --------------- */
     /* pop up event */
     .popup-content {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -179,7 +187,7 @@
     /* content kanan */
     .area-content-VNS-kanan {
         width: 44%;
-        height: 980px;
+        height: fit-content;
         gap: 10px;
     }
 
@@ -190,18 +198,30 @@
     border: 1px blue solid;
 } */
 
+    .area-news-streaming {
+        margin: 0px 128px 0px 128px;
+    }
+
+    .area-content-news-streaming {
+        padding-bottom: 40px;
+    }
+
+    .content-news-streaming{
+        padding: 60px 0px;
+    }
+
     .title-news {
         font-size: 44px;
     }
 
     .box-news {
-        height: 95px;
-        padding: 8px;
+        height: fit-content;
+        /* padding: 8px; */
     }
 
-    .area-image {
+    /* .area-image {
         height: 100%;
-    }
+    } */
 
     .tag-top-info {
         font-size: 22px;
@@ -214,6 +234,15 @@
     .date-top-info {
         font-size: 18px;
     }
+
+    .more-news {
+        font-size: 22px;
+    }
+
+    .more-news i {
+        font-size: 24px;
+    }
+
     /* ------------ */
     /* area content stream */
     .area-content-streaming {
@@ -226,7 +255,7 @@
     }
 
     .box-streaming {
-        height: 240px;
+        height: 280px;
     }
 
     .btn-play-streaming {
@@ -300,14 +329,14 @@
         margin: 4px 0;
         font-family: "Poppins";
         font-size: 15px;
-        color: white;
+        /* color: white; */
     }
 
     .video--details__meta-data {
         display: flex;
         gap: 10px;
         font-size: 0.7rem;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-family: "Poppins";
         font-weight: 200;
     }
@@ -326,7 +355,7 @@
     .line-VNS {
         width: 100%;
         border: 1px white solid;
-        margin: 100px 0px;
+        margin: 50px 0px;
     }
 
     .area-event-news-streaming {
@@ -342,7 +371,7 @@
     /* content kiri */
 
     .area-content-VNS-kiri {
-        width: 55%;
+        width: 100%;
     }
 
     .title-event {
@@ -351,7 +380,11 @@
 
     .content-kiri-event {
         gap: 10px;
-        height: 555px;
+        height: fit-content;
+    }
+
+    .area-event-mid {
+        height: 531px;
     }
 
     .area-countdown {
@@ -378,6 +411,10 @@
         gap: 10px;
     }
 
+    .box-event {
+        height: 250px;
+    }
+
     .area-days-date-right {
         height: 35px;
     }
@@ -394,7 +431,7 @@
     /* pop up event */
     .popup-content-event {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -427,13 +464,17 @@
         border: 1px blue solid;
     } */
 
+    .area-news-streaming {
+        margin: 20px 32px 0px 32px;
+    }
+
     .title-news {
         font-size: 34px;
     }
 
     .box-news {
-        height: 55px;
-        padding: 8px;
+        height: fit-content;
+        /* padding: 8px; */
     }
 
     .area-image {
@@ -451,6 +492,14 @@
     .date-top-info {
         font-size: 10px;
     }
+
+    .more-news {
+        font-size: 16px;
+    }
+
+    .more-news i {
+        font-size: 20px;
+    }
     /* ------------ */
 
     /* area content stream */
@@ -465,7 +514,7 @@
     }
 
     .box-streaming {
-        height: 108px;
+        height: 165px;
     }
 
     .btn-play-streaming {
@@ -539,14 +588,14 @@
         margin: 4px 0;
         font-family: "Poppins";
         font-size: 15px;
-        color: white;
+        /* color: white; */
     }
 
     .video--details__meta-data {
         display: flex;
         gap: 10px;
         font-size: 0.7rem;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-family: "Poppins";
         font-weight: 200;
     }
@@ -587,7 +636,7 @@
     /* content kiri */
 
     .area-content-VNS-kiri {
-        width: 55%;
+        width: 100%;
     }
 
     .title-event {
@@ -596,11 +645,11 @@
 
     .content-kiri-event {
         gap: 10px;
-        height: 555px;
+        height: fit-content;
     }
 
     .area-event-mid {
-        height: 50%;
+        height: 400px;
     }
 
     .area-countdown {
@@ -614,7 +663,7 @@
     }
 
     .area-days-date {
-        width: 40%;
+        width: 100%;
     }
 
     .timer {
@@ -636,7 +685,7 @@
     /* pop up event */
     .popup-content-event {
         width: 400px;
-        height: 180px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -663,13 +712,13 @@
     /* box- bawah */
     .area-event-bottom {
         gap: 10px;
-        height: 50%;
-        flex-direction: column;
+        height: fit-content;
+        flex-direction: row;
     }
 
     .box-event {
         width: 100%;
-        height: 50%;
+        height: 200px;
     }
 
     .area-days-date-right {
@@ -706,14 +755,17 @@
         font-size: 30px;
     }
 
+    .content-news {
+        gap: 10px;
+    }
+
     .box-news {
-        height: auto;
-        padding: 8px;
+        height: fit-content;
+        /* padding: 8px; */
     }
 
     .area-image {
-        width: 40%;
-        height: 100%;
+        border-radius: 10px;
     }
 
     .tag-top-info {
@@ -727,7 +779,16 @@
     .date-top-info {
         font-size: 10px;
     }
-    /* ------------ */
+
+    .more-news {
+        font-size: 14px;
+    }
+
+    .more-news i {
+        font-size: 18px;
+    }
+
+    /*--------------- */
 
     /* area content stream */
 
@@ -741,7 +802,7 @@
     }
 
     .box-streaming {
-        height: 108px;
+        height: 160px;
     }
 
     .btn-play-streaming {
@@ -835,14 +896,14 @@
         margin: 0px 0px;
         font-family: "Poppins";
         font-size: 13px;
-        color: white;
+        /* color: white; */
     }
 
     .video--details__meta-data {
         display: flex;
         gap: 10px;
         font-size: 0.5rem;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-family: "Poppins";
         font-weight: 200;
     }
@@ -868,6 +929,7 @@
     .line-VNS {
         width: 100%;
         border: 1px white solid;
+        margin: 10px 0px 40px 0px;
     }
 
     .area-event-news-streaming {
@@ -891,11 +953,11 @@
 
     .content-kiri-event {
         gap: 10px;
-        height: 555px;
+        height: fit-content;
     }
 
     .area-event-mid {
-        height: 50%;
+        height: 221px;
     }
 
     .area-countdown {
@@ -909,7 +971,7 @@
     }
 
     .area-days-date {
-        width: 40%;
+        width: 100%;
     }
 
     .timer {
@@ -931,7 +993,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -958,13 +1020,13 @@
     /* box- bawah */
     .area-event-bottom {
         gap: 10px;
-        height: 50%;
+        height: fit-content;
         flex-direction: column;
     }
 
     .box-event {
         width: 100%;
-        height: 50%;
+        height: 221px;
     }
 
     .area-days-date-right {
@@ -992,6 +1054,10 @@
 
     /* area news */
 
+    .area-news-streaming {
+        margin: 10px 8px 0px 8px;
+    }
+
     .content-news {
         height: 80%;
         /* border: 1px blue solid; */
@@ -1001,14 +1067,18 @@
         font-size: 28px;
     }
 
-    .box-news {
-    max-height: 60px;  /* Or any value that fits your design */
-    padding: 8px;
+    .content-news {
+        gap: 10px;
+        flex-wrap: wrap;
     }
 
-    .area-image {
-        width: 40%;
-        height: 100%;
+    .link-box-news {
+        width: calc(50% - 5px);
+    }
+
+    .box-news {
+        height: fit-content;
+        width: 100%;
     }
 
     .tag-top-info {
@@ -1022,7 +1092,7 @@
     .date-top-info {
         font-size: 10px;
     }
-    /* ------------ */
+    /*--------------- */
 
     /* area content stream */
 
@@ -1037,7 +1107,7 @@
     }
 
     .box-streaming {
-        height: 100%;
+        height: 100px;
     }
 
     .btn-play-streaming {
@@ -1053,8 +1123,6 @@
 
     /* -------------------- */
 }
-
-
 
 @media (max-width: 375px) {
     .area-thumbnail-youtube {
@@ -1138,14 +1206,14 @@
         margin: 0px 0px;
         font-family: "Poppins";
         font-size: 13px;
-        color: white;
+        /* color: white; */
     }
 
     .video--details__meta-data {
         display: flex;
         gap: 10px;
         font-size: 0.5rem;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-family: "Poppins";
         font-weight: 200;
     }
@@ -1208,11 +1276,11 @@
 
     .content-kiri-event {
         gap: 10px;
-        height: 555px;
+        height: fit-content;
     }
 
     .area-event-mid {
-        height: 50%;
+        height: 193px;
     }
 
     .area-countdown {
@@ -1227,7 +1295,7 @@
     }
 
     .area-days-date {
-        width: 40%;
+        width: 100%;
     }
 
     .timer {
@@ -1249,7 +1317,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -1276,13 +1344,13 @@
     /* box- bawah */
     .area-event-bottom {
         gap: 10px;
-        height: 50%;
+        height: fit-content;
         flex-direction: column;
     }
 
     .box-event {
         width: 100%;
-        height: 50%;
+        height: 193px;
     }
 
     .area-days-date-right {
@@ -1317,17 +1385,16 @@
     }
 
     .title-news {
-        font-size: 26px;
+        font-size: 28px;
+    }
+
+    .content-news {
+        gap: 10px;
     }
 
     .box-news {
-        height: 60px;
-        padding: 6px;
-    }
-
-    .area-image {
-        /* height: 100%; */
-        width: 40%;
+        /* height: 60px; */
+        gap: 6px;
     }
 
     .tag-top-info {
@@ -1341,7 +1408,11 @@
     .date-top-info {
         font-size: 10px;
     }
-    /* ------------ */
+    /*--------------- */
+
+    .line-NS {
+        margin: 10px 0px;
+    }
 
     /* area content stream */
 
@@ -1356,7 +1427,7 @@
     }
 
     .box-streaming {
-        height: 100%;
+        height: 100px;
     }
 
     .btn-play-streaming {
@@ -1374,315 +1445,6 @@
 }
 
 @media (max-width: 344px) {
-    .area-thumbnail-youtube {
-        margin: 20px 0px 0px 0px;
-    }
-
-    .area-image-thumbnail {
-        /*width: 100%;
-        */
-        height: 160px;
-        border-radius: 0px;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        -ms-border-radius: 0px;
-        -o-border-radius: 0px;
-    }
-
-    .banner-youtube {
-        border-radius: 0px;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        -ms-border-radius: 0px;
-        -o-border-radius: 0px;
-    }
-
-    .area-title-thumbnail {
-        margin: 10px 0px;
-    }
-
-    .title-thumbnail {
-        font-size: 30px;
-    }
-
-    /* page youtube 2 */
-    .area-video-youtube {
-        margin: 20px 8px 0px 8px;
-    }
-
-    .text-choose {
-        font-size: 12px;
-    }
-
-    .dropdown-btn-search {
-        width: 100px;
-        /* padding: 5px; */
-        font-size: 10px;
-    }
-
-    .dropdown-item {
-        font-size: 10px;
-    }
-
-    .video {
-        display: flex;
-    }
-
-    .video--wrapper {
-        width: 100%;
-    }
-
-    .video--details__avatar img {
-        width: 25px;
-        height: 25px;
-        display: none;
-    }
-
-    .video--details {
-        padding: 0px 10px;
-        width: 50%;
-    }
-
-    .video--details__title {
-        font-size: 12px;
-    }
-
-    .video--details__channelTitle {
-        font-size: 12px;
-    }
-
-    .video--details__meta h3 {
-        margin: 0px 0px;
-        font-family: "Poppins";
-        font-size: 13px;
-        color: white;
-    }
-
-    .video--details__meta-data {
-        display: flex;
-        gap: 10px;
-        font-size: 0.5rem;
-        color: #ffffff;
-        font-family: "Poppins";
-        font-weight: 200;
-    }
-
-    .video--thumbnail {
-        height: fit-content;
-        width: 50%;
-    }
-
-    .video--thumbnail img {
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        -ms-border-radius: 8px;
-        -o-border-radius: 8px;
-    }
-
-    .video--thumbnail__overlays {
-        font-size: 8px;
-        margin: 5px;
-    }
-
-    .modal-content {
-        width: 55%; /* Diperkecil lagi untuk layar mobile */
-    }
-    iframe {
-        height: 120px; /* Tinggi iframe lebih rendah */
-    }
-    /* -------------------- */
-
-    /* page youtube 3 */
-
-    .page-youtube-3 {
-        height: auto;
-    }
-
-    .line-VNS {
-        width: 100%;
-        border: 1px white solid;
-    }
-
-    .area-event-news-streaming {
-        margin: 15px 8px 25px 8px;
-    }
-
-    .area-content-VNS {
-        gap: 10px;
-        flex-direction: column;
-    }
-
-    /* content kiri */
-
-    .area-content-VNS-kiri {
-        width: 100%;
-    }
-
-    .title-event {
-        font-size: 26px;
-    }
-
-    .content-kiri-event {
-        gap: 10px;
-        height: 555px;
-    }
-
-    .area-event-mid {
-        height: 50%;
-    }
-
-    .area-countdown {
-        height: 55px;
-        padding: 10px 15px;
-        padding: 8px;
-    }
-
-    .countdown {
-        width: 60%;
-        gap: 8px;
-    }
-
-    .area-days-date {
-        width: 40%;
-    }
-
-    .timer {
-        font-size: 22px;
-    }
-
-    .title-timer {
-        font-size: 10px;
-    }
-
-    .date-month {
-        font-size: 20px;
-    }
-
-    .year {
-        font-size: 20px;
-    }
-    /* ---------------- */
-    /* pop up event */
-    .popup-content-event {
-        width: 200px;
-        height: 110px;
-        padding: 15px;
-    }
-
-    .area-info-event {
-        gap: 3px;
-    }
-
-    .desk-event {
-        font-size: 8px;
-    }
-
-    .jam-event {
-        font-size: 10px;
-    }
-
-    .title-box-event {
-        font-size: 18px;
-    }
-
-    .link-event {
-        font-size: 10px;
-    }
-    /* -------------- */
-    /* box- bawah */
-    .area-event-bottom {
-        gap: 10px;
-        height: 50%;
-        flex-direction: column;
-    }
-
-    .box-event {
-        width: 100%;
-        height: 50%;
-    }
-
-    .area-days-date-right {
-        height: 25px;
-        padding: 8px;
-    }
-
-    .date-month-right {
-        font-size: 16px;
-    }
-
-    .year-right {
-        font-size: 16px;
-    }
-    /* ------------- */
-
-    /* --------------- */
-
-    /* content kanan */
-    .area-content-VNS-kanan {
-        width: 100%;
-        height: fit-content;
-        /* gap: 6px; */
-        /* border: 1px red solid; */
-    }
-
-    /* area news */
-
-    .content-news {
-        height: 80%;
-        /* border: 1px blue solid; */
-    }
-
-    .title-news {
-        font-size: 26px;
-    }
-
-    .box-news {
-        height: 60px;
-        padding: 6px;
-    }
-
-    .area-top-image {
-        width: 40%;
-    }
-
-    .tag-top-info {
-        font-size: 12px;
-    }
-
-    .desk-top-info {
-        font-size: 10px;
-    }
-
-    .date-top-info {
-        font-size: 8px;
-    }
-    /* ------------ */
-
-    /* area content stream */
-
-    .content-streaming {
-        height: 85px;
-        /* border: 1px  red solid; */
-    }
-
-    .title-streaming {
-        padding-top: 10px;
-        font-size: 26px;
-    }
-
-    .box-streaming {
-        height: 100%;
-    }
-
-    .btn-play-streaming {
-        width: 35px;
-        height: 35px;
-    }
-
-    .btn-play-streaming span {
-        font-size: 22px;
-    }
     /* ------------------- */
     /* --------------- */
 
@@ -1770,14 +1532,14 @@
         margin: 0px 0px;
         font-family: "Poppins";
         font-size: 13px;
-        color: white;
+        /* color: white; */
     }
 
     .video--details__meta-data {
         display: flex;
         gap: 10px;
         font-size: 0.5rem;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-family: "Poppins";
         font-weight: 200;
     }
@@ -1840,15 +1602,15 @@
 
     .content-kiri-event {
         gap: 10px;
-        height: 555px;
+        height: fit-content;
     }
 
     .area-event-mid {
-        height: 50%;
+        height: 160px;
     }
 
     .area-countdown {
-        height: 55px;
+        height: 40px;
         padding: 10px 15px;
         padding: 8px;
     }
@@ -1859,7 +1621,8 @@
     }
 
     .area-days-date {
-        width: 40%;
+        width: 100%;
+        padding: 8px;
     }
 
     .timer {
@@ -1871,7 +1634,7 @@
     }
 
     .date-month {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .year {
@@ -1881,7 +1644,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -1914,7 +1677,7 @@
 
     .box-event {
         width: 100%;
-        height: 50%;
+        height: 160px;
     }
 
     .area-days-date-right {
@@ -1952,27 +1715,37 @@
         font-size: 26px;
     }
 
-    .box-news {
-        height: 60px;
-        padding: 6px;
+    .content-news {
+        gap: 10px;
+        margin-top: 6px;
     }
 
-    .area-top-image {
-        width: 40%;
+    /* .link-box-news{
+        width: calc();
+    } */
+
+    .box-news {
+        height: fit-content;
     }
+
+    /* .area-image {
+        width: 40%;
+    } */
 
     .tag-top-info {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .desk-top-info {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .date-top-info {
-        font-size: 8px;
+        font-size: 10px;
     }
-    /* ------------ */
+    /*--------------- */
+    /* ------------------ */
+    /* ------------------ */
 
     /* area content stream */
 
@@ -1987,7 +1760,7 @@
     }
 
     .box-streaming {
-        height: 100%;
+        height: 100px;
     }
 
     .btn-play-streaming {

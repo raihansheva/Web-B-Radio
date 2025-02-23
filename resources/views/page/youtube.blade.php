@@ -110,8 +110,15 @@
                                     data-description="{{ $eventSoonList->deskripsi_pendek }}"
                                     data-date="{{ \Carbon\Carbon::parse($eventSoonList->date_event)->format('d F Y') }}"
                                     data-slug="{{ $eventSoonList->slug }}"
-                                    data-deskShort="{{ $eventSoonList->deskripsi_event }}">
-                                    <img class="image-EM" src="./storage/{{ $eventSoonList->image_event }}" alt="">
+                                    data-deskShort="{{ $eventSoonList->deskripsi_event }}">                                              
+                                    <img class="image-CD" src="./storage/{{ $eventSoonList->image_event }}" alt="">
+                                    <div class="area-days-date">
+                                        <div class="box-days-date">
+                                            <h3 class="date-month">
+                                                {{ \Carbon\Carbon::parse($eventSoonList->date_event)->format('d F Y') }}
+                                            </h3>
+                                        </div>
+                                    </div>
                                     <span id="dataTime" style="display: none">{{ $eventSoonList->time_countdown }}</span>
                                     <div class="area-countdown">
                                         <div class="countdown">
@@ -132,13 +139,6 @@
                                                 <span class="title-timer">Second</span>
                                             </div>
                                         </div>
-                                        <div class="area-days-date">
-                                            <div class="box-days-date">
-                                                <h3 class="date-month">
-                                                    {{ \Carbon\Carbon::parse($eventSoonList->date_event)->format('d F Y') }}
-                                                </h3>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             @endforeach
@@ -146,12 +146,13 @@
                         <div class="area-event-bottom">
                             @foreach ($event_upcoming as $eventUpcomingList)
                                 <div class="box-event"
+                                    style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                                     onclick="showPopupEvent(this)"
                                     data-description="{{ $eventUpcomingList->deskripsi_pendek }}"
                                     data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                                     data-slug="{{ $eventUpcomingList->slug }}"
                                     data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
-                                    <img class="image-EB" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
+                                    <img class="image-CD-OV" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
                                     <div class="area-days-date-right">
                                         <div class="content-days-date-right">
                                             <div class="box-days-date-right">
@@ -178,10 +179,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="area-content-VNS-kanan">
+
+            </div>
+            <div class="line-VNS"></div>
+
+        </div>
+    </section>
+    <section class="page-youtube-4">
+        <div class="area-news-streaming">
+            <div class="area-content-news-streaming">
+                <div class="content-news-streaming">
                     <div class="area-content-news">
                         <div class="header-news">
                             <h1 class="title-news">Top Info</h1>
+                            <a class="link-more-news" href="/info-news">
+                                <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
+                            </a>
                         </div>
                         <div class="content-news">
                             @foreach ($top_info as $topInfoList)
@@ -209,6 +222,7 @@
                             @endforeach
                         </div>
                     </div>
+                    <div class="line-NS"></div>
                     <div class="area-content-streaming">
                         <div class="header-streaming">
                             <h2 class="title-streaming">Streaming</h2>
