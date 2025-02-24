@@ -50,6 +50,9 @@
                 @foreach ($podcast as $podcastList)
                     <div class="card-podcast" data-slug="{{ $podcastList->slug }}">
                         <div class="card-body-podcast">
+                            <div class="card-image-podcast">
+                                <img src="./storage/{{ $podcastList->image_podcast }}" alt="" class="image-podcast">
+                            </div>
                             <div class="head-body-podcast">
                                 <div class="genre">
                                     @if (is_array($podcastList->genre_podcast))
@@ -64,18 +67,6 @@
                                     <h1 class="card-text-podcast">{{ $podcastList->judul_podcast }}</h1>
                                 </div>
                             </div>
-                            <div class="card-image-podcast">
-                                <img src="./storage/{{ $podcastList->image_podcast }}" alt="" class="image-podcast">
-                            </div>
-                        </div>
-                        <div class="card-header-podcast">
-                            <div class="author-podcast">
-                            </div>
-                            <a class="link-podcast" href="/detail-podcast/{{ $podcastList->slug }}">
-                                <div class="view-podcast">
-                                    <p class="text-watch-podcast">View Podcast</p>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 @endforeach
@@ -129,26 +120,13 @@
 </section>
 <section class="page-podcast-4">
     <div class="area-streaming-news">
-        <div class="area-content-SN">
-            <div class="area-content-SN-kiri">
-                <div class="header-SN-kiri">
-                    <h2 class="title-SN-kiri">Streaming</h2>
-                </div>
-                <div class="content-SN-kiri">
-                    <div class="box-streaming">
-                        <img class="image-streaming" src="./storage/{{ $streamAudio->image_stream }}">
-                        <div class="btn-play-streaming" id="BtnStream" data-audio-src="{{ $streamAudio->stream_url }}">
-                            <span class="material-symbols-rounded">play_arrow</span>
-                        </div>
-                        {{-- <audio class="audio-streaming" id="audio-streaming" preload="auto">
-                            <source type="audio/mpeg" src="{{ $stream->stream_audio_url }}" />
-                        </audio> --}}
-                    </div>
-                </div>
-            </div>
+        <div class="area-content-SN">           
             <div class="area-content-SN-kanan">
                 <div class="header-news">
                     <h1 class="title-news">Top Info</h1>
+                    <a class="link-more-news" href="/info-news">
+                        <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
+                    </a>
                 </div>
                 <div class="content-news">
                     @foreach ($topInfo as $topInfoList)
@@ -159,16 +137,16 @@
                                         alt="">
                                 </div>
                                 <div class="area-text-desk-top-info">
-                                    <div class="area-tag">
-                                        <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
-                                    </div>
-                                    <div class="area-text">
-                                        <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
-                                    </div>
                                     <div class="area-date">
                                         <p class="date-top-info">
                                             {{ \Carbon\Carbon::parse($topInfoList->date_info)->translatedFormat('l, d F Y') }}
                                         </p>
+                                    </div>
+                                    <div class="area-text">
+                                        <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
+                                    </div>
+                                    <div class="area-tag">
+                                        <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
                                     </div>
                                 </div>
                             </div>
@@ -189,6 +167,23 @@
                     </div>
                 </section>
             </div>
+            <div class="line-SN"></div>
+        <div class="area-content-SN-kiri">
+            <div class="header-SN-kiri">
+                <h2 class="title-SN-kiri">Streaming</h2>
+            </div>
+            <div class="content-SN-kiri">
+                <div class="box-streaming">
+                    <img class="image-streaming" src="./storage/{{ $streamAudio->image_stream }}">
+                    <div class="btn-play-streaming" id="BtnStream" data-audio-src="{{ $streamAudio->stream_url }}">
+                        <span class="material-symbols-rounded">play_arrow</span>
+                    </div>
+                    {{-- <audio class="audio-streaming" id="audio-streaming" preload="auto">
+                        <source type="audio/mpeg" src="{{ $stream->stream_audio_url }}" />
+                    </audio> --}}
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </section>
