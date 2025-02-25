@@ -8,15 +8,18 @@
 @push('Style.css')
     <link rel="stylesheet" href="{{ asset('css/StyleContent/detailPodcast.css?v=' . time()) }}">
     <link rel="stylesheet" href="{{ asset('css/ResponsiveStyle/responsiveDetailPodcast.css?v=' . time()) }}">
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHYYVVYF3D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-BHYYVVYF3D');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BHYYVVYF3D');
+    </script>
 @endpush
 <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
 
@@ -37,7 +40,8 @@
                                 <p style="display: none;" id="id_podcast">{{ $detail_podcast->podcast_id }}</p>
                                 <p style="display: none;" id="idP">{{ $detail_podcast->id }}</p>
                             </div>
-                            <audio src="./storage/{{ $detail_podcast->file }}" id="audio-podcast" preload="metadata"></audio>
+                            <audio src="./storage/{{ $detail_podcast->file }}" id="audio-podcast"
+                                preload="metadata"></audio>
                             <!--<audio src="" type="audio/mpeg" id="audio-podcast"></audio>-->
                         </div>
                         <div class="card-DP-header">
@@ -51,7 +55,8 @@
                     <div class="card-DP-B">
                         <div class="card-body-DP-B">
                             <div class="video-container">
-                                <!--@if (!empty($detail_podcast->link_podcast))-->
+                                <!--@if (!empty($detail_podcast->link_podcast))
+    -->
                                 <!--    <video id="PlayerVid" class="video-js" controls preload="auto" poster=""-->
                                 <!--        data-setup='{"fluid": true}'>-->
                                 <!--        <source src="{{ $detail_podcast->link_podcast }}" />-->
@@ -60,9 +65,10 @@
                                 <!--        poster=""-->
                                 <!--        data-setup='{"techOrder": ["youtube", "html5"], "sources": [{"src": "{{ $detail_podcast->link_podcast }}?autoplay=1&mute=1&controls=1&showinfo=0&modestbranding=1", "type": "video/youtube"}]}'>-->
                                 <!--    </video>-->
-                                <!--@else-->
+                            <!--@else-->
                                 <!--    <p>Streaming URL tidak tersedia.</p>-->
-                                <!--@endif-->
+                                <!--
+    @endif-->
                                 <!--{{-- <video id="hlsPlayer" controls width="640" height="360"></video>-->
                                 <!--<div id="player" data-pl="{{ $detail_podcast->link_podcast }}"></div> --}}-->
                                 <!--<div id="player" data-link="https://youtu.be/yBwnU7eQqDs?si=INQbh5OsLRfRN6Xe"></div>-->
@@ -149,7 +155,7 @@
                             </div>
                         @endforeach
                     @else
-                        <p>Data tidak tersedia</p>
+                        <p></p>
                     @endif
                 </div>
                 <div class="area-see-more">
@@ -157,7 +163,11 @@
                 </div>
             </div>
         </div>
-        <div class="line-detail-podcast"></div>
+        @if ($eps_group && $eps_group->isNotEmpty())
+            <div class="line-detail-podcast"></div>
+        @else
+            <p></p>
+        @endif
     </section>
     <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
         <div class="area-banner">
@@ -175,24 +185,33 @@
     <section class="page-detail-2">
         <div class="area-other-podcast">
             <div class="area-content-OP">
+                <div class="line-OP"></div>
                 <div class="header-OP">
                     <h1 class="title-OP">Other Podcast</h1>
                 </div>
                 <div class="content-OP">
+                    {{-- <div class="area-tombol-OP">
+                        <div class="tombol-kiri-OP"></div>
+                        <div class="tombol-kanan-OP"></div>
+                    </div> --}}
                     <swiper-container class="area-content-card-OP" loop="true" autoplay-delay="2500"
-                    autoplay-disable-on-interaction="false"
-                    breakpoints='{
+                        autoplay-disable-on-interaction="false"
+                        breakpoints='{
                         "480": { "slidesPerView": 1 },
-                        "768": { "slidesPerView": 2 },
+                        "768": { "slidesPerView": 1 },
                         "1024": { "slidesPerView": 3 },
                         "1280": { "slidesPerView": 3 },
                         "2560": { "slidesPerView" : 3}
                     }'
-                    space-between="20">
+                        space-between="20">
                         @foreach ($all_podcast as $allpodcastList)
-                        <swiper-slide>
-                            <div class="card-podcast" data-slug="{{ $allpodcastList->slug }}">
+                            <swiper-slide class="card-podcast" data-slug="{{ $allpodcastList->slug }}">
                                 <div class="card-body-podcast">
+
+                                    <div class="card-image-podcast">
+                                        <img src="./storage/{{ $allpodcastList->image_podcast }}" alt=""
+                                            class="image-podcast">
+                                    </div>
                                     <div class="head-body-podcast">
                                         <div class="genre">
                                             @if (is_array($allpodcastList->genre_podcast))
@@ -207,12 +226,8 @@
                                             <h1 class="card-text-podcast">{{ $allpodcastList->judul_podcast }}</h1>
                                         </div>
                                     </div>
-                                    <div class="card-image-podcast">
-                                        <img src="./storage/{{ $allpodcastList->image_podcast }}" alt=""
-                                            class="image-podcast">
-                                    </div>
                                 </div>
-                                <div class="card-header-podcast">
+                                {{-- <div class="card-header-podcast">
                                     <div class="author-podcast">
                                     </div>
                                     <a class="link-podcast" href="/detail-podcast/{{ $allpodcastList->slug }}">
@@ -220,9 +235,8 @@
                                             <p class="text-watch-podcast">View Podcast</p>
                                         </div>
                                     </a>
-                                </div>
-                            </div>
-                        </swiper-slide>
+                                </div> --}}
+                            </swiper-slide>
                         @endforeach
                     </swiper-container>
                 </div>
@@ -232,55 +246,7 @@
     <section class="page-detail-3">
         <div class="area-video-news-stream">
             <div class="area-content-VNS">
-                <div class="area-content-VNS-kiri">
-                    <div class="header-content-kiri">
-                        <h2 class="title-video">Video</h2>
-                    </div>
-                    <div class="content-kiri-video">
-                        <div class="area-video-top">
-                            @foreach (collect($videos)->slice(0, 2) as $video)
-                                <div class="box-video" data-video-id="{{ $video['videoUrl'] }}">
-                                    <img class="video-thumbnail"
-                                        src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
-                                        alt="Thumbnail">
-                                    <div class="btn-play-video" onclick="showPopupYT('{{ $video['videoUrl'] }}')">
-                                        <span class="material-symbols-rounded">play_arrow</span>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="area-video-mid">
-                            @foreach (collect($videos)->slice(2, 1) as $video)
-                                <div class="box-video-mid" data-video-id="{{ $video['videoUrl'] }}">
-                                    <img class="video-thumbnail"
-                                        src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
-                                        alt="Thumbnail">
-                                    <div class="btn-play-video-mid" onclick="showPopupYT('{{ $video['videoUrl'] }}')">
-                                        <span class="material-symbols-rounded">play_arrow</span>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="area-video-bottom">
-                            @foreach (collect($videos)->slice(3, 2) as $video)
-                                <div class="box-video" data-video-id="{{ $video['videoUrl'] }}">
-                                    <img class="video-thumbnail"
-                                        src="https://img.youtube.com/vi/{{ $video['videoId'] }}/hqdefault.jpg"
-                                        alt="Thumbnail">
-                                    <div class="btn-play-video" onclick="showPopupYT('{{ $video['videoUrl'] }}')">
-                                        <span class="material-symbols-rounded">play_arrow</span>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-player-yt" id="popup-player" style="display:none;">
-                    <div class="popup-content-yt">
-                        {{-- <span id="close-popup" onclick="hidePopup()">X</span> --}}
-                        <div id="player-yt"></div>
-                    </div>
-                </div>
+                <div class="line-NS"></div>
                 <div class="area-content-VNS-kanan">
                     <div class="area-content-news">
                         <div class="header-news">
@@ -297,7 +263,7 @@
                                         <div class="area-text-desk-top-info">
                                             <div class="area-tag">
                                                 <h2 class="tag-top-info">{{ $topInfoList->tagInfo->nama_kategori }}</h2>
-                                                
+
                                             </div>
                                             <div class="area-text">
                                                 <p class="desk-top-info">{{ $topInfoList->judul_info }}</p>
@@ -312,6 +278,7 @@
                                 </a>
                             @endforeach
                         </div>
+                        <div class="line-NS"></div>
                     </div>
                     <div class="area-content-streaming">
                         <div class="header-streaming">
@@ -337,7 +304,7 @@
     <script src="{{ asset('js/detailPodcast.js?v=' . time()) }}"></script>
     <script src="{{ asset('js/playerjs.js?v=' . time()) }}"></script>
     <!--<script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>-->
-        <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Pilih semua elemen dengan class "card-podcast"
@@ -366,7 +333,7 @@
             //         type: 'video/youtube', // Tipe untuk YouTube
             //     }, ],
             // });
-            
+
             // pjs
             const playerElement = document.getElementById("player");
             const streamURL = playerElement ? playerElement.getAttribute("data-link") : null;

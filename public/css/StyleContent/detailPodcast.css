@@ -10,29 +10,36 @@
     height: 100%;
 }
 
+/* area detail podcast */
+
 .page-detail-1 {
     width: 100%;
     height: 1000px;
+    background-color: #f0f0f0;
 }
 
 .area-detail-podcast {
     width: auto;
-    margin: 30px 64px 0px 64px;
+    margin: 0px 64px 0px 64px;
     height: auto;
     /* border: 1px red solid; */
     display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
 /* area detail kiri */
 .area-detail-kiri {
-    width: 65%;
+    width: 100%;
     height: auto;
+    display: flex;
+    margin-top: 30px;
+    gap: 10px;
     /* border: 1px white solid; */
 }
 
 .area-image-DP {
-    width: 100%;
+    width: 55%;
     height: auto;
     /* border: 1px red solid; */
 }
@@ -41,19 +48,13 @@
     width: 100%;
     height: 500px;
     background-color: gainsboro;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: relative; /* Dibutuhkan untuk child position: absolute */
-    overflow: hidden;
 }
 
 .image-podcast-detail {
     width: 100%;
     height: 100%;
-    position: absolute; /* Untuk menempel pada parent */
-    object-fit: cover; /* Menjaga proporsi gambar */
-    top: 0; /* Atur posisi di atas */
-    left: 0;
+    object-fit: cover;
+    position: absolute;
     filter: brightness(0.5); /* Mengurangi brightness menjadi lebih gelap */
     /* opacity: 0.8; */
 }
@@ -80,7 +81,7 @@
 
 .card-DP .card-DP-body {
     /*width: 100%;*/
-    height: 375px;
+    height: 415px;
     background-color: white;
     /* padding: 30px; */
     overflow: hidden;
@@ -145,14 +146,6 @@
 
 .text-watchP {
     font-family: "Poppins";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.text-watchP i{
-    font-size: 24px;
 }
 
 .btn-play-DP {
@@ -230,14 +223,6 @@
 
 .text-watchP-B {
     font-family: "Poppins";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-}
-
-.text-watchP-B i{
-    font-size: 24px;
 }
 
 .video-container {
@@ -245,18 +230,12 @@
     width: 100%;
     height: fit-content;
     /* padding-bottom: 49%; */
-    height: 375px;
+    height: 415px;
     overflow: hidden;
 }
 
-
-.PlayerVid-dimensions{
-    height: 100%;
-    width: 100%;
-}
-
 .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode){
-    padding-top: 375px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+    padding-top: 415px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
 }
 
 .video-container video {
@@ -302,20 +281,22 @@
 }
 
 .content-detail-podcast {
-    width: 100%;
-    height: auto;
-    margin-top: 25px;
+    width: 45%;
+    height: auto
+    /* margin-top: 25px; */
     display: flex;
 }
 
 .line-detail-podcast {
     width: auto;
     height: 1px;
-    background-color: white;
+    background-color: black;
     margin: 0px 64px 30px 64px;
 }
 
 /* content kiri */
+
+
 .content-detail-kiri {
     width: 100%;
     height: auto;
@@ -330,19 +311,19 @@
 }
 
 .area-detail-genre {
-    width: 200px;
+    width: fit-content;
     height: 100%;
     /* border: 1px white solid; */
 }
 
 .detail-genre {
     font-family: "Bebas Neue";
-    font-size: 24px;
-    color: white;
+    font-size: 22px;
+    /* color: white; */
     font-weight: 200;
     margin: 0px;
     padding: 5px 20px;
-    border: 1px white solid;
+    border: 1px black solid;
     text-align: center;
     border-radius: 10px;
 }
@@ -356,64 +337,37 @@
 .detail-title {
     font-family: "Bebas Neue";
     font-weight: 200;
-    color: white;
+    /* color: white; */
     margin: 0px;
     font-size: 40px;
 }
 
 .area-desk-detail-podcast {
     width: 100%;
-    height: fit-content;
-    /* border: 1px green solid; */
-    padding-top: 15px;
-    font-size: 16px;
-    font-family: "Poppins";
-    font-weight: 300;
-    margin: 0px;
-    color: #fff;
-}
-
-figure{
-    margin: 0px;
+    max-height: 380px;
+    height: 380px;
     /* border: 1px red solid; */
-    margin-bottom: 10px;
-    margin-top: 10px;
+    /* margin-top: 20px; */
 }
 
-figure img{
+.area-desk-detail-podcast p {
     width: 100%;
-    height: auto;
-}
-
-figure p{
-    font-size: 16px;
-    font-family: "Poppins";
-    margin: 0px;
-    font-weight: 300;
-    color: #fff;
-}
-
-figcaption span{
-    color: white;
-}
-
-figcaption span:hover{
-    color: white;
-    text-decoration: underline;
-}
-
-.desk-podcast {
+    max-height: 380px;
+    height: 380px;
+    /* border: 1px red solid; */
+    /* margin-top: 20px; */
     font-family: "poppins";
     font-size: 18px;
-    font-weight: 200;
-    color: white;
+    font-weight: 300;
+    /* color: white; */
     margin: 0px;
 }
+
 /* ------------------ */
 
 /* area detail kanan */
 .area-detail-kanan {
-    width: 35%;
+    width: 100%;
     height: auto;
     /* border: 1px green solid; */
 }
@@ -428,14 +382,18 @@ figcaption span:hover{
     font-size: 40px;
     font-weight: 300;
     margin: 0px;
-    color: white;
+    /* color: white; */
 }
 
 .area-episodeP {
     width: 100%;
-    height: 900px;
-    overflow-y: auto;
+    height: auto;
+    /* overflow-y: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px red solid; */
     gap: 15px;
+    margin-top: 10px;
 }
 
 .card-episode a {
@@ -448,15 +406,22 @@ figcaption span:hover{
 /* card episode */
 
 .card-episode {
-    width: auto;
-    height: auto;
+    width: calc(25% - 15px);
+    height: fit-content;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 25px 15px;
     cursor: pointer;
     margin-right: 10px;
     margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
+
 }
+
+.card-header-episode{
+    margin-top: 8px;
+}
+
 .genre-episode {
     width: fit-content;
     height: fit-content;
@@ -532,19 +497,19 @@ figcaption span:hover{
 .page-detail-2 {
     width: 100%;
     height: fit-content;
-    /* background-color: #f0f0f0; */
+    background-color: #f0f0f0;
     /* border: 1px white solid; */
 }
 
 .area-content-OP {
     /* width: 100%; */
-    height: 550px;
-    background-color: #353535;
+    height: fit-content;
+    background-color: transparent;
     /* position: relative; */
     /* top: 85px; */
-    margin-top: 60px;
-    padding: 0px 64px 0px 64px;
-    margin-bottom: 20px;
+    /* margin-top: 60px; */
+    padding: 0px 64px 40px 64px;
+    /* margin-bottom: 40px; */
 }
 
 .header-OP {
@@ -560,14 +525,14 @@ figcaption span:hover{
     font-weight: 200;
     margin: 0px;
     padding: 30px 0px 5px 0px;
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 .content-OP {
     width: 100%;
     height: auto;
     /* border: 1px red solid; */
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .area-tombol-OP {
@@ -621,9 +586,10 @@ figcaption span:hover{
 }
 
 .card-podcast {
-    flex: 1 0 calc(33.33% - 14px); /* Membuat card mengambil 50% lebar, dengan margin antar card */
-    height: 435px;
+    width: calc(33.33% - 14px); /* Membuat card mengambil 50% lebar, dengan margin antar card */
+    height: fit-content;
     cursor: pointer;
+    
 }
 
 .card-podcast .card-header-podcast {
@@ -642,10 +608,12 @@ figcaption span:hover{
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    border-bottom-right-radius: 10px;
+    /* gap: 8px; */
+    /* border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 10px; */
+    border: 1px #292929 solid;
+    border-radius: 10px;
     padding: 15px;
 }
 
@@ -653,6 +621,7 @@ figcaption span:hover{
     width: 100%;
     height: auto;
     /* border: 1px black solid; */
+    margin-top: 8px;
 }
 
 .genre {
@@ -664,10 +633,10 @@ figcaption span:hover{
 }
 
 .title-genre {
-    font-size: 18px;
+    font-size: 14px;
     font-family: "Bebas Neue";
     font-weight: 200;
-    margin: 5px 25px;
+    margin: 2px 15px;
 }
 
 .area-card-text {
@@ -676,7 +645,7 @@ figcaption span:hover{
 }
 
 .card-text-podcast {
-    font-size: 34px;
+    font-size: px;
     margin: 0px;
     font-weight: 200;
     font-family: "Bebas Neue";
@@ -684,7 +653,7 @@ figcaption span:hover{
 
 .card-image-podcast {
     width: 100%;
-    height: 195px;
+    height: 220px;
     background-color: #f0f0f0;
     border-radius: 10px;
 }
@@ -755,6 +724,11 @@ figcaption span:hover{
     text-decoration: none;
 }
 
+.line-OP{
+    width: 100%;
+    border: 1px black solid;
+    margin: 0px 0px;
+}
 /* .text-watch-podcast {
     color: white;
     font-family: "Poppins";
@@ -765,8 +739,9 @@ figcaption span:hover{
 /* area video news stream */
 .page-detail-3 {
     width: 100%;
+    background-color: #f0f0f0;
     height: fit-content;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .area-video-news-stream {
@@ -778,17 +753,18 @@ figcaption span:hover{
 
 .area-content-VNS {
     width: 100%;
-    height: 802px;
+    height: fit-content;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
 }
 
 /* area content kiri */
 .area-content-VNS-kiri {
-    width: 60%;
+    width: 62%;
     height: auto;
     /* border: 1px green solid; */
+    margin-top: 30px;
 }
 
 .header-content-kiri {
@@ -798,11 +774,11 @@ figcaption span:hover{
 }
 
 .title-video {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 200;
     font-family: "Bebas Neue";
     margin: 0px;
-    color: white;
+    /* color: white; */
 }
 
 .content-kiri-video {
@@ -814,7 +790,7 @@ figcaption span:hover{
 }
 
 .area-video-top {
-    height: 180px;
+    height: 231px;
     width: 100%;
     /* border: 1px #ff004d solid; */
     display: flex;
@@ -822,7 +798,7 @@ figcaption span:hover{
 }
 
 .area-video-bottom {
-    height: 180px;
+    height: 231px;
     width: 100%;
     /* border: 1px #ff004d solid; */
     display: flex;
@@ -858,7 +834,7 @@ figcaption span:hover{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: white;
     cursor: pointer;
     /* margin-top: 15px; */
     display: flex;
@@ -867,9 +843,9 @@ figcaption span:hover{
     transition: all 0.4s ease-in-out;
 }
 
-.btn-play-video:hover {
+/* .btn-play-video:hover {
     background-color: #dfc102;
-}
+} */
 
 .btn-play-video span {
     color: black;
@@ -884,7 +860,7 @@ figcaption span:hover{
 
 .box-video-mid {
     width: 100%;
-    height: 352px;
+    height: 470px;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
@@ -898,7 +874,7 @@ figcaption span:hover{
     height: 55px;
     width: 55px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: white;
     cursor: pointer;
     /* margin-top: 15px; */
     display: flex;
@@ -907,9 +883,9 @@ figcaption span:hover{
     transition: all 0.4s ease-in-out;
 }
 
-.btn-play-video-mid:hover {
+/* .btn-play-video-mid:hover {
     background-color: #dfc102;
-}
+} */
 
 .btn-play-video-mid span {
     color: black;
@@ -953,7 +929,7 @@ figcaption span:hover{
 
 /* area content kanan */
 .area-content-VNS-kanan {
-    width: 40%;
+    width: 100%;
     height: 100%;
     /* border: 1px green solid; */
     display: flex;
@@ -973,7 +949,9 @@ figcaption span:hover{
 .header-news {
     width: 100%;
     height: fit-content;
-    /* text-align: end; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title-news {
@@ -981,77 +959,86 @@ figcaption span:hover{
     font-family: "Bebas Neue";
     font-size: 38px;
     font-weight: 200;
-    color: white;
+    color: black;
 }
+
+.link-box-news {
+    width: calc(25% - 10px); /* Setengah kontainer minus setengah gap */
+    color: black;
+}
+
+.more-news{
+    margin: 0px;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 200;
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+
+.more-news i{
+    font-size: 22px;
+}
+
 
 .content-news {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 5px;
-    height: 543px;
-}
-
-.link-news{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    gap: 14px;
+    margin-top: 10px;
 }
 
 .box-news {
-    width: auto;
-    height: 80px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    justify-content: start;
-    align-items: center;
+    width: 100%;
+    /* height: 340px; */
+    /* max-height: 120px; */
+    /* background-color: #f0f0f0; */
+    border-radius: 15px;
+    /* display: flex; */
+    /* padding: 10px; */
+    /* justify-content: center;
+    align-items: center; */
+    box-sizing: border-box;
+    gap: 8px;
 }
 
 .area-image {
-    width: 30%;
+    width: 100%;
     /*border: 1px black solid;
     */
-    background-color: #333;
-    border-radius: 10px;
-    height: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: relative; /* Dibutuhkan untuk child position: absolute */
-    overflow: hidden;
+    border-radius: 20px;
+    /* background-color: #333; */
+    /* height: 100%; */
 }
 
-.image-top-info {
+.line-top-info {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Menjaga proporsi gambar */
-    top: 0; /* Atur posisi di atas */
-    left: 0;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin-top: 10px;
 }
 
 .area-text-desk-top-info {
-    width: 100%;
-    height: 100%;
-    /* max-height: 100%; */
+    /* width: 100%; */
+    height: fit-content;
+    max-height: 50%;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    /* margin-top: 10px; */
+    margin-top: 5px;
+    /* padding: 10px; */
+    /* border: 1px rgb(40, 40, 40) solid; */
+    border-radius: 8px;
 }
 
 .area-tag {
     display: flex;
     gap: 4px;
+    margin-top: 5px;
 }
 
 .tag-top-info {
@@ -1061,22 +1048,24 @@ figcaption span:hover{
     font-weight: 500;
     overflow-wrap: break-word;
     padding: 2px 0;
-    color: black;
 }
+
+/* .area-text {
+    height: 54px;
+} */
 
 .desk-top-info {
     font-family: "Poppins";
     margin: 0px;
-    font-size: 14px;
+    font-size: 16px;
     overflow-wrap: break-word;
-    /* padding: 2px 0; */
+    padding: 2px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* Membatasi 3 baris */
+    -webkit-line-clamp: 2; /* Membatasi 3 baris */
     -webkit-box-orient: vertical;
     overflow: hidden; /* Menyembunyikan sisa teks yang tidak muat */
     text-overflow: ellipsis;
     font-weight: 700;
-    color: black;
 }
 
 .date-top-info {
@@ -1085,16 +1074,28 @@ figcaption span:hover{
     font-size: 12px;
     overflow-wrap: break-word;
     padding: 2px 0;
-    font-weight: 500;
-    color: black;
 }
-/* ------------------------ */
+
+.image-top-info {
+    width: 100%;
+    /* height: 50%; */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
+}
+/* ------------------ */
+
+.line-NS{
+    width: 100%;
+    border: 1px black solid;
+    margin: 20px 0px;
+}
+
 
 /* area content streaming */
-
 .area-content-streaming {
     width: 100%;
-    height: 202px;
+    height: fit-content;
     /* border: 1px red solid; */
 }
 
@@ -1108,7 +1109,7 @@ figcaption span:hover{
     font-size: 40px;
     font-family: "Bebas Neue";
     font-weight: 200;
-    color: white;
+    color: black;
     margin: 0px;
 }
 
@@ -1120,8 +1121,8 @@ figcaption span:hover{
 
 .box-streaming {
     width: 100%;
-    height: 150px;
-    background-color: #f0f0f0;
+    height: 240px;
+    /* background-color: #f0f0f0; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1131,7 +1132,7 @@ figcaption span:hover{
     height: 55px;
     width: 55px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -1139,17 +1140,20 @@ figcaption span:hover{
     position: absolute;
 }
 
-.image-streaming {
+.image-streaming{
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: relative;
     filter: brightness(0.5);
+    border-radius: 8px;
 }
 
 .btn-play-streaming span {
     font-size: 28px;
 }
+
+/* ------------------------ */
 
 /* .btn-play-streaming:hover{
     background-color: #bd4200;
