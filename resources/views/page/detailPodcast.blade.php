@@ -101,6 +101,9 @@
                 <div class="content-detail-podcast">
                     <div class="content-detail-kiri">
                         <div class="area-header-DP">
+                            <div class="area-detail-title-podcast">
+                                <h2 class="detail-title">{{ $detail_podcast->judul_podcast }}</h2>
+                            </div>
                             <div class="area-detail-genre">
                                 @if (is_array($detail_podcast->genre_podcast))
                                     @foreach ($detail_podcast->genre_podcast as $genre)
@@ -110,9 +113,6 @@
                                     <h2 class="detail-genre">-</h2>
                                 @endif
                             </div>
-                            <div class="area-detail-title-podcast">
-                                <h2 class="detail-title">{{ $detail_podcast->judul_podcast }}</h2>
-                            </div>
                         </div>
                         <div class="area-desk-detail-podcast">
                             {!! str($detail_podcast->deskripsi_podcast)->sanitizeHtml() !!}
@@ -120,53 +120,57 @@
                     </div>
                 </div>
             </div>
-            <div class="area-detail-kanan">
-                <div class="header-detail-kanan">
-                    <h2 class="title-detail-kanan">Other Episode</h2>
-                </div>
-                <div class="area-episodeP" id="style-3">
-                    @if ($eps_group && $eps_group->isNotEmpty())
-                        @foreach ($eps_group as $epsgroupList)
-                            <div class="card-episode">
-                                <a href="/detail-podcast/{{ $epsgroupList->slug }}">
-                                    <div class="card-body-episode">
-                                        <div class="card-header-episode">
-                                            <div class="genre-episode">
-                                                @if (is_array($epsgroupList->genre_podcast))
-                                                    @foreach ($epsgroupList->genre_podcast as $genre)
-                                                        <h1 class="title-genre-episode">{{ $genre }}
-                                                        </h1>
-                                                    @endforeach
-                                                @else
-                                                    <h1 class="title-genre-episode">-</h1>
-                                                @endif
+            @if ($eps_group && $eps_group->isNotEmpty())
+                <div class="area-detail-kanan">
+                    <div class="header-detail-kanan">
+                        <h2 class="title-detail-kanan">Other Episode</h2>
+                    </div>
+                    <div class="area-episodeP" id="style-3">
+                        @if ($eps_group && $eps_group->isNotEmpty())
+                            @foreach ($eps_group as $epsgroupList)
+                                <div class="card-episode">
+                                    <a href="/detail-podcast/{{ $epsgroupList->slug }}">
+                                        <div class="card-body-episode">
+                                            <div class="card-header-episode">
+                                                <div class="genre-episode">
+                                                    @if (is_array($epsgroupList->genre_podcast))
+                                                        @foreach ($epsgroupList->genre_podcast as $genre)
+                                                            <h1 class="title-genre-episode">{{ $genre }}
+                                                            </h1>
+                                                        @endforeach
+                                                    @else
+                                                        <h1 class="title-genre-episode">-</h1>
+                                                    @endif
+                                                </div>
+                                                <div class="area-card-text-episode">
+                                                    <h1 class="card-text-podcast-episode">
+                                                        {{ $epsgroupList->judul_podcast }}
+                                                    </h1>
+                                                </div>
                                             </div>
-                                            <div class="area-card-text-episode">
-                                                <h1 class="card-text-podcast-episode">{{ $epsgroupList->judul_podcast }}
-                                                </h1>
+                                            <div class="card-image-podcast-episode">
+                                                <img src="./storage/{{ $epsgroupList->image_podcast }}" alt=""
+                                                    class="image-podcast">
                                             </div>
                                         </div>
-                                        <div class="card-image-podcast-episode">
-                                            <img src="./storage/{{ $epsgroupList->image_podcast }}" alt=""
-                                                class="image-podcast">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    @else
-                        <p></p>
-                    @endif
+                                    </a>
+                                </div>
+                            @endforeach
+                        @else
+                            <p></p>
+                        @endif
+                    </div>
+                    <div class="area-see-more">
+                        <h2 class="text-see-more" id="toggleSeeMore">See more</h2>
+                    </div>
                 </div>
-                <div class="area-see-more">
-                    <h2 class="text-see-more" id="toggleSeeMore">See more</h2>
-                </div>
-            </div>
+            @else
+            @endif
+
         </div>
         @if ($eps_group && $eps_group->isNotEmpty())
             <div class="line-detail-podcast"></div>
         @else
-            <p></p>
         @endif
     </section>
     <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
@@ -198,7 +202,7 @@
                         autoplay-disable-on-interaction="false"
                         breakpoints='{
                         "480": { "slidesPerView": 1 },
-                        "768": { "slidesPerView": 1 },
+                        "768": { "slidesPerView": 3 },
                         "1024": { "slidesPerView": 3 },
                         "1280": { "slidesPerView": 3 },
                         "2560": { "slidesPerView" : 3}
@@ -250,7 +254,10 @@
                 <div class="area-content-VNS-kanan">
                     <div class="area-content-news">
                         <div class="header-news">
-                            <h1 class="title-news">Top News</h1>
+                            <h1 class="title-news">Top Info</h1>
+                            <a class="link-more-news" href="/info-news">
+                                <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
+                            </a>
                         </div>
                         <div class="content-news">
                             @foreach ($top_info as $topInfoList)

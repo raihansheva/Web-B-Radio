@@ -1,7 +1,7 @@
 /* Desktop dan Laptop */
 @media (min-width: 1920px) {
     .page-detail-1 {
-        height: 860px;
+        height: fit-content;
     }
 
     .area-detail-podcast {
@@ -29,7 +29,7 @@
 
     .card-DP .card-DP-body {
         /* width: 100%; */
-        height: 605px;
+        height: 507px;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -170,7 +170,7 @@
     .video-container {
         position: relative;
         /* padding-bottom: 42.85%; */
-        height: 610px;
+        height: 507px;
         overflow: hidden;
         width: 100%;
         background-color: black; /* Optional: background color if needed */
@@ -178,7 +178,7 @@
     }
 
     .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 610px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+        padding-top: 507px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     }
 
     .video-container iframe,
@@ -215,7 +215,7 @@
 
     /* content */
     .content-detail-podcast {
-        margin-top: 25px;
+        margin-top: 0px;
     }
 
     .line-detail-podcast {
@@ -228,7 +228,7 @@
 
     .detail-genre {
         font-size: 20px;
-        padding: 4px 15px;
+        padding: 8px 25px;
     }
 
     .detail-title {
@@ -279,12 +279,12 @@
     /* area other podcast */
 
     .page-detail-2 {
-        margin-bottom: 20px;
+        margin-bottom: 00px;
     }
 
     .area-content-OP {
         padding: 0px 128px 0px 128px;
-        margin-top: 40px;
+        margin-top: 0px;
         height: fit-content;
         padding-bottom: 20px;
     }
@@ -323,7 +323,7 @@
     }
 
     .card-podcast {
-        flex: 1 0 calc(33.33% - 14px); /* Membuat card mengambil 50% lebar, dengan margin antar card */
+        width: calc(33.33% - 14px); /* Membuat card mengambil 50% lebar, dengan margin antar card */
         height: fit-content;
     }
 
@@ -337,7 +337,7 @@
 
     .card-podcast .card-body-podcast {
         /* width: 100%; */
-        height: 380px;
+        height: fit-content;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -385,7 +385,7 @@
 
     .card-image-podcast {
         width: 100%;
-        height: 285px;
+        height: 275px;
         background-color: #f0f0f0;
         border-radius: 10px;
     }
@@ -512,7 +512,7 @@
 
     /* content kanan */
     .area-content-VNS-kanan {
-        width: 40%;
+        width: 100%;
         height: fit-content;
         gap: 10px;
     }
@@ -522,7 +522,7 @@
     }
 
     .content-news {
-        height: 560px;
+        height: fit-content;
     }
 
     /* area news */
@@ -531,12 +531,8 @@
     }
 
     .box-news {
-        height: 85px;
-        padding: 8px;
-    }
-
-    .area-image {
-        height: 100%;
+        height: fit-content;
+        /* padding: 8px; */
     }
 
     .tag-top-info {
@@ -564,12 +560,12 @@
     }
 
     .box-streaming {
-        height: 158px;
+        height: 280px;
     }
 
     .btn-play-streaming {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 
     .btn-play-streaming span {
@@ -621,7 +617,7 @@
 }
 @media (max-width: 1024px) {
     .page-detail-1 {
-        height: 860px;
+        height: fit-content;
     }
 
     .area-detail-podcast {
@@ -649,7 +645,7 @@
 
     .card-DP .card-DP-body {
         /* width: 100%; */
-        height: 330px;
+        height: 289px;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -712,11 +708,15 @@
         font-size: 14px;
     }
 
+    .text-watchP i {
+        font-size: 20px;
+    }
+
     .btn-play-DP {
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
         border-radius: 50%;
-        background-color: var(--secondary-color);
+        background-color: white;
         cursor: pointer;
         margin-top: 15px;
         display: flex;
@@ -775,7 +775,7 @@
         display: flex;
         height: 25px;
         width: calc(20% - 2px);
-        background-color: var(--secondary-color);
+        background-color: var(--primary-color);
         border-radius: 12px;
         padding: 10px;
         /* margin-top: 5px; */
@@ -783,15 +783,18 @@
     }
 
     .text-watchP-B {
-        color: rgb(48, 48, 48);
         font-family: "Poppins";
         font-size: 14px;
+    }
+
+    .text-watchP-B i {
+        font-size: 20px;
     }
 
     .video-container {
         position: relative;
         /* padding-bottom: 56.25%; */
-        height: 335px;
+        height: 289px;
         overflow: hidden;
         width: 100%;
         background-color: black; /* Optional: background color if needed */
@@ -799,7 +802,7 @@
     }
 
     .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 335px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+        padding-top: 289px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     }
 
     .video-container iframe,
@@ -836,7 +839,7 @@
 
     /* content */
     .content-detail-podcast {
-        margin-top: 25px;
+        margin-top: 0px;
     }
 
     .line-detail-podcast {
@@ -848,20 +851,24 @@
     }
 
     .detail-genre {
-        font-size: 20px;
-        padding: 4px 15px;
+        font-size: 16px;
+        padding: 6px 25px;
     }
 
     .detail-title {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .area-desk-detail-podcast {
         margin-top: 10px;
     }
 
-    .desk-podcast {
+    .area-desk-detail-podcast p {
         font-size: 16px;
+    }
+
+    .desk-podcast {
+        font-size: 14px;
         font-weight: 200;
     }
     /* ------------ */
@@ -872,7 +879,7 @@
     }
 
     .area-episodeP {
-        height: 800px;
+        height: 400px;
     }
 
     .card-episode {
@@ -901,12 +908,12 @@
 
     .area-content-OP {
         padding: 0px 32px 0px 32px;
-        margin-top: 40px;
+        /* margin-top: 40px; */
         height: 480px;
     }
 
     .title-OP {
-        font-size: 40px;
+        font-size: 34px;
         padding: 25px 0px 5px 0px;
     }
 
@@ -938,7 +945,7 @@
     }
 
     .card-podcast {
-        flex: 1 0 calc(33.33% - 14px); /* Membuat card mengambil 50% lebar, dengan margin antar card */
+        width: calc(33.33% - 14px);
         height: 330px;
     }
 
@@ -952,7 +959,7 @@
 
     .card-podcast .card-body-podcast {
         /* width: 100%; */
-        height: 70%;
+        height: fit-content;
         background-color: white;
         padding: 30px;
         overflow: hidden;
@@ -968,6 +975,7 @@
     .head-body-podcast {
         width: 100%;
         height: auto;
+        margin-top: 0px;
         /* border: 1px black solid; */
     }
 
@@ -980,7 +988,7 @@
     }
 
     .title-genre {
-        font-size: 16px;
+        font-size: 14px;
         font-family: "Bebas Neue";
         font-weight: 200;
         margin: 3px 20px;
@@ -992,15 +1000,19 @@
     }
 
     .card-text-podcast {
-        font-size: 30px;
+        font-size: 26px;
         margin: 0px;
         font-weight: 200;
         font-family: "Bebas Neue";
+        -webkit-line-clamp: 2; /* Membatasi 3 baris */
+        -webkit-box-orient: vertical;
+        overflow: hidden; /* Menyembunyikan sisa teks yang tidak muat */
+        text-overflow: ellipsis;
     }
 
     .card-image-podcast {
         width: 100%;
-        height: 125px;
+        height: 151px;
         background-color: #f0f0f0;
         border-radius: 10px;
     }
@@ -1127,7 +1139,7 @@
 
     /* content kanan */
     .area-content-VNS-kanan {
-        width: 40%;
+        width: 100%;
         height: fit-content;
         gap: 10px;
     }
@@ -1137,7 +1149,7 @@
     }
 
     .content-news {
-        height: 460px;
+        height: auto;
     }
 
     /* area news */
@@ -1146,8 +1158,8 @@
     }
 
     .box-news {
-        height: 55px;
-        padding: 8px;
+        height: fit-content;
+        /* padding: 8px; */
     }
 
     .area-image {
@@ -1165,6 +1177,15 @@
     .date-top-info {
         font-size: 10px;
     }
+
+    .more-news {
+        font-size: 16px;
+    }
+
+    .more-news i {
+        font-size: 20px;
+    }
+
     /* ------------ */
 
     /* area content stream */
@@ -1175,11 +1196,11 @@
     }
 
     .title-streaming {
-        font-size: 30px;
+        font-size: 34px;
     }
 
     .box-streaming {
-        height: 108px;
+        height: 195px;
     }
 
     .btn-play-streaming {
@@ -1199,7 +1220,7 @@
 /* Tablet */
 @media (max-width: 768px) {
     .page-detail-1 {
-        height: 860px;
+        height: fit-content;
     }
 
     .area-detail-podcast {
@@ -1227,7 +1248,7 @@
 
     .card-DP .card-DP-body {
         /* width: 100%; */
-        height: 282px;
+        height: 217px;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -1293,10 +1314,10 @@
     }
 
     .btn-play-DP {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
-        background-color: var(--secondary-color);
+        background-color: white;
         cursor: pointer;
         margin-top: 15px;
         display: flex;
@@ -1306,7 +1327,7 @@
 
     .btn-play-DP span {
         /* color: rgb(238, 238, 238); */
-        font-size: 30px;
+        font-size: 26px;
     }
 
     /* card B */
@@ -1377,12 +1398,12 @@
         width: 100%;
         height: fit-content;
         /* padding-bottom: 65.25%; */
-        height: 282px;
+        height: 217px;
         overflow: hidden;
     }
 
     .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 282px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+        padding-top: 217px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     }
 
     .video-container video {
@@ -1418,7 +1439,7 @@
 
     /* content */
     .content-detail-podcast {
-        margin-top: 25px;
+        margin-top: 0px;
     }
 
     .line-detail-podcast {
@@ -1430,17 +1451,23 @@
     }
 
     .detail-genre {
-        font-size: 20px;
-        padding: 4px 5px;
+        font-size: 14px;
+        padding: 6px 20px;
     }
 
     .detail-title {
-        font-size: 34px;
+        font-size: 26px;
     }
 
     .area-desk-detail-podcast {
         margin-top: 10px;
         /* border: 1px red solid; */
+        height: fit-content;
+    }
+
+    .area-desk-detail-podcast p {
+        font-size: 12px;
+        /* height: 330px; */
     }
 
     .desk-podcast {
@@ -1486,9 +1513,9 @@
     }
 
     .area-content-OP {
-        padding: 0px 32px 0px 32px;
-        margin-top: 40px;
-        height: 450px;
+        padding: 0px 20px 0px 20px;
+        margin-top: 0px;
+        height: fit-content;
     }
 
     .title-OP {
@@ -1497,7 +1524,8 @@
     }
 
     .content-OP {
-        margin-top: 15px;
+        margin-top: 0px;
+        padding-bottom: 15px;
     }
 
     .area-content-card-OP {
@@ -1524,8 +1552,10 @@
     }
 
     .card-podcast {
-        flex: 1 0 calc(50% - 14px); /* Membuat card mengambil 50% lebar, dengan margin antar card */
-        height: 330px;
+        width: calc(
+            33.33% - 14px
+        ); /* Membuat card mengambil 50% lebar, dengan margin antar card */
+        height: fit-content;
     }
 
     .card-podcast .card-header-podcast {
@@ -1538,7 +1568,7 @@
 
     .card-podcast .card-body-podcast {
         /* width: 100%; */
-        height: 70%;
+        height: fit-content;
         background-color: white;
         padding: 30px;
         overflow: hidden;
@@ -1548,7 +1578,7 @@
         border-bottom-right-radius: 10px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        padding: 15px;
+        padding: 10px;
     }
 
     .head-body-podcast {
@@ -1566,7 +1596,7 @@
     }
 
     .title-genre {
-        font-size: 16px;
+        font-size: 14px;
         font-family: "Bebas Neue";
         font-weight: 200;
         margin: 3px 20px;
@@ -1578,7 +1608,7 @@
     }
 
     .card-text-podcast {
-        font-size: 30px;
+        font-size: 22px;
         margin: 0px;
         font-weight: 200;
         font-family: "Bebas Neue";
@@ -1586,7 +1616,7 @@
 
     .card-image-podcast {
         width: 100%;
-        height: 125px;
+        height: 108px;
         background-color: #f0f0f0;
         border-radius: 10px;
     }
@@ -1648,7 +1678,7 @@
     /* area VNS */
 
     .page-detail-3 {
-        height: 700px;
+        height: fit-content;
     }
 
     .area-video-news-stream {
@@ -1657,7 +1687,7 @@
 
     .area-content-VNS {
         gap: 10px;
-        margin-top: 25px;
+        /* margin-top: 25px; */
     }
 
     /* content kiri */
@@ -1708,8 +1738,8 @@
 
     /* content kanan */
     .area-content-VNS-kanan {
-        width: 45%;
-        height: 540px;
+        width: 100%;
+        height: fit-content;
         gap: 6px;
         /* border: 1px red solid; */
     }
@@ -1719,34 +1749,45 @@
     .content-news {
         height: 100%;
         /* border: 1px blue solid; */
-        gap: 6px;
+        gap: 10px;
+        margin-top: 6px;
     }
 
     .title-news {
         font-size: 30px;
     }
 
+    .link-box-news {
+        width: calc(25% - 5px);
+    }
+
     .box-news {
-        height: 45px;
-        padding: 8px;
+        height: fit-content;
+        /* padding: 8px; */
     }
 
     .area-image {
-        width: 40%;
-        height: 100%;
+        border-radius: 10px;
     }
 
     .tag-top-info {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .desk-top-info {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .date-top-info {
-        font-size: 8px;
-        padding: 0px;
+        font-size: 10px;
+    }
+
+    .more-news {
+        font-size: 14px;
+    }
+
+    .more-news i {
+        font-size: 18px;
     }
     /* ------------ */
 
@@ -1762,7 +1803,7 @@
     }
 
     .box-streaming {
-        height: 108px;
+        height: 160px;
     }
 
     .btn-play-streaming {
@@ -1795,6 +1836,7 @@
 
     .area-detail-kiri {
         width: 100%;
+        flex-direction: column;
     }
 
     .card-DP {
@@ -1817,7 +1859,7 @@
 
     .card-DP .card-DP-body {
         /* width: 100%; */
-        height: 190px;
+        height: 221px;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -1829,6 +1871,10 @@
         border-bottom-right-radius: 20px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
+    }
+
+    .area-image-DP {
+        width: 100%;
     }
 
     .card-DP .card-DP-header .DP-author {
@@ -1882,11 +1928,15 @@
         font-size: 10px;
     }
 
+    .text-watchP i {
+        font-size: 16px;
+    }
+
     .btn-play-DP {
         height: 45px;
         width: 45px;
         border-radius: 50%;
-        background-color: var(--secondary-color);
+        background-color: white;
         cursor: pointer;
         margin-top: 15px;
         display: flex;
@@ -1955,16 +2005,21 @@
         font-family: "Poppins";
         font-size: 10px;
     }
+
+    .text-watchP-B i {
+        font-size: 16px;
+    }
+
     .video-container {
         position: relative;
         width: 100%;
-        height: 190px;
+        height: 221px;
         /* padding-bottom: 50.25%; */
         overflow: hidden;
     }
 
     .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 190px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+        padding-top: 221px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     }
 
     .video-container video {
@@ -2000,7 +2055,8 @@
 
     /* content */
     .content-detail-podcast {
-        margin-top: 20px;
+        width: 100%;
+        margin-top: 10px;
         flex-direction: column;
     }
 
@@ -2018,18 +2074,18 @@
 
     .detail-genre {
         font-size: 16px;
-        padding: 4px 5px;
+        padding: 4px 15px;
         border-radius: 5px;
     }
 
     .detail-title {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .area-desk-detail-podcast {
         margin-top: 5px;
         /* border: 1px red solid; */
-        height: 200px;
+        height: fit-content;
     }
 
     .desk-podcast {
@@ -2102,9 +2158,9 @@
     /* area other podcast */
 
     .area-content-OP {
-        padding: 0px 32px 0px 32px;
-        margin-top: 40px;
-        height: 450px;
+        padding: 0px 8px 0px 8px;
+        margin-top: 0px;
+        height: fit-content;
     }
 
     .title-OP {
@@ -2142,7 +2198,7 @@
 
     .card-podcast {
         flex: 1 0 100%; /* Membuat card mengambil 50% lebar, dengan margin antar card */
-        height: 330px;
+        height: fit-content;
     }
 
     .card-podcast .card-header-podcast {
@@ -2155,7 +2211,7 @@
 
     .card-podcast .card-body-podcast {
         /* width: 100%; */
-        height: 65%;
+        height: fit-content;
         background-color: white;
         padding: 30px;
         overflow: hidden;
@@ -2203,7 +2259,7 @@
 
     .card-image-podcast {
         width: 100%;
-        height: 125px;
+        height: 203px;
         background-color: #f0f0f0;
         border-radius: 10px;
     }
@@ -2272,7 +2328,7 @@
     }
 
     .area-content-VNS {
-        gap: 100px;
+        gap: 0px;
         flex-direction: column;
         margin-bottom: 30px;
     }
@@ -2336,20 +2392,20 @@
     .content-news {
         height: fit-content;
         /* border: 1px blue solid; */
+        flex-wrap: wrap;
     }
 
     .title-news {
         font-size: 28px;
     }
 
-    .box-news {
-        height: 60px;
-        padding: 8px;
+    .link-box-news {
+        width: calc(50% - 6px);
     }
 
-    .area-image {
-        height: 100%;
-        width: 40%;
+    .box-news {
+        height: fit-content;
+        width: 100%;
     }
 
     .tag-top-info {
@@ -2368,7 +2424,7 @@
     /* area content stream */
 
     .content-streaming {
-        height: 85px;
+        height: fit-content;
         /* border: 1px  red solid; */
     }
 
@@ -2378,7 +2434,16 @@
     }
 
     .box-streaming {
-        height: 100%;
+        height: 100px;
+    }
+
+    .btn-play-streaming {
+        height: 35px;
+        width: 35px;
+    }
+
+    .btn-play-streaming span {
+        font-size: 20px;
     }
 
     .text-streaming {
@@ -2390,8 +2455,6 @@
 
     /* -------------------- */
 }
-
-
 
 @media (max-width: 375px) {
     .page-detail-1 {
@@ -2428,7 +2491,7 @@
 
     .card-DP .card-DP-body {
         /* width: 100%; */
-        height: 180px;
+        height: 193px;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -2576,13 +2639,13 @@
     .video-container {
         position: relative;
         width: 100%;
-        height: 180px;
+        height: 193px;
         /* padding-bottom: 52.25%; */
         overflow: hidden;
     }
 
     .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 180px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+        padding-top: 193px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     }
 
     .video-container video {
@@ -2626,6 +2689,10 @@
         width: 100%;
     }
 
+    .area-detail-kiri {
+        margin-bottom: 15px;
+    }
+
     .line-detail-podcast {
         margin: 20px 8px;
     }
@@ -2641,19 +2708,19 @@
     }
 
     .detail-genre {
-        font-size: 16px;
-        padding: 4px 5px;
+        font-size: 14px;
+        padding: 3px 5px;
         border-radius: 5px;
     }
 
     .detail-title {
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .area-desk-detail-podcast {
         margin-top: 5px;
         /* border: 1px red solid; */
-        height: 200px;
+        height: fit-content;
     }
 
     .desk-podcast {
@@ -2726,9 +2793,9 @@
     /* area other podcast */
 
     .area-content-OP {
-        padding: 0px 20px 0px 20px;
-        margin-top: 40px;
-        height: 450px;
+        padding: 0px 8px 0px 8px;
+        margin-top: 0px;
+        height: fit-content;
     }
 
     .title-OP {
@@ -2737,7 +2804,7 @@
     }
 
     .content-OP {
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .area-content-card-OP {
@@ -2766,7 +2833,7 @@
 
     .card-podcast {
         flex: 1 0 100%; /* Membuat card mengambil 50% lebar, dengan margin antar card */
-        height: 330px;
+        height: fit-content;
     }
 
     .card-podcast .card-header-podcast {
@@ -2819,7 +2886,7 @@
     }
 
     .card-text-podcast {
-        font-size: 28px;
+        font-size: 24px;
         margin: 0px;
         font-weight: 200;
         font-family: "Bebas Neue";
@@ -2827,7 +2894,7 @@
 
     .card-image-podcast {
         width: 100%;
-        height: 125px;
+        height: 175px;
         background-color: #f0f0f0;
         border-radius: 10px;
     }
@@ -2959,7 +3026,7 @@
     /* area news */
 
     .content-news {
-        height: 80%;
+        height: 100%;
         /* border: 1px blue solid; */
     }
 
@@ -2967,14 +3034,13 @@
         font-size: 28px;
     }
 
-    .box-news {
-        height: auto;
-        padding: 8px;
+    .image-top-info {
+        border-radius: 6px;
     }
 
-    .area-image {
-        height: 100%;
-        width: 40%;
+    .box-news {
+        height: fit-content;
+        /* padding: 8px; */
     }
 
     .tag-top-info {
@@ -2993,7 +3059,7 @@
     /* area content stream */
 
     .content-streaming {
-        height: 85px;
+        height: fit-content;
         /* border: 1px  red solid; */
     }
 
@@ -3003,12 +3069,21 @@
     }
 
     .box-streaming {
-        height: 100%;
+        height: 100px;
     }
 
     .text-streaming {
         font-size: 10px;
         margin: 5px 10px;
+    }
+
+    .btn-play-streaming {
+        height: 35px;
+        width: 35px;
+    }
+
+    .btn-play-streaming span {
+        font-size: 20px;
     }
     /* ------------------- */
     /* --------------- */
@@ -3016,632 +3091,6 @@
     /* -------------------- */
 }
 @media (max-width: 344px) {
-    .page-detail-1 {
-        height: auto;
-    }
-
-    .area-detail-podcast {
-        margin: 0px 8px 0px 8px;
-        /* border: 1px red solid; */
-        flex-direction: column;
-    }
-
-    .area-detail-kiri {
-        width: 100%;
-    }
-
-    .card-DP {
-        width: 100%;
-        /* background-color: darkgrey; */
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        /* height: 350px; */
-    }
-
-    .card-DP .card-DP-header {
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        width: 100%;
-        /* border: 1px red solid; */
-    }
-
-    .card-DP .card-DP-body {
-        /* width: 100%; */
-        height: 169px;
-        background-color: white;
-        /* padding: 30px; */
-        overflow: hidden;
-        display: flex;
-        /* flex-direction: column; */
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        border-bottom-right-radius: 20px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    }
-
-    .card-DP .card-DP-header .DP-author {
-        color: #333;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-weight: 600;
-        width: 68%;
-        height: 50px;
-        display: flex;
-        background-color: white;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        cursor: pointer;
-        /* border: 1px black solid; */
-    }
-
-    .card-DP .card-DP-header .DP-author::before {
-        background-color: transparent;
-        border-top-left-radius: 20px;
-        box-shadow: -30px -30px 0 white;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 50px;
-        width: 32%;
-        content: "";
-        cursor: pointer;
-        /* border: 1px black solid; */
-    }
-
-    .card-DP .card-DP-header .DP-view {
-        font-weight: 600;
-        color: rgb(238, 238, 238);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        height: 15px;
-        width: calc(27% - 2px);
-        background-color: var(--secondary-color);
-        border-radius: 8px;
-        padding: 8px;
-        margin-top: 10px;
-        cursor: pointer;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        -ms-border-radius: 8px;
-        -o-border-radius: 8px;
-    }
-
-    .text-watchP {
-        color: rgb(48, 48, 48);
-        font-family: "Poppins";
-        font-size: 8px;
-    }
-
-    .btn-play-DP {
-        height: 35px;
-        width: 35px;
-        border-radius: 50%;
-        background-color: var(--secondary-color);
-        cursor: pointer;
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .btn-play-DP span {
-        /* color: rgb(238, 238, 238); */
-        font-size: 22px;
-    }
-
-    /* card B */
-    .card-DP-B {
-        width: 100%;
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        /* border: 1px green solid; */
-        height: auto;
-    }
-
-    .card-DP-B .card-header-DP-B {
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        width: 100%;
-        /* border: 1px red solid; */
-    }
-
-    .card-DP-B .card-body-DP-B {
-        width: auto;
-        overflow: hidden;
-        display: flex;
-        gap: 12px;
-        /* border: 1px red solid; */
-    }
-
-    .card-DP-footer {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: start;
-        margin-top: 10px;
-    }
-
-    .card-DP-B .view-DP-B {
-        font-weight: 600;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        height: 15px;
-        width: calc(27% - 2px);
-        background-color: var(--secondary-color);
-        border-radius: 8px;
-        padding: 8px;
-        cursor: pointer;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        -ms-border-radius: 8px;
-        -o-border-radius: 8px;
-    }
-
-    .text-watchP-B {
-        font-family: "Poppins";
-        font-size: 8px;
-    }
-
-    .video-container {
-        position: relative;
-        width: 100%;
-        height: 169px;
-        /* padding-bottom: 58.25%; */
-        overflow: hidden;
-    }
-
-    .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 169px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
-    }
-
-    .video-container video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-    /* ---------------------- */
-    /* animasi */
-    /* Kelas untuk menampilkan card dengan animasi */
-    .card-DP.show {
-        opacity: 1;
-        transform: translateY(0);
-        width: 100%;
-        height: fit-content;
-    }
-    .card-DP-B.show {
-        opacity: 1;
-        transform: translateY(0);
-        width: 100%;
-        height: auto;
-    }
-
-    /* Kelas untuk menyembunyikan card dengan animasi */
-    .card-DP.hide,
-    .card-DP-B.hide {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    /* content */
-    .content-detail-podcast {
-        margin-top: 20px;
-        flex-direction: column;
-    }
-
-    .content-detail-kiri {
-        width: 100%;
-    }
-
-    .line-detail-podcast {
-        margin: 20px 8px;
-    }
-
-    .area-header-DP {
-        gap: 10px;
-    }
-
-    .area-detail-genre {
-        width: 100px;
-        height: 100%;
-        /* border: 1px white solid; */
-    }
-
-    .detail-genre {
-        font-size: 14px;
-        padding: 4px 0px;
-        border-radius: 5px;
-    }
-
-    .detail-title {
-        font-size: 22px;
-    }
-
-    .area-desk-detail-podcast {
-        margin-top: 5px;
-        /* border: 1px red solid; */
-        height: 200px;
-    }
-
-    .desk-podcast {
-        font-size: 10px;
-        font-weight: 200;
-    }
-    /* ------------ */
-    /* area detail kanan */
-
-    .area-detail-kanan {
-        width: 100%;
-    }
-
-    .title-detail-kanan {
-        font-size: 26px;
-    }
-
-    .area-episodeP {
-        height: auto;
-        overflow: hidden;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Dua kolom */
-        gap: 10px;
-        width: 100%;
-    }
-
-    .card-episode {
-        margin-right: 0px;
-        padding: 10px 8px;
-        flex: 1 1 calc(50% - 10px);
-        margin-bottom: 0px;
-        display: none;
-    }
-
-    .card-episode.visible {
-        display: block;
-    }
-
-    .title-genre-episode {
-        font-size: 10px;
-        margin: 2px 10px;
-    }
-
-    .card-text-podcast-episode {
-        font-size: 18px;
-    }
-
-    .card-image-podcast-episode {
-        height: 100px;
-    }
-
-    #style-3::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .area-see-more {
-        width: 100%;
-        height: fit-content;
-        display: block;
-        text-align: center;
-    }
-
-    .text-see-more {
-        font-size: 14px;
-        font-weight: 300;
-        font-family: "Poppins";
-        color: var(--secondary-color);
-    }
-    /* ---------------- */
-    /* area other podcast */
-
-    .area-content-OP {
-        padding: 0px 8px 0px 8px;
-        margin-top: 40px;
-        height: 450px;
-    }
-
-    .title-OP {
-        font-size: 26px;
-        padding: 25px 0px 5px 0px;
-    }
-
-    .content-OP {
-        margin-top: 5px;
-    }
-
-    .area-content-card-OP {
-        width: 100%;
-        display: flex;
-        gap: 20px;
-        overflow: hidden;
-        box-sizing: border-box;
-        padding: 0 0px;
-    }
-
-    .tombol-kiri-OP,
-    .tombol-kanan-OP {
-        height: 40px;
-        width: 40px;
-        top: 40;
-    }
-
-    .tombol-kanan-OP {
-        right: -15;
-    }
-
-    .tombol-kiri-OP {
-        left: -15;
-    }
-
-    .card-podcast {
-        flex: 1 0 100%; /* Membuat card mengambil 50% lebar, dengan margin antar card */
-        height: 330px;
-    }
-
-    .card-podcast .card-header-podcast {
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        width: 100%;
-        /* border: 1px red solid; */
-    }
-
-    .card-podcast .card-body-podcast {
-        /* width: 100%; */
-        height: 65%;
-        background-color: white;
-        /* padding: 30px; */
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        border-bottom-right-radius: 10px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 15px;
-    }
-
-    .head-body-podcast {
-        width: 100%;
-        height: auto;
-        /* border: 1px black solid; */
-    }
-
-    .genre {
-        width: fit-content;
-        height: fit-content;
-        text-align: center;
-        border: 1px black solid;
-        border-radius: 5px;
-    }
-
-    .title-genre {
-        font-size: 14px;
-        font-family: "Bebas Neue";
-        font-weight: 200;
-        margin: 3px 20px;
-    }
-
-    .area-card-text {
-        width: fit-content;
-        height: fit-content;
-    }
-
-    .card-text-podcast {
-        font-size: 28px;
-        margin: 0px;
-        font-weight: 200;
-        font-family: "Bebas Neue";
-    }
-
-    .card-image-podcast {
-        width: 100%;
-        height: 125px;
-        background-color: #f0f0f0;
-        border-radius: 10px;
-    }
-
-    .card-podcast .card-header-podcast .author-podcast {
-        color: #333;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-weight: 600;
-        width: 48%;
-        height: 50px;
-        display: flex;
-        background-color: white;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        /* border: 1px black solid; */
-    }
-
-    .card-podcast .card-header-podcast .author-podcast::before {
-        background-color: transparent;
-        border-top-left-radius: 10px;
-        box-shadow: -30px -30px 0 white;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 52px;
-        width: 52%;
-        content: "";
-        /* border: 1px black solid; */
-    }
-
-    .card-podcast .card-header-podcast .view-podcast {
-        font-weight: 600;
-        color: #333;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        height: 22px;
-        width: 82%;
-        border-radius: 12px;
-        padding: 10px;
-        margin-top: 10px;
-    }
-
-    .link-podcast {
-        width: 48%;
-        /* border: 1px red solid; */
-        z-index: 10;
-        text-decoration: none;
-    }
-
-    .text-watch-podcast {
-        font-family: "Poppins";
-        font-size: 12px;
-    }
-    /* ------------------- */
-
-    /* area VNS */
-
-    .page-detail-3 {
-        height: auto;
-    }
-
-    .area-video-news-stream {
-        margin: 0px 8px 0px 8px;
-    }
-
-    .area-content-VNS {
-        gap: 20px;
-        flex-direction: column;
-        margin-bottom: 30px;
-    }
-
-    /* content kiri */
-
-    .area-content-VNS-kiri {
-        width: 100%;
-        /* border: 1px green solid; */
-    }
-
-    .title-video {
-        font-size: 28px;
-    }
-
-    .content-kiri-video {
-        gap: 10px;
-        height: 500px;
-    }
-
-    .area-video-top,
-    .area-video-bottom {
-        gap: 10px;
-    }
-
-    .btn-play-video {
-        height: 35px;
-        width: 35px;
-    }
-
-    .btn-play-video span {
-        font-size: 26px;
-    }
-
-    .btn-play-video-mid {
-        width: 50px;
-        height: 50px;
-    }
-
-    .btn-play-video-mid span {
-        font-size: 30px;
-    }
-
-    .popup-content-yt {
-        width: 320px;
-        height: 180px;
-    }
-
-    /* --------------- */
-
-    /* content kanan */
-    .area-content-VNS-kanan {
-        width: 100%;
-        height: fit-content;
-        /* gap: 6px; */
-        /* border: 1px red solid; */
-    }
-
-    /* area news */
-
-    .content-news {
-        height: 80%;
-        /* border: 1px blue solid; */
-        gap: 4px;
-        margin-top: 0px;
-    }
-
-    .header-news {
-        text-align: start;
-    }
-
-    .title-news {
-        font-size: 26px;
-    }
-
-    .box-news {
-        height: auto;
-        padding: 5px;
-        gap: 4px;
-    }
-
-    .area-image {
-        height: 100%;
-        width: 35%;
-    }
-
-    .tag-top-info {
-        font-size: 12px;
-    }
-
-    .desk-top-info {
-        font-size: 10px;
-    }
-
-    .date-top-info {
-        font-size: 8px;
-    }
-    /* ------------ */
-
-    /* area content stream */
-
-    .content-streaming {
-        height: 85px;
-        /* border: 1px  red solid; */
-        margin-top: 0px;
-    }
-
-    .title-streaming {
-        padding-top: 10px;
-        font-size: 26px;
-    }
-
-    .box-streaming {
-        height: 100%;
-    }
-
-    .text-streaming {
-        font-size: 10px;
-        margin: 5px 10px;
-    }
-    /* ------------------- */
-    /* --------------- */
-
-    /* -------------------- */
 }
 @media (max-width: 320px) {
     .page-detail-1 {
@@ -3678,7 +3127,7 @@
 
     .card-DP .card-DP-body {
         /* width: 100%; */
-        height: 169px;
+        height: 162px;
         background-color: white;
         /* padding: 30px; */
         overflow: hidden;
@@ -3747,11 +3196,15 @@
         font-size: 8px;
     }
 
+    .text-watchP i {
+        font-size: 12px;
+    }
+
     .btn-play-DP {
         height: 35px;
         width: 35px;
         border-radius: 50%;
-        background-color: var(--secondary-color);
+        background-color: white;
         cursor: pointer;
         margin-top: 15px;
         display: flex;
@@ -3821,16 +3274,20 @@
         font-size: 8px;
     }
 
+    .text-watchP-B i {
+        font-size:12px;
+    }
+
     .video-container {
         position: relative;
         width: 100%;
-        height: 169px;
+        height: 162px;
         /* padding-bottom: 58.25%; */
         overflow: hidden;
     }
 
     .PlayerVid-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
-        padding-top: 169px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
+        padding-top: 162px; /* Rasio 16:9 (9 / 16 = 0.5625 * 100) */
     }
 
     .video-container video {
@@ -3866,7 +3323,7 @@
 
     /* content */
     .content-detail-podcast {
-        margin-top: 20px;
+        margin-top: 8px;
         flex-direction: column;
     }
 
@@ -3883,25 +3340,29 @@
     }
 
     .area-detail-genre {
-        width: 100px;
+        width: fit-content;
         height: 100%;
         /* border: 1px white solid; */
     }
 
     .detail-genre {
-        font-size: 14px;
-        padding: 4px 0px;
+        font-size: 12px;
+        padding: 4px 20px;
         border-radius: 5px;
     }
 
     .detail-title {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .area-desk-detail-podcast {
         margin-top: 5px;
         /* border: 1px red solid; */
-        height: 200px;
+        height: fit-content;
+    }
+
+    .area-desk-detail-podcast p{
+        font-size: 10px;
     }
 
     .desk-podcast {
@@ -3975,8 +3436,8 @@
 
     .area-content-OP {
         padding: 0px 8px 0px 8px;
-        margin-top: 40px;
-        height: 450px;
+        margin-top: 0px;
+        height: fit-content;
     }
 
     .title-OP {
@@ -4013,8 +3474,8 @@
     }
 
     .card-podcast {
-        flex: 1 0 100%; /* Membuat card mengambil 50% lebar, dengan margin antar card */
-        height: 330px;
+        width: 100%; /* Membuat card mengambil 50% lebar, dengan margin antar card */
+        height: fit-content;
     }
 
     .card-podcast .card-header-podcast {
@@ -4027,7 +3488,7 @@
 
     .card-podcast .card-body-podcast {
         /* width: 100%; */
-        height: 65%;
+        height: fit-content;
         background-color: white;
         padding: 30px;
         overflow: hidden;
@@ -4055,7 +3516,7 @@
     }
 
     .title-genre {
-        font-size: 14px;
+        font-size: 12px;
         font-family: "Bebas Neue";
         font-weight: 200;
         margin: 3px 20px;
@@ -4067,7 +3528,7 @@
     }
 
     .card-text-podcast {
-        font-size: 28px;
+        font-size: 22px;
         margin: 0px;
         font-weight: 200;
         font-family: "Bebas Neue";
@@ -4075,7 +3536,7 @@
 
     .card-image-podcast {
         width: 100%;
-        height: 125px;
+        height: 144px;
         background-color: #f0f0f0;
         border-radius: 10px;
     }
@@ -4207,9 +3668,9 @@
     /* area news */
 
     .content-news {
-        height: 80%;
+        height: fit-content;
         /* border: 1px blue solid; */
-        gap: 4px;
+        gap: 10px;
         margin-top: 0px;
     }
 
@@ -4222,14 +3683,9 @@
     }
 
     .box-news {
-        height: auto;
-        padding: 5px;
-        gap: 4px;
-    }
-
-    .area-image {
-        height: 100%;
-        width: 35%;
+        height: fit-content;
+        /* padding: 5px;
+        gap: 4px; */
     }
 
     .tag-top-info {
@@ -4248,7 +3704,7 @@
     /* area content stream */
 
     .content-streaming {
-        height: 85px;
+        height: fit-content;
         /* border: 1px  red solid; */
         margin-top: 0px;
     }
@@ -4259,12 +3715,21 @@
     }
 
     .box-streaming {
-        height: 100%;
+        height: 100px;
     }
 
     .text-streaming {
         font-size: 10px;
         margin: 5px 10px;
+    }
+
+    .btn-play-streaming {
+        height: 35px;
+        width: 35px;
+    }
+
+    .btn-play-streaming span {
+        font-size: 20px;
     }
     /* ------------------- */
     /* --------------- */
