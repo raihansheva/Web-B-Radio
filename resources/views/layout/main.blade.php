@@ -40,7 +40,7 @@
 
 <body>
     <!--pop up ads-->
-     <div id="popup-ads" class="popup-ads-container">
+    <div id="popup-ads" class="popup-ads-container">
         <div id="imageAds" class="popup-content-ads">
             <a id="linkAds" href="">
                 <img id="image-ads" class="image-ads" src="" alt="Popup Ads">
@@ -54,64 +54,7 @@
     <!--------------------->
     {{-- navbar area --}}
     <nav class="navbar">
-        <div class="area-kiri-navbar">
-            <img class="image-brand" src="storage/{{ \App\Helpers\Settings::get('site_logo', 'null') }}" alt="">
-        </div>
-        <div class="area-kanan-navbar">
-            <div class="menu-link-navbar">
-                <a class="link" href="/">
-                    <p>Home</p>
-                </a>
-                <div class="dropdown">
-                    <a class="link dropText" id="dropdown-toggle">Media & Program<i class="arrow-down"></i></a>
-                    <div class="dropdown-content" id="dropdown-menu">
-                        @if (Request::is('/') || Request::is('/home'))
-                            <a href="#program">Program</a>
-                        @else
-                            <a href="{{ url('/') }}#program">Program</a>
-                        @endif
-                        <div class="line"></div>
-                        <a href="/info-news">Info News</a>
-                        <div class="line"></div>
-                        <a href="/event">Event</a>
-                        <div class="line"></div>
-                        <a href="/ardan-youtube">Playlist Youtube</a>
-                        <div class="line"></div>
-                        <a href="/podcast">Podcast</a>
-                        <div class="line"></div>
-                    </div>
-                </div>
-                @if (Request::is('/') || Request::is('/home'))
-                    <a class="link" href="#announcer">
-                        <p>Announcer</p>
-                    </a>
-                @else
-                    <a class="link" href="{{ url('/') }}#announcer">
-                        <p>Announcer</p>
-                    </a>
-                @endif
-                @if (Request::is('/') || Request::is('/'))
-                    <a class="link" href="#chart">
-                        <p>Chart</p>
-                    </a>
-                @else
-                    <a class="link" href="{{ url('/') }}#chart">
-                        <p>Chart</p>
-                    </a>
-                @endif
-                @if (Request::is('/') || Request::is('/'))
-                    <a class="link" href="#schedule">
-                        <p>Schedule</p>
-                    </a>
-                @else
-                    <a class="link" href="{{ url('/') }}#schedule">
-                        <p>Schedule</p>
-                    </a>
-                @endif
-                <a class="link" href="#contact">
-                    <p>Contact</p>
-                </a>
-            </div>
+        <div class="area-menu-link">
             @if ($sosmed)
                 <div class="area-socmed">
                     @foreach ($sosmed as $sosmedList)
@@ -147,6 +90,67 @@
                     @endforeach
                 </div>
             @endif
+
+            <div class="area-kanan-navbar">
+                <div class="menu-link-navbar">
+                    <a class="link" href="/">
+                        <p>Home</p>
+                    </a>
+                    <div class="dropdown">
+                        <a class="link dropText" id="dropdown-toggle">Media & Program<i class="arrow-down"></i></a>
+                        <div class="dropdown-content" id="dropdown-menu">
+                            @if (Request::is('/') || Request::is('/home'))
+                                <a href="#program">Program</a>
+                            @else
+                                <a href="{{ url('/') }}#program">Program</a>
+                            @endif
+                            <div class="line"></div>
+                            <a href="/info-news">Info News</a>
+                            <div class="line"></div>
+                            <a href="/event">Event</a>
+                            <div class="line"></div>
+                            <a href="/ardan-youtube">Playlist Youtube</a>
+                            <div class="line"></div>
+                            <a href="/podcast">Podcast</a>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    @if (Request::is('/') || Request::is('/home'))
+                        <a class="link" href="#announcer">
+                            <p>Announcer</p>
+                        </a>
+                    @else
+                        <a class="link" href="{{ url('/') }}#announcer">
+                            <p>Announcer</p>
+                        </a>
+                    @endif
+                    @if (Request::is('/') || Request::is('/'))
+                        <a class="link" href="#chart">
+                            <p>Chart</p>
+                        </a>
+                    @else
+                        <a class="link" href="{{ url('/') }}#chart">
+                            <p>Chart</p>
+                        </a>
+                    @endif
+                    @if (Request::is('/') || Request::is('/'))
+                        <a class="link" href="#schedule">
+                            <p>Schedule</p>
+                        </a>
+                    @else
+                        <a class="link" href="{{ url('/') }}#schedule">
+                            <p>Schedule</p>
+                        </a>
+                    @endif
+                    <a class="link" href="#contact">
+                        <p>Contact</p>
+                    </a>
+                </div>
+            </div>
+            <div class="area-kiri-navbar">
+                <img class="image-brand" src="storage/{{ \App\Helpers\Settings::get('site_logo', 'null') }}"
+                    alt="">
+            </div>
         </div>
         <!-- Hamburger Icon -->
         <div class="hamburger" id="hamburger-icon">
@@ -225,7 +229,7 @@
         <div id="promoteUMKMBtn" onclick="promoteUMKM()">
             <span>Promosikan UMKM</span>
         </div>
-    </div>  
+    </div>
     {{-- <div id="scrollToTopBtn"><i onclick="scrollToTop()" class='bx bx-up-arrow-alt'></i>
     </div> --}}
     {{-- audio player --}}
@@ -436,15 +440,15 @@
             }
         });
         // ----------------------
-        
-         // Fungsi untuk mendapatkan nama halaman saat ini
+
+        // Fungsi untuk mendapatkan nama halaman saat ini
         function getCurrentPage() {
             const path = window.location.pathname; // Mendapatkan path URL
             const page = path.split('/').pop(); // Mendapatkan bagian terakhir dari path
             return page || 'home'; // Default ke 'home' jika path kosong
         }
 
-       // Fetch data popup
+        // Fetch data popup
         fetch('/api/popup')
             .then(response => {
                 if (!response.ok) {
@@ -678,7 +682,7 @@
         function closePopup() {
             document.getElementById('popup-ads').style.display = 'none';
         }
-            // ----------------
+        // ----------------
     });
 </script>
 
