@@ -105,11 +105,11 @@
                                 <a href="{{ url('/') }}#program">Program</a>
                             @endif
                             <div class="line"></div>
-                            <a href="/info-news">Info News</a>
+                            <a href="/infoNews">Info News</a>
                             <div class="line"></div>
                             <a href="/event">Event</a>
                             <div class="line"></div>
-                            <a href="/ardan-youtube">Playlist Youtube</a>
+                            <a href="/ardanYoutube">Playlist Youtube</a>
                             <div class="line"></div>
                             <a href="/podcast">Podcast</a>
                             <div class="line"></div>

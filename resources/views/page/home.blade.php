@@ -211,7 +211,7 @@
                         </div>
                         <div class="content-top-info">
                             @foreach ($top_info as $topInfoList)
-                                <a class="link-box-top-info" href="/info-detail/{{ $topInfoList->slug }}">
+                                <a class="link-box-top-info" href="/infoNews/{{ $topInfoList->slug }}">
                                     <div class="box-top-info">
                                         <div class="area-image-top-info">
                                             <img class="image-top-info" src="./storage/{{ $topInfoList->image_info }}"
@@ -244,7 +244,7 @@
                     </div>
                     <div class="content-news">
                         @foreach ($info as $InfoList)
-                            <a class="link-box-news" href="/info-detail/{{ $InfoList->slug }}">
+                            <a class="link-box-news" href="/infoNews/{{ $InfoList->slug }}">
                                 <div class="box-news">
                                     <div class="area-image">
                                         <img class="image-info" src="./storage/{{ $InfoList->image_info }}"
@@ -276,7 +276,7 @@
                         </div>
                         <div class="content-trending-info">
                             @foreach ($trending_info as $trendingInfoList)
-                                <a class="link-box-trending-info" href="/info-detail/{{ $trendingInfoList->slug }}">
+                                <a class="link-box-trending-info" href="/infoNews/{{ $trendingInfoList->slug }}">
                                     <div class="box-trending-info">
                                         <div class="area-image-trending-info">
                                             <img class="image-trending-info"
@@ -309,7 +309,7 @@
                         <div class="content-info">
                             @foreach ($kategoriInfo as $kategoriInfoList)
                                 <div class="box-info">
-                                    <a href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
+                                    <a href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                         <div class="area-tag-info">
 
                                             <h3 class="tag-info">#{{ $kategoriInfoList->nama_kategori }}</h3>
@@ -557,7 +557,7 @@
                         @foreach ($podcast as $podcastList)
                             <div class="card-podcast" data-slug="{{ $podcastList->slug }}">
                                 <div class="card-body-podcast">
-                                    <a class="link-podcast" href="/detail-podcast/{{ $podcastList->slug }}">
+                                    <a class="link-podcast" href="/podcast/{{ $podcastList->slug }}">
                                         <div class="card-image-podcast">
                                             <img src="./storage/{{ $podcastList->image_podcast }}" alt=""
                                             class="image-podcast">
@@ -847,7 +847,7 @@
                         </div>
                     </div>
                     <div class="link-text-video">
-                        <a href="/ardan-youtube">
+                        <a href="/ardanYoutube">
                             <h1 class="text-video">See more</h1>
                         </a>
                     </div>

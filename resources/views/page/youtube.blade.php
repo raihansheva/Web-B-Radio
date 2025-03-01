@@ -192,7 +192,7 @@
                     <div class="area-content-news">
                         <div class="header-news">
                             <h1 class="title-news">Top Info</h1>
-                            <a class="link-more-news" href="/info-news">
+                            <a class="link-more-news" href="/infoNews">
                                 <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
                             </a>
                         </div>

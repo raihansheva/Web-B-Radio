@@ -155,7 +155,7 @@
                     <div class="area-top-news">
                         <div class="header-top-news">
                             <h1 class="title-top-news">Top Info</h1>
-                            <a class="more-info" href="/info-news">
+                            <a class="more-info" href="/infoNews">
                                 <span class="more-info">More Info <i class='bx bx-right-arrow-alt'></i></span>
                             </a>
                         </div>
@@ -168,17 +168,17 @@
                                 autoplay-disable-on-interaction="false"
                                 breakpoints='{
                                 "320": { "slidesPerView": 2, "spaceBetween": 8 },
-    "344": { "slidesPerView": 2, "spaceBetween": 8 },
-    "375": { "slidesPerView": 2, "spaceBetween": 10 },
-    "425": { "slidesPerView": 2, "spaceBetween": 12 },
-    "768": { "slidesPerView": 3, "spaceBetween": 16 },
-    "1024": { "slidesPerView": 3, "spaceBetween": 20 },
-    "1280": { "slidesPerView": 3, "spaceBetween": 24 },
-    "2560": { "slidesPerView": 3, "spaceBetween": 32 }
+                                "344": { "slidesPerView": 2, "spaceBetween": 8 },
+                                "375": { "slidesPerView": 2, "spaceBetween": 10 },
+                                "425": { "slidesPerView": 2, "spaceBetween": 12 },
+                                "768": { "slidesPerView": 3, "spaceBetween": 16 },
+                                "1024": { "slidesPerView": 3, "spaceBetween": 20 },
+                                "1280": { "slidesPerView": 3, "spaceBetween": 24 },
+                                "2560": { "slidesPerView": 3, "spaceBetween": 32 }
                             }'>
                                 @foreach ($top_info as $topInfoList)
-                                    <swiper-slide>
-                                        <a class="link-box-top-info" href="/info-detail/{{ $topInfoList->slug }}">
+                                    <swiper-slide style="width: ">
+                                        <a class="link-box-top-info" href="/infoNews/{{ $topInfoList->slug }}">
                                             <div class="box-top-info">
                                                 <div class="area-top-image">
                                                     <img class="image-top-info"
@@ -213,7 +213,7 @@
                         </div>
                         <div class="area-box-news">
                             @foreach ($kategoriInfo as $kategoriInfoList)
-                                <a class="link-box-news" href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
+                                <a class="link-box-news" href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                     <div class="box-news">
                                         <div class="area-tag-news">
                                             <h3 class="tag-news">{{ $kategoriInfoList->nama_kategori }}</h3>

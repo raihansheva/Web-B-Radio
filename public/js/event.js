@@ -54,7 +54,7 @@ function showPopupEvent(element) {
 
     // Set href pada link "See detail"
     const detailLink = document.querySelector(".detail-link");
-    detailLink.href = `/detail-event/${slug}`; // Update URL sesuai dengan slug
+    detailLink.href = `/event/${slug}`; // Update URL sesuai dengan slug
 
     // Menampilkan pop-up
     document.getElementById("popupEvent").style.display = "flex";
@@ -101,7 +101,7 @@ function showPopup(element) {
     if (deskP) {
         // Tampilkan detailLink jika deskShort ada
         detailLink.style.display = "block";
-        detailLink.href = `/detail-program/${slug}`; // Update URL sesuai dengan slug
+        detailLink.href = `/program/${slug}`; // Update URL sesuai dengan slug
     } else {
         // Sembunyikan detailLink jika deskShort tidak ada
         detailLink.style.display = "none";

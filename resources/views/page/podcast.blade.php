@@ -124,13 +124,13 @@
             <div class="area-content-SN-kanan">
                 <div class="header-news">
                     <h1 class="title-news">Top Info</h1>
-                    <a class="link-more-news" href="/info-news">
+                    <a class="link-more-news" href="/infoNews">
                         <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
                     </a>
                 </div>
                 <div class="content-news">
                     @foreach ($topInfo as $topInfoList)
-                        <a class="link-box-news" href="/info-detail/{{ $topInfoList->slug }}">
+                        <a class="link-box-news" href="/infoNews/{{ $topInfoList->slug }}">
                             <div class="box-news">
                                 <div class="area-image">
                                     <img class="image-top-info" src="./storage/{{ $topInfoList->image_info }}"
@@ -201,7 +201,7 @@
 
                 if (slug) {
                     // Redirect user ke halaman detail podcast sesuai slug
-                    window.location.href = `/detail-podcast/${slug}`;
+                    window.location.href = `/podcast/${slug}`;
                 }
             });
         });

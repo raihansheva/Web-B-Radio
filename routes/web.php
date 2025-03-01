@@ -73,25 +73,25 @@ Route::get('/get-realtime-analytics', [GoogleAnalyticsControllers::class, 'getGo
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index']);
-Route::get('/info-artis', [HomeController::class, 'artis']);
-Route::get('/detail-info-artis/{slug}', [HomeController::class, 'detailInfoArtis']);
+Route::get('/infoArtis', [HomeController::class, 'artis']);
+Route::get('/infoArtis/{slug}', [HomeController::class, 'detailInfoArtis']);
 
 Route::get('/event', [HomeController::class, 'event']);
-Route::get('/detail-event/{slug}', [HomeController::class, 'detailEvent']);
+Route::get('/event/{slug}', [HomeController::class, 'detailEvent']);
 
 Route::get('/podcast', [HomeController::class, 'podcast']);
 
-Route::get('/detail-podcast/{slug}', [HomeController::class, 'detailpodcast']);
+Route::get('/podcast/{slug}', [HomeController::class, 'detailpodcast']);
 
 Route::get('/chart', [HomeController::class, 'chart']);
 
-Route::get('/detail-program/{slug}', [HomeController::class, 'detailprogram']);
+Route::get('/program/{slug}', [HomeController::class, 'detailprogram']);
 
-Route::get('/info-news', [HomeController::class, 'info']);
-Route::get('/info-tag/{tag}', [HomeController::class, 'tagInfo']);
-Route::get('/info-detail/{slug}', [HomeController::class, 'detailInfo']);
+Route::get('/infoNews', [HomeController::class, 'info']);
+Route::get('/infoTag/{tag}', [HomeController::class, 'tagInfo']);
+Route::get('/infoNews/{slug}', [HomeController::class, 'detailInfo']);
 
-Route::get('/ardan-youtube', [HomeController::class, 'youtube']);
+Route::get('/ardanYoutube', [HomeController::class, 'youtube']);
 
 Route::get('/api/playlists', [PlaylistController::class, 'getPlaylists']);
 Route::get('/api/videos/{playlist_name}', [PlaylistController::class, 'getVideosByPlaylist']);

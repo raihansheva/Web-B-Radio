@@ -129,7 +129,7 @@
                         @if ($eps_group && $eps_group->isNotEmpty())
                             @foreach ($eps_group as $epsgroupList)
                                 <div class="card-episode">
-                                    <a href="/detail-podcast/{{ $epsgroupList->slug }}">
+                                    <a href="/podcast/{{ $epsgroupList->slug }}">
                                         <div class="card-body-episode">
                                             <div class="card-header-episode">
                                                 <div class="genre-episode">
@@ -255,13 +255,13 @@
                     <div class="area-content-news">
                         <div class="header-news">
                             <h1 class="title-news">Top Info</h1>
-                            <a class="link-more-news" href="/info-news">
+                            <a class="link-more-news" href="/infoNews">
                                 <span class="more-news">More Info <i class='bx bx-right-arrow-alt'></i></span>
                             </a>
                         </div>
                         <div class="content-news">
                             @foreach ($top_info as $topInfoList)
-                                <a class="link-box-news" href="/info-detail/{{ $topInfoList->slug }}">
+                                <a class="link-box-news" href="/infoNews/{{ $topInfoList->slug }}">
                                     <div class="box-news">
                                         <div class="area-image">
                                             <img class="image-top-info" src="./storage/{{ $topInfoList->image_info }}"
@@ -324,7 +324,7 @@
 
                     if (slug) {
                         // Redirect user ke halaman detail podcast sesuai slug
-                        window.location.href = `/detail-podcast/${slug}`;
+                        window.location.href = `/podcast/${slug}`;
                     }
                 });
             });

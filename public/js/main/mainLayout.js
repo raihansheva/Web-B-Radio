@@ -1186,7 +1186,7 @@ function showPopupEvent(element) {
     if (description) {
         // Tampilkan detailLink jika deskShort ada
         detailLink.style.display = "block";
-        detailLink.href = `/detail-event/${slug}`; // Update URL sesuai dengan slug
+        detailLink.href = `/event/${slug}`; // Update URL sesuai dengan slug
     } else {
         // Sembunyikan detailLink jika deskShort tidak ada
         detailLink.style.display = "none";

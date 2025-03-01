@@ -89,7 +89,7 @@
                             </div>
                             <div class="content-more-info">
                                 @foreach ($top_info as $topInfoList)
-                                    <a class="link-box-info" href="/info-detail/{{ $topInfoList->slug }}">
+                                    <a class="link-box-info" href="/infoNews/{{ $topInfoList->slug }}">
                                         <div class="box-info">
                                             <div class="area-text-desk-more-info">
                                                 <div class="area-date">
@@ -123,7 +123,7 @@
                             </div>
                             <div class="content-trending-info">
                                 @foreach ($trending_info as $trendingInfoList)
-                                    <a class="link-box-trending-info" href="/info-detail/{{ $trendingInfoList->slug }}">
+                                    <a class="link-box-trending-info" href="/infoNews/{{ $trendingInfoList->slug }}">
                                         <div class="box-trending-info">
                                             <div class="area-image-trending-info">
                                                 <img class="image-trending-info"
@@ -157,7 +157,7 @@
                                 <div class="area-box-news">
                                     @foreach ($kategoriInfo as $kategoriInfoList)
                                         <div class="box-news">
-                                            <a href="/info-tag/{{ $kategoriInfoList->nama_kategori }}">
+                                            <a href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                                 <div class="area-tag-news">
                                                     <h3 class="tag-news">{{ $kategoriInfoList->nama_kategori }}</h3>
                                                 </div>

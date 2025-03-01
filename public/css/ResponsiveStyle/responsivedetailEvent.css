@@ -22,7 +22,7 @@
 
     /* content kiri */
     .content-IN-kiri {
-        width: 65%;
+        width: 100%;
     }
 
     .box-info {
@@ -59,7 +59,7 @@
 
     .area-image-detail-event {
         width: 100%;
-        height: auto;
+        height: fit-content;
     }
 
     .area-desk-detail-event {
@@ -104,8 +104,14 @@
     /* ------------ */
 
     /* content kanan */
+
+    .area-stream-info-event{
+        margin: 0px 128px 0px 128px;
+        padding-bottom: 40px;
+    }
+
     .content-IN-kanan {
-        width: 35%;
+        width: 100%;
     }
 
     /* area-news */
@@ -162,7 +168,7 @@
     }
 
     .area-thumbnail {
-        height: 180px;
+        height: 280px;
     }
 
     .text-streaming {
@@ -190,13 +196,13 @@
     }
 
     .box-top-info {
-        height: 105px;
+        height: fit-content;
         padding: 15px;
     }
 
-    .area-top-image {
+    /* .area-top-image {
         width: 40%;
-    }
+    } */
 
     .tag-top-info {
         font-size: 22px;
@@ -223,7 +229,7 @@
     }
 
     .box-event {
-        height: 300px;
+        height: 321px;
     }
 
     .area-days-date-right {
@@ -249,7 +255,7 @@
     /* pop up event */
     .popup-content {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -396,7 +402,7 @@
 
     /* content kiri */
     .content-IN-kiri {
-        width: 65%;
+        width: 100%;
     }
 
     .link-url-detail-event {
@@ -421,7 +427,7 @@
 
     .area-image-detail-event {
         width: 100%;
-        height: auto;
+        height: fit-content;
     }
 
     .area-desk-detail-event {
@@ -462,8 +468,14 @@
     /* ------------ */
 
     /* content kanan */
+    .area-stream-info-event {
+        margin: 0px 32px 0px 32px;
+    }
+
     .content-IN-kanan {
-        width: 35%;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     /* area-news */
     .header-news {
@@ -472,7 +484,7 @@
 
     .box-news {
         flex: 0 0 calc(50% - 5px);
-        height: 100px;
+        height: 85px;
         /* background-color: #f0f0f0; */
         /* border-radius: 10px; */
     }
@@ -489,9 +501,9 @@
     .tag-news {
         margin: 0px;
         font-family: "Bebas Neue";
-        color: white;
+        color: black;
         font-weight: 200;
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .image-news {
@@ -515,7 +527,7 @@
     }
 
     .area-thumbnail {
-        height: 120px;
+        height: 195px;
     }
 
     .text-streaming {
@@ -543,8 +555,8 @@
     }
 
     .box-top-info {
-        height: 65px;
-        padding: 6px;
+        height: fit-content;
+        /* padding: 6px */
     }
 
     .tag-top-info {
@@ -557,6 +569,14 @@
 
     .date-top-info {
         font-size: 10px;
+    }
+
+    .more-info {
+        font-size: 16px;
+    }
+
+    .more-info i {
+        font-size: 20px;
     }
     /* ------------- */
 
@@ -576,7 +596,7 @@
     }
 
     .box-event {
-        height: 160px;
+        height: 182px;
     }
 
     .area-days-date-right {
@@ -590,7 +610,7 @@
     .year-right {
         font-size: 16px;
     }
-    
+
     .area-see-more {
         margin-top: 10px;
     }
@@ -602,7 +622,7 @@
     /* pop up event */
     .popup-content-event {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -731,7 +751,7 @@
 
     /* content kiri */
     .content-IN-kiri {
-        width: 60%;
+        width: 100%;
     }
 
     .link-url-detail-event {
@@ -756,7 +776,7 @@
 
     .area-image-detail-event {
         width: 100%;
-        height: auto;
+        height: fit-content;
     }
 
     .area-desk-detail-event {
@@ -801,8 +821,14 @@
     /* ------------ */
 
     /* content kanan */
+
+    .area-stream-info-event {
+        margin: 0px 20px 0px 20px;
+    }
+
     .content-IN-kanan {
-        width: 40%;
+        width: 100%;
+        gap: 0px;
     }
 
     /* area-news */
@@ -835,7 +861,7 @@
     }
 
     .area-thumbnail {
-        height: 100px;
+        height: 160px;
     }
 
     .text-streaming {
@@ -859,24 +885,32 @@
     }
 
     .content-top-news {
-        gap: 10px;
+        gap: 8px;
     }
 
     .box-top-info {
-        height: 60px;
-        padding: 6px;
+        height: fit-content;
+        /* padding: 6px; */
     }
 
     .tag-top-info {
-        font-size: 14px;
-    }
-
-    .desk-top-info {
         font-size: 12px;
     }
 
-    .date-top-info {
+    .desk-top-info {
         font-size: 10px;
+    }
+
+    .date-top-info {
+        font-size: 8px;
+    }
+
+    .more-info {
+        font-size: 14px;
+    }
+
+    .more-info i {
+        font-size: 18px;
     }
     /* ------------- */
 
@@ -891,8 +925,8 @@
         gap: 15px;
     }
 
-.box-event {
-        height: 111px;
+    .box-event {
+        height: 136px;
     }
 
     .area-days-date-right {
@@ -921,7 +955,7 @@
     /* pop up event */
     .popup-content-event {
         width: 400px;
-        height: 180px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -1037,8 +1071,8 @@
     /* ------------- */
 }
 @media (max-width: 600px) {
-
-/* Mobile Devices */}
+    /* Mobile Devices */
+}
 
 @media (max-width: 480px) {
     /* page news 1 */
@@ -1060,6 +1094,7 @@
     /* page news 2 */
     .area-detail-event {
         margin: 0px 8px 0px 8px;
+        padding-bottom: 30px;
     }
 
     .content-detail-event {
@@ -1073,8 +1108,17 @@
         width: 100%;
         height: auto;
         overflow-y: hidden;
+        flex-direction: column;
     }
-    
+
+    .area-detail-kiri-event {
+        width: 100%;
+    }
+
+    .area-detail-kanan-event {
+        width: 100%;
+    }
+
     .area-image-detail-event {
         width: 100%;
         height: auto;
@@ -1097,19 +1141,14 @@
         height: fit-content;
     }
 
-
-/* ini image nya pa*/
-    .area-image-detail-info{
+    /* ini image nya pa*/
+    .area-image-detail-info {
         height: 203px;
     }
 
     .link-url-detail-event,
     .url-detail-event {
         font-size: 12px;
-    }
-
-    .area-detail-event {
-        margin-top: 15px;
     }
 
     .text-ticket {
@@ -1179,7 +1218,15 @@
         width: 100%;
     }
 
+    .area-stream-info-event {
+        margin: 0px 8px 0px 8px;
+    }
+
     /* area-news */
+
+    .area-kategori-top-news {
+        flex-direction: column;
+    }
 
     .header-news {
         font-size: 30px;
@@ -1206,6 +1253,11 @@
 
     /* area streaming */
 
+    .area-streaming {
+        margin-top: 8px;
+        margin-bottom: 15px;
+    }
+
     .title-streaming {
         font-size: 30px;
     }
@@ -1230,6 +1282,11 @@
     /* ------------- */
 
     /* area news */
+
+    .area-top-news {
+        width: 100%;
+    }
+
     .title-top-news {
         font-size: 28px;
     }
@@ -1238,9 +1295,13 @@
         gap: 8px;
     }
 
+    .link-box-top-info {
+        width: calc(50% - 5px);
+    }
+
     .box-top-info {
-        height: 60px;
-        padding: 6px;
+        height: fit-content;
+        /* padding: 6px; */
     }
 
     .tag-top-info {
@@ -1268,15 +1329,15 @@
     }
 
     .box-event {
-        height: 106px;
+        height: 222px;
     }
 
     .area-days-date-right {
-        height: 5px;
+        height: 20px;
     }
 
     .date-month-right {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .year-right {
@@ -1296,7 +1357,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -1411,7 +1472,7 @@
     .popUp-desk-berita {
         font-size: 7px;
     }
-.image-detail-event {
+    .image-detail-event {
         width: 100%;
         height: auto;
     }
@@ -1635,20 +1696,20 @@
     }
 
     .box-top-info {
-        height: 60px;
-        padding: 6px;
+        height: fit-content;
+        /* padding: 6px; */
     }
 
     .tag-top-info {
-        font-size: 14px;
-    }
-
-    .desk-top-info {
         font-size: 12px;
     }
 
-    .date-top-info {
+    .desk-top-info {
         font-size: 10px;
+    }
+
+    .date-top-info {
+        font-size: 8px;
     }
     /* ------------- */
 
@@ -1664,15 +1725,15 @@
     }
 
     .box-event {
-        height: 94px;
+        height: 194px;
     }
 
     .area-days-date-right {
-        height: 10px;
+        height: 20px;
     }
 
     .date-month-right {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .year-right {
@@ -1692,7 +1753,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -1767,7 +1828,6 @@
 
     .judul-berita {
         font-size: 14px;
-        
     }
 
     .desk-berita {
@@ -1809,8 +1869,8 @@
     /* ------------- */
 }
 @media (max-width: 344px) {
-    /* page news 1 */
-    .page-news-1 {
+     /* page news 1 */
+     .page-news-1 {
         margin-bottom: 25px;
     }
 
@@ -1860,10 +1920,9 @@
         font-size: 12px;
     }
 
-    .area-image-detail-event {
-        width: 100%;
-        height: auto;
-    }
+    /*.area-image-detail-info {*/
+    /*    height: 160px;*/
+    /*}*/
 
     .area-desk-detail-event {
         font-size: 10px;
@@ -1945,6 +2004,7 @@
     /* content kanan */
     .content-IN-kanan {
         width: 100%;
+        margin-top: 20px;
     }
 
     /* area-news */
@@ -2006,14 +2066,9 @@
     }
 
     .box-top-info {
-        height: 60px;
-        padding: 6px;
+        height: fit-content;
+        /* padding: 6px; */
     }
-
-    .area-top-image {
-        width: 40%;
-    }
-
     .tag-top-info {
         font-size: 12px;
     }
@@ -2023,10 +2078,9 @@
     }
 
     .date-top-info {
-        font-size: 8px;
+        font-size: 7px;
     }
     /* ------------- */
-
     /* area event */
 
     .title-event {
@@ -2039,16 +2093,16 @@
     }
 
     .box-event {
-        height: 78px;
+        height: 163px;
     }
 
     .area-days-date-right {
-        height: 8px;
+        height: 15px;
         padding: 8px 10px;
     }
 
     .date-month-right {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .year-right {
@@ -2068,7 +2122,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -2110,7 +2164,7 @@
     /* area box */
 
     .area-box-info-artis {
-        margin-top: 6px;
+        margin-top: 0px;
         /* border: 1px red solid; */
         gap: 10px;
     }
@@ -2319,6 +2373,7 @@
     /* content kanan */
     .content-IN-kanan {
         width: 100%;
+        margin-top: 20px;
     }
 
     /* area-news */
@@ -2380,14 +2435,9 @@
     }
 
     .box-top-info {
-        height: 60px;
-        padding: 6px;
+        height: fit-content;
+        /* padding: 6px; */
     }
-
-    .area-top-image {
-        width: 40%;
-    }
-
     .tag-top-info {
         font-size: 12px;
     }
@@ -2397,10 +2447,9 @@
     }
 
     .date-top-info {
-        font-size: 8px;
+        font-size: 7px;
     }
     /* ------------- */
-
     /* area event */
 
     .title-event {
@@ -2413,16 +2462,16 @@
     }
 
     .box-event {
-        height: 78px;
+        height: 163px;
     }
 
     .area-days-date-right {
-        height: 8px;
+        height: 15px;
         padding: 8px 10px;
     }
 
     .date-month-right {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .year-right {
@@ -2442,7 +2491,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content ;
         padding: 15px;
     }
 
