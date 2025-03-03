@@ -67,7 +67,8 @@ Route::get('/analytics-test', function (GoogleAnalyticsServices $analyticsServic
     return response()->json($data);
 });
 
-Route::get('/get-realtime-analytics', [GoogleAnalyticsControllers::class, 'getGoogleAnalyticsData']);
+Route::get('/analytics/realtime', [GoogleAnalyticsControllers::class, 'getGoogleAnalyticsData'])
+    ->name('analytics.realtime');
 
 
 Route::get('/', [HomeController::class, 'index']);
