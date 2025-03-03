@@ -5,6 +5,7 @@ use App\Http\Controllers\GoogleAnalyticsControllers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\SitemapController;
 use App\Models\Info;
 use App\Models\Podcast;
 use App\Services\GoogleAnalyticsService;
@@ -20,6 +21,9 @@ use Spatie\Sitemap\Tags\Url;
 // Route::get('/home', function () {
 //     return view('page.home');
 // });
+
+Route::get('/generate-sitemap', [SitemapController::class, 'generateSitemap']);
+
 Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create()
         ->add(Url::create('/')

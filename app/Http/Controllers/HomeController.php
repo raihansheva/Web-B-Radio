@@ -35,7 +35,7 @@ class HomeController extends Controller
 
         $streamAudio = Streaming::where('type_url', 'Audio')->first();
         $streamVideo = Streaming::where('type_url', 'Video')->first();
-        
+
         $setPlayerStream = SettingPlayerStream::all()->first();
 
         $program = Program::where(function ($query) {
@@ -112,9 +112,9 @@ class HomeController extends Controller
                         ->where('tanggal_publikasi', '<=', now());
                 });
         })
-        ->where('is_highlight', true)
-        ->take(4)->get();
-        
+            ->where('is_highlight', true)
+            ->take(4)->get();
+
         $Kategori = Kategori::with('charts')->get();
 
         $schedule = Schedule::with('program')->get();
@@ -485,7 +485,7 @@ class HomeController extends Controller
 
         $idPodcast = $detailpodcast->id;
 
-        $epsgroup = Podcast::where('podcast_id', $idPodcast)->skip(1)->take(10)->get();
+        $epsgroup = Podcast::where('podcast_id', $idPodcast)->take(10)->get();
 
         $allpodcast = Podcast::all();
 
@@ -501,7 +501,7 @@ class HomeController extends Controller
 
         $streamAudio = Streaming::where('type_url', 'Audio')->first();
         // dd($epsgroup);
-$playlist = YoutubeHighlight::where('page', 'podcast')->limit(5)->get();
+        $playlist = YoutubeHighlight::where('page', 'podcast')->limit(5)->get();
 
         $videos = [];
         foreach ($playlist as $item) {
@@ -537,7 +537,7 @@ $playlist = YoutubeHighlight::where('page', 'podcast')->limit(5)->get();
 
         // $videos = $response->json()['items'];
 
-                // -----------------------------------------------
+        // -----------------------------------------------
         // Bagian untuk mengelola link_youtube di detail podcast
         // -----------------------------------------------
 
@@ -559,9 +559,9 @@ $playlist = YoutubeHighlight::where('page', 'podcast')->limit(5)->get();
             'youtubeId' => $youtubeId,  // Kirim youtubeId ke Blade
         ]);
     }
-    
-    
-     /**
+
+
+    /**
      * Fungsi untuk mengekstrak ID YouTube dari URL.
      */
     private function getYoutubeId($url)

@@ -1,5 +1,4 @@
 /* area detail podcast */
-
 .iframe-yt{
     width: 100%;
     height: 100%;
@@ -401,6 +400,7 @@
     /* border: 1px red solid; */
     gap: 15px;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .card-episode a {
@@ -408,21 +408,20 @@
     color: black;
     margin: 0px;
     height: fit-content;
+    width: 100%;
 }
 
 /* card episode */
 
 .card-episode {
-    width: calc(25% - 15px);
+    /* width: calc(25% - 10px); */
     height: fit-content;
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 25px 15px;
+    padding: 15px 15px;
     cursor: pointer;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Shadow */
-
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); Shadow */
+    border: 1px #292929 solid;
 }
 
 .card-header-episode{
@@ -438,10 +437,10 @@
 }
 
 .title-genre-episode {
-    font-size: 18px;
+    font-size: 14px;
     font-family: "Bebas Neue";
     font-weight: 200;
-    margin: 5px 25px;
+    margin: 1px 15px;
 }
 
 .area-card-text-episode {
@@ -454,6 +453,10 @@
     margin: 0px;
     font-weight: 200;
     font-family: "Bebas Neue";
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-image-podcast-episode {

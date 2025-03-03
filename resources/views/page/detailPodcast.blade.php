@@ -120,58 +120,73 @@
                     </div>
                 </div>
             </div>
-            @if ($eps_group && $eps_group->isNotEmpty())
+            @if ($eps_group)
                 <div class="area-detail-kanan">
                     <div class="header-detail-kanan">
                         <h2 class="title-detail-kanan">Other Episode</h2>
                     </div>
-                    <div class="area-episodeP" id="style-3">
-                        @if ($eps_group && $eps_group->isNotEmpty())
+                    <swiper-container class="area-episodeP" loop="true" autoplay-delay="2500"
+                        autoplay-disable-on-interaction="false"
+                        breakpoints='{
+                    "320": { "slidesPerView": 1 },
+                    "340": { "slidesPerView": 1 },
+                    "375": { "slidesPerView": 1 },
+                    "425": { "slidesPerView": 2 },
+                    "768": { "slidesPerView": 3 },
+                    "1024": { "slidesPerView": 4 },
+                    "1280": { "slidesPerView": 4 },
+                    "2560": { "slidesPerView" : 4}
+                }'
+                        space-between="20">
+                        @if ($eps_group)
                             @foreach ($eps_group as $epsgroupList)
-                                <div class="card-episode">
-                                    <a href="/podcast/{{ $epsgroupList->slug }}">
-                                        <div class="card-body-episode">
-                                            <div class="card-header-episode">
-                                                <div class="genre-episode">
-                                                    @if (is_array($epsgroupList->genre_podcast))
-                                                        @foreach ($epsgroupList->genre_podcast as $genre)
-                                                            <h1 class="title-genre-episode">{{ $genre }}
-                                                            </h1>
-                                                        @endforeach
-                                                    @else
-                                                        <h1 class="title-genre-episode">-</h1>
-                                                    @endif
+                                <swiper-slide class="card-episode">
+                                    {{-- <div class="card-episode">/ --}}
+                                        <a href="/podcast/{{ $epsgroupList->slug }}">
+                                            <div class="card-body-episode">
+
+                                                <div class="card-image-podcast-episode">
+                                                    <img src="./storage/{{ $epsgroupList->image_podcast }}" alt=""
+                                                        class="image-podcast">
                                                 </div>
-                                                <div class="area-card-text-episode">
-                                                    <h1 class="card-text-podcast-episode">
-                                                        {{ $epsgroupList->judul_podcast }}
-                                                    </h1>
+                                                <div class="card-header-episode">
+                                                    <div class="genre-episode">
+                                                        @if (is_array($epsgroupList->genre_podcast))
+                                                            @foreach ($epsgroupList->genre_podcast as $genre)
+                                                                <h1 class="title-genre-episode">{{ $genre }}
+                                                                </h1>
+                                                            @endforeach
+                                                        @else
+                                                            <h1 class="title-genre-episode">-</h1>
+                                                        @endif
+                                                    </div>
+                                                    <div class="area-card-text-episode">
+                                                        <h1 class="card-text-podcast-episode">
+                                                            {{ $epsgroupList->judul_podcast }}
+                                                        </h1>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="card-image-podcast-episode">
-                                                <img src="./storage/{{ $epsgroupList->image_podcast }}" alt=""
-                                                    class="image-podcast">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>
+                                    {{-- </div>  --}}
+                                </swiper-slide>
                             @endforeach
                         @else
                             <p></p>
                         @endif
-                    </div>
-                    <div class="area-see-more">
+                    </swiper-container>
+                    {{-- <div class="area-see-more">
                         <h2 class="text-see-more" id="toggleSeeMore">See more</h2>
-                    </div>
+                    </div> --}}
                 </div>
             @else
             @endif
 
         </div>
-        @if ($eps_group && $eps_group->isNotEmpty())
+        {{-- @if ($eps_group && $eps_group->isNotEmpty())
             <div class="line-detail-podcast"></div>
         @else
-        @endif
+        @endif --}}
     </section>
     <section class="section-banner {{ $banner->where('position', 'middle')->count() > 0 ? '' : 'hidden' }}">
         <div class="area-banner">
@@ -312,6 +327,7 @@
     <script src="{{ asset('js/playerjs.js?v=' . time()) }}"></script>
     <!--<script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Pilih semua elemen dengan class "card-podcast"
@@ -391,7 +407,7 @@
 
             tontonSiaranBtnB.addEventListener("click", function() {
                 hideCard(cardB);
-                // playerYT.pause();
+                playerYT.pauseVideo();
                 setTimeout(() => {
                     playPodcast(idP);
                     showCard(cardA);

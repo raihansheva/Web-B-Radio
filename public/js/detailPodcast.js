@@ -119,47 +119,47 @@ function onPlayerReady(event) {
     // Anda dapat menambahkan logika tambahan saat player siap, jika diperlukan
 }
 
-const cards = document.querySelectorAll('.card-episode');
-const seeMoreText = document.getElementById('toggleSeeMore');
-let isExpanded = false;
+// const cards = document.querySelectorAll('.card-episode');
+// const seeMoreText = document.getElementById('toggleSeeMore');
+// let isExpanded = false;
 
-function toggleCards() {
-    if (isExpanded) {
-        cards.forEach((card, index) => {
-            if (index >= 4) card.classList.remove('visible');
-        });
-        seeMoreText.textContent = 'See more';
-    } else {
-        cards.forEach(card => card.classList.add('visible'));
-        seeMoreText.textContent = 'See less';
-    }
-    isExpanded = !isExpanded;
-}
+// function toggleCards() {
+//     if (isExpanded) {
+//         cards.forEach((card, index) => {
+//             if (index >= 4) card.classList.remove('visible');
+//         });
+//         seeMoreText.textContent = 'See more';
+//     } else {
+//         cards.forEach(card => card.classList.add('visible'));
+//         seeMoreText.textContent = 'See less';
+//     }
+//     isExpanded = !isExpanded;
+// }
 
-function handleResize() {
-    if (window.innerWidth <= 480) {
-        cards.forEach((card, index) => {
-            if (index < 4) card.classList.add('visible');
-            else card.classList.remove('visible');
-        });
-        seeMoreText.style.display = cards.length > 4 ? 'block' : 'none';
-    } else {
-        // Reset state if window is larger than 480px
-        cards.forEach(card => card.classList.add('visible'));
-        seeMoreText.style.display = 'none';
-        isExpanded = false;
-        seeMoreText.textContent = 'See more';
-    }
-}
+// function handleResize() {
+//     if (window.innerWidth <= 480) {
+//         cards.forEach((card, index) => {
+//             if (index < 4) card.classList.add('visible');
+//             else card.classList.remove('visible');
+//         });
+//         seeMoreText.style.display = cards.length > 4 ? 'block' : 'none';
+//     } else {
+//         // Reset state if window is larger than 480px
+//         cards.forEach(card => card.classList.add('visible'));
+//         seeMoreText.style.display = 'none';
+//         isExpanded = false;
+//         seeMoreText.textContent = 'See more';
+//     }
+// }
 
-// Initial setup
-handleResize();
+// // Initial setup
+// handleResize();
 
-// Add event listener for window resize
-window.addEventListener('resize', handleResize);
+// // Add event listener for window resize
+// window.addEventListener('resize', handleResize);
 
-// Add event listener for see more/see less toggle
-seeMoreText.addEventListener('click', toggleCards);
+// // Add event listener for see more/see less toggle
+// seeMoreText.addEventListener('click', toggleCards);
 
 // Menambahkan thumbnail YouTube secara dinamis di belakang tombol play
 document.querySelectorAll(".box-video, .box-video-mid").forEach((videoBox) => {
