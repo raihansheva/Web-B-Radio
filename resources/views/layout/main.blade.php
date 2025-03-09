@@ -226,9 +226,9 @@
         <div id="scrollToTopBtn" onclick="scrollToTop()">
             <i class='bx bx-up-arrow-alt'></i>
         </div>
-        <div id="promoteUMKMBtn" onclick="promoteUMKM()">
+        {{-- <div id="promoteUMKMBtn" onclick="promoteUMKM()">
             <span>Promosikan UMKM</span>
-        </div>
+        </div> --}}
     </div>
     {{-- <div id="scrollToTopBtn"><i onclick="scrollToTop()" class='bx bx-up-arrow-alt'></i>
     </div> --}}
@@ -266,13 +266,13 @@
                     <p class="name"></p>
                     <p class="artist"></p>
                 </div>
-                <div class="area-line">
+                {{-- <div class="area-line">
                     <div class="progress-details">
                         <div class="progress-bar">
                             <span></span>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="music-titles">
                     <p class="name">Hamburger area</p>
                 </div> --}}

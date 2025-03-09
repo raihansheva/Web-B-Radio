@@ -377,7 +377,7 @@ swiper-container {
 
 /* area-kiri-navbar */
 .area-kiri-navbar {
-    width: 10%;
+    width: fit-content;
     /* border: 1px black solid; */
 }
 
@@ -510,7 +510,7 @@ swiper-container {
 }
 
 .area-socmed {
-    width: 10%;
+    width: fit-content;
     display: flex;
     gap: 15px;
     cursor: pointer;
@@ -561,7 +561,7 @@ swiper-container {
     display: flex;
     justify-content: start;
     align-items: center;
-    height: 80px;
+    height: 60px;
     z-index: 6;
     /* border: 1px red solid; */
 }
@@ -725,8 +725,8 @@ swiper-container {
     padding: 0px 10px;
     /* width: 210px; */
     background-color: var(--secondary-color);
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     gap: 5px;
 }
 

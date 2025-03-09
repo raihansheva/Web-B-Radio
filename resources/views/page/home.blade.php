@@ -488,24 +488,24 @@
                             @endforeach
                         </div>
                         <div class="area-content-event-kanan">
-                            <swiper-container class="area-content-event-kanan" loop="true" autoplay-delay="2500"
+                            <swiper-container class="area-box-content-event-kanan" loop="true" autoplay-delay="2500"
                                 autoplay-disable-on-interaction="false"
                                 breakpoints='{
                                     "480": { "slidesPerView": 1 },
                                     "768": { "slidesPerView": 1 },
-                                    "1024": { "slidesPerView": 2 },
-                                    "1280": { "slidesPerView": 2 },
-                                    "2560": { "slidesPerView" : 2}
+                                    "1024": { "slidesPerView": 1 },
+                                    "1280": { "slidesPerView": 1 },
+                                    "2560": { "slidesPerView" : 1}
                                 }'
                                 space-between="20">
                                 @foreach ($event_upcoming as $eventUpcomingList)
                                     <swiper-slide class="content-event"
-                                        style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                                         onclick="showPopupEvent(this)"
                                         data-description="{{ $eventUpcomingList->deskripsi_pendek }}"
                                         data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                                         data-slug="{{ $eventUpcomingList->slug }}"
                                         data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
+                                        <img class="image-UC" src="./storage/{{ $eventUpcomingList->image_event }}" alt="" srcset="">
                                         <div class="area-days-date-right">
                                             <div class="content-days-date-right">
                                                 <div class="box-days-date-right">
