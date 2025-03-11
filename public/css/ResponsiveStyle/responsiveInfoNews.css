@@ -198,7 +198,7 @@
     /* pop up event */
     .popup-content-event {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -489,7 +489,7 @@
     /* pop up event */
     .popup-content-event {
         width: 450px;
-        height: 200px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -862,7 +862,7 @@
     /* pop up event */
     .popup-content-event {
         width: 400px;
-        height: 180px;
+        height: fit-content;
         padding: 25px;
     }
 
@@ -1263,7 +1263,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -1665,7 +1665,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -2066,7 +2066,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
@@ -2467,7 +2467,7 @@
     /* pop up event */
     .popup-content-event {
         width: 200px;
-        height: 110px;
+        height: fit-content;
         padding: 15px;
     }
 
