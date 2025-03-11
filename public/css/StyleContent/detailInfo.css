@@ -607,8 +607,13 @@ figcaption span:hover {
     gap: 8px;
 }
 
+.link-kat-info{
+    width: calc(50% - 5px);
+    height: fit-content;
+}
+
 .box-news {
-    flex: 0 0 calc(50% - 5px);
+    width: 100%;
     height: 100px;
     background-color: var(--primary-color);
     border-radius: 10px;
@@ -876,12 +881,12 @@ figcaption span:hover {
 }
 
 .popup-content-event {
-    background-color: var(--primary-color);
+    background-color: white;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
     width: 500px;
-    height: 250px; /* Lebar pop-up */
+    height: fit-content; /* Lebar pop-up */
     display: flex;
     justify-content: center;
     align-items: end;

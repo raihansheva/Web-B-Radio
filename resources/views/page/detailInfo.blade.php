@@ -156,8 +156,8 @@
                                 </div>
                                 <div class="area-box-news">
                                     @foreach ($kategoriInfo as $kategoriInfoList)
+                                    <a class="link-kat-info" href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                         <div class="box-news">
-                                            <a href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                                 <div class="area-tag-news">
                                                     <h3 class="tag-news">{{ $kategoriInfoList->nama_kategori }}</h3>
                                                 </div>
@@ -168,8 +168,8 @@
                                                 @else
                                                     <p>Tidak ada info untuk tag ini.</p>
                                                 @endif --}}
-                                            </a>
-                                        </div>
+                                            </div>
+                                        </a>
                                     @endforeach
                                 </div>
                                 {{-- <div class="line-news"></div> --}}
