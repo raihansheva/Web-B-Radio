@@ -757,7 +757,7 @@ class HomeController extends Controller
 
         // dd($info);
 
-        return view('page.detailTaginfo', [
+        return view('page.infoNews', [
             'banner' => $banner,
             'bannerInfo' => $bannerI,
             'info' => $info,

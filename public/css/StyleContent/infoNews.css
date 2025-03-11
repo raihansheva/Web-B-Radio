@@ -121,9 +121,9 @@
     width: 100%;
     /*border: 1px black solid;
     */
-    background-color: #333;
+    /* background-color: #333; */
     border-radius: 10px;
-    height: 160px;
+    height: fit-content;
 }
 
 .image-top-info {
