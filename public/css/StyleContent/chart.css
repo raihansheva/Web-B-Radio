@@ -121,6 +121,13 @@
     /* border: 1px white solid; */
 }
 
+.table-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 thead tr {
     text-align: left;
     font-weight: 200;
@@ -136,6 +143,12 @@ tbody tr {
     font-size: 28px;
     height: 75px;
     border-bottom: 1px solid #fff;
+}
+
+.area-btn-more{
+    width: fit-content;
+   display: flex;
+   gap: 8px;
 }
 
 .btn-see-more {
@@ -157,6 +170,29 @@ tbody tr {
 }
 
 .btn-see-more:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-see-less {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px white solid;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.btn-see-less:hover {
     background-color: white;
     color: black;
 }

@@ -342,7 +342,7 @@
                     @endif
                     <div class="area-group-kanan">
                         <div class="area-partner">
-                            <h1 class="text-partner">Our digital partner :</h1>
+                            <h1 class="text-partner">Member Of :</h1>
                             <div class="area-box-partner">
                                 @foreach ($partner as $partnerList)
                                     <div class="partner">

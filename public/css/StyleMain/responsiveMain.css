@@ -306,7 +306,7 @@
     }
 
     .link {
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .dropdown-text {
@@ -327,8 +327,9 @@
     }
     .arrow-down {
         padding: 3px;
-        margin-bottom: 3px;
+        margin-bottom: 5px;
         margin-left: 10px;
+        border-width: 0px 3px 3px 0px;
     }
 
     .kotak-socmed i {
@@ -512,6 +513,7 @@
 
     .area-banner {
         margin: 0px 32px 0px 32px;
+        height: 175px;
     }
 
     .area-banner-full-small{

@@ -765,7 +765,7 @@
                 <div class="area-content-chart">
                     <div class="content-chart">
                         <div class="header-chart">
-                            <h1 class="title-chart">ARDAN CHART</h1>
+                            <h1 class="title-chart">CHART B RADIO</h1>
                         </div>
                         <div class="area-top-chart">
                             {{-- <div class="tab-chart active" data-tab="top-20">
@@ -828,7 +828,7 @@
                 </div>
                 <div class="area-content-video">
                     <div class="area-header-video">
-                        <h1 class="title-video">Youtube Video</h1>
+                        <h1 class="title-video">B Radio Video</h1>
                     </div>
                     <div class="content-video" id="content-video">
                         @foreach ($videos as $video)

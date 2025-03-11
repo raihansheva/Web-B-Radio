@@ -165,12 +165,12 @@
                     <div class="area-event-bottom">
                         @foreach ($event_upcoming as $eventUpcomingList)
                             <div class="box-event"
-                                style="background-image: url('./storage/{{ $eventUpcomingList->image_event }}')"
                                 onclick="showPopupEvent(this)"
                                 data-description="{{ $eventUpcomingList->deskripsi_pendek }}"
                                 data-date="{{ \Carbon\Carbon::parse($eventUpcomingList->date_event)->format('d F Y') }}"
                                 data-slug="{{ $eventUpcomingList->slug }}"
                                 data-deskShort="{{ $eventUpcomingList->deskripsi_event }}">
+                                <img class="image-UC" src="./storage/{{ $eventUpcomingList->image_event }}" alt="">
                                 <div class="area-days-date-right">
                                     <div class="content-days-date-right">
                                         <div class="box-days-date-right">

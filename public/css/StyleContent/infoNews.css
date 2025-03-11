@@ -583,7 +583,7 @@
 }
 
 .area-event-bottom {
-    height: 500px;
+    height: fit-content;
     width: 100%;
     /* border: 1px #ff004d solid; */
     display: flex;
@@ -594,13 +594,25 @@
 
 .box-event {
     width: 100%;
-    height: 50%;
+    height: 268px;
     background-color: #f0f0f0;
     /* display: flex;
     justify-content: end;
     align-items: end; */
     cursor: pointer;
     border-radius: 8px;
+    position: relative; /* Dibutuhkan untuk child position: absolute */
+    overflow: hidden;
+}
+
+.image-UC{
+    width: 100%; /* Sesuaikan dengan lebar parent */
+    height: 100%; /* Sesuaikan dengan tinggi parent */
+    position: absolute; /* Untuk menempel pada parent */
+    object-fit: contain; /* Menjaga proporsi gambar */
+    top: 0; /* Atur posisi di atas */
+    left: 0;
+    z-index: 1;
 }
 
 .area-days-date-right {
@@ -614,6 +626,7 @@
 }
 
 .content-days-date-right {
+    z-index: 2;
     width: 100%;
     height: auto;
     /* border: 1px red solid; */
