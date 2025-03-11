@@ -107,8 +107,8 @@
                             <div class="line"></div>
                             <a href="/infoNews">Info News</a>
                             <div class="line"></div>
-                            <a href="/event">Event</a>
-                            <div class="line"></div>
+                            {{-- <a href="/event">Event</a>
+                            <div class="line"></div> --}}
                             <a href="/ardanYoutube">Playlist Youtube</a>
                             <div class="line"></div>
                             <a href="/podcast">Podcast</a>
@@ -171,7 +171,7 @@
                     <a class="link-mobile" href="{{ url('home') }}#program">Program</a>
                 @endif
                 <a class="link-mobile" href="/info-news">Info News</a>
-                <a class="link-mobile" href="/event">Event</a>
+                {{-- <a class="link-mobile" href="/event">Event</a> --}}
                 <a class="link-mobile" href="/ardan-youtube">Playlist Youtube</a>
                 <a class="link-mobile" href="/podcast">Podcast</a>
                 @if (Request::is('/') || Request::is('/'))

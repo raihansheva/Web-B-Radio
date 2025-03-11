@@ -308,14 +308,14 @@
                         </div>
                         <div class="content-info">
                             @foreach ($kategoriInfo as $kategoriInfoList)
+                            <a class="link-kat-info" href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                 <div class="box-info">
-                                    <a href="/infoTag/{{ $kategoriInfoList->nama_kategori }}">
                                         <div class="area-tag-info">
 
                                             <h3 class="tag-info">#{{ $kategoriInfoList->nama_kategori }}</h3>
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
                             @endforeach
                         </div>
                         <div class="area-bottom-info">
@@ -670,8 +670,9 @@
                         breakpoints='{
                         "320": { "slidesPerView": 1 },
                         "375": { "slidesPerView": 1 },
-                        "425": { "slidesPerView": 1 },
-                        "480": { "slidesPerView": 1 },
+                        "390": { "slidesPerView": 2 },
+                        "425": { "slidesPerView": 2 },
+                        "480": { "slidesPerView": 2 },
                         "768": { "slidesPerView": 3 },
                         "1024": { "slidesPerView": 4 },
                         "1280": { "slidesPerView": 5 },

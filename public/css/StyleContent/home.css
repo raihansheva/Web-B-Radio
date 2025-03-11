@@ -667,10 +667,15 @@ swiper-slide .image-announcer {
 }
 
 .box-info {
-    flex: 0 0 calc(50% - 6px);
-    height: 90px;
+    width: 100%;
+    height: 100%;
     background-color: var(--primary-color);
     border-radius: 10px;
+}
+
+.link-kat-info{
+    flex: 0 0 calc(50% - 6px);
+    height: 90px;
 }
 
 .area-tag-info {
@@ -924,7 +929,7 @@ swiper-slide .image-announcer {
 }
 
 .link-box-top-info {
-    width: calc(25% - 10px); /* Setengah kontainer minus setengah gap */
+    width: calc(25% - 12px); /* Setengah kontainer minus setengah gap */
     color: black;
     height: fit-content;
 }
@@ -1887,7 +1892,7 @@ swiper-slide .image-announcer {
 }
 
 .card-text-podcast {
-    font-size: px;
+    font-size: 22px;
     margin: 0px;
     font-weight: 200;
     font-family: "Bebas Neue";
