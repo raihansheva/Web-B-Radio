@@ -359,7 +359,7 @@ figcaption span:hover {
 
 .box-event {
     width: 100%;
-    height: 262px;
+    height: 234px;
     background-color: #f0f0f0;
     cursor: pointer;
     border-radius: 8px;
@@ -451,12 +451,12 @@ figcaption span:hover {
 }
 
 .popup-content-event {
-    background-color: var(--primary-color);
+    background-color: white;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
     width: 500px;
-    height: 250px; /* Lebar pop-up */
+    height: fit-content; /* Lebar pop-up */
     display: flex;
     justify-content: center;
     align-items: end;
@@ -855,7 +855,7 @@ figcaption span:hover {
 
 .area-thumbnail {
     width: 100%;
-    height: 260px;
+    height: 180px;
     border-radius: 8px;
     background-color: whitesmoke;
     display: flex;
