@@ -5778,8 +5778,16 @@
         font-size: 14px;
     }
 
+    .text-watchS i{
+        font-size: 20px;
+    }
+
     .text-watchS-B {
         font-size: 14px;
+    }
+
+    .text-watchS-B i{
+        font-size: 20px;
     }
 
     .title-streaming {
@@ -7204,8 +7212,8 @@
     }
 
     .btn-play-streaming {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
     }
 
     .card-B .card-body-B {
@@ -7222,7 +7230,7 @@
     .video-container {
         position: relative;
         /* padding-bottom: 47.15%; */
-        height: 254px;
+        height: 190px;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -7241,8 +7249,16 @@
         font-size: 12px;
     }
 
+    .text-watchS i{
+        font-size: 18px;
+    }
+
     .text-watchS-B {
         font-size: 12px;
+    }
+
+    .text-watchS-B i{
+        font-size: 18px;
     }
 
     .title-streaming {
@@ -8662,7 +8678,7 @@
     }
 
     .card-A .card-body {
-        height: 190px;
+        height: 159px;
         /* padding: 25px; */
         /* border: 1px red solid; */
     }
@@ -8686,7 +8702,7 @@
     .video-container {
         position: relative;
         /* padding-bottom: 47.15%; */
-        height: 254px;
+        height:159px;
         overflow: hidden;
         width: 100%;
         background-color: rgb(
@@ -8705,8 +8721,16 @@
         font-size: 12px;
     }
 
+    .text-watchS i{
+        font-size: 18px;
+    }
+
     .text-watchS-B {
         font-size: 12px;
+    }
+
+    .text-watchS-B i{
+        font-size: 18px;
     }
 
     .title-streaming {
@@ -10179,8 +10203,16 @@
         font-size: 12px;
     }
 
+    .text-watchS i{
+        font-size: 18px;
+    }
+
     .text-watchS-B {
         font-size: 12px;
+    }
+
+    .text-watchS-B i{
+        font-size: 18px;
     }
 
     .title-streaming {

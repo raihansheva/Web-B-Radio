@@ -45,7 +45,7 @@
     }
 
     .image-brand {
-        width: 174px;
+        width: fit-content;
         height: 80px;
     }
 
@@ -283,7 +283,7 @@
     }
 
     .image-brand {
-        width: 170px;
+        width: fit-content;
         height: 60px;
     }
 
@@ -527,7 +527,7 @@
     }
 
     .image-brand {
-        width: 80px;
+        width: fit-content;
         height: 33px;
     }
 
@@ -781,7 +781,7 @@
     }
 
     .image-brand {
-        width: 80px;
+        width: fit-content;
         height: 35px;
     }
 
@@ -1130,7 +1130,283 @@
     }
 
     .image-brand {
+        width: fit-content;
+        height: 40px;
+    }
+
+    .dropdown-text {
+        font-size: 12px;
+    }
+
+    .link {
+        font-size: 12px;
+    }
+
+    .kotak-socmed i {
+        font-size: 18px;
+    }
+
+    /* area-footer */
+    body .footer {
+        height: auto; /* Tetap fleksibel */
+    }
+
+    .footer .top-footer {
+        height: auto; /* Biarkan fleksibel untuk konten */
+        height: 100%;
+        padding: 0px 20px;
+    }
+
+    .group-top-footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .area-group-kiri {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer .text-contact {
+        font-size: 2rem;
+    }
+
+    .footer .text-name {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .footer .footer-address {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .area-group-tengah {
+        width: 100%;
+    }
+
+    .area-app-download {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-app-download {
+        font-size: 1.7rem;
+    }
+
+    .area-footer-download {
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .kotak-download {
+        width: auto;
+        height: 30px;
+    }
+
+    .area-group-kanan {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-platform {
+        object-fit: contain;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .area-partner {
+        width: auto;
+        text-align: center;
+    }
+    .area-box-partner {
+        justify-content: center;
+    }
+
+    .text-partner {
+        font-size: 1.6rem;
+    }
+
+    .partner {
+        /* width: 130px; */
+        height: 50px;
+    }
+
+    .image-partner {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .text-copyRight {
+        font-size: 10px;
+    }
+
+    .name-owners {
+        font-size: 12px;
+    }
+
+    .bottom-footer-dummy {
+        display: none;
+    }
+
+    /* ----------- */
+
+    /* area-audio-player */
+    .content {
+        /* padding: 0 15px; */
+        height: 60px;
+        /* display: none; */
+    }
+
+    .audio-player-container {
+        width: fit-content;
+        /* display: none; */
+        /* background-color: red; */
+    }
+
+    .music-image {
+        width: 80px;
+        height: 50px;
+    }
+
+    .music-titles {
         width: 120px;
+    }
+
+    .music-titles .name {
+        font-size: 10px;
+    }
+
+    .music-titles .artist {
+        font-size: 12px;
+    }
+
+    .area-control-progres {
+        display: none;
+        background: transparent;
+    }
+
+    .area-line {
+        width: 500px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .area-control-btn {
+        width: auto;
+    }
+
+    .control-btn {
+        width: fit-content;
+        height: 60px;
+        /* /*position: fixed; */
+        border: 2px white solid;
+    }
+
+    .control-btn span {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        /* position: fixed; */
+    }
+
+    .control-btn p{
+        display: none;
+    }
+
+    .icon-menu .bx-menu {
+        display: none;
+    }
+
+    #visual {
+        height: 160px;
+        display: none;
+    }
+    /* ----------------- */
+}
+@media (max-width: 390px) {
+    
+        .popup-content-ads.landscape {
+        width: 280px;
+        height: 157px;
+    }
+    .popup-content-ads.portrait {
+        width: 200px;
+        height: 200px;
+    }
+
+    .btn-link{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .close-icon{
+        font-size: 38px;
+    }
+
+    #floatingButtons{
+        right: 8px;
+    }
+
+    #promoteUMKMBtn{
+        font-size: 8px;
+        padding: 6px 12px;
+    }
+    
+    #scrollToTopBtn {
+        bottom: 15px;
+        right: 15px;
+        /* font-size: 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+    }
+    
+
+    #scrollToTopBtn:hover {
+        background-color: var(--primary-color);
+        color: black;
+    }
+
+    #scrollToTopBtn i {
+        font-size: 16px;
+    }
+
+    .area-banner {
+        margin: 0px 8px 0px 8px;
+        height: 66px;
+    }
+
+    .area-banner-small{
+        height: 80px;
+    }
+
+    .area-banner-full-small{
+        height: 80px;
+    }
+
+    .navbar {
+        padding: 0px 8px;
+        height: 60px;
+    }
+
+    .area-menu-link{
+        flex-direction: row-reverse;
+    }
+
+    .image-brand {
+        width: fit-content;
         height: 40px;
     }
 
@@ -1405,7 +1681,7 @@
     }
 
     .image-brand {
-        width: 100px;
+        width: fit-content;
         height: 40px;
     }
 
@@ -1678,7 +1954,7 @@
     }
 
     .image-brand {
-        width: 100px;
+        width: fit-content;
         height: 40px;
     }
 

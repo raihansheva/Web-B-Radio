@@ -24,7 +24,7 @@ class StreamResource extends Resource
 {
     protected static ?string $model = Streaming::class;
 
-    protected static ?string $navigationGroup = 'Menu';
+    protected static ?string $navigationGroup = 'Streaming';
 
     protected static ?string $navigationLabel = 'Streaming';
     protected static ?string $navigationIcon = 'heroicon-o-video-camera';

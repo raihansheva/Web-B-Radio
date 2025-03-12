@@ -20,6 +20,8 @@ class SettingPlayerStreamResource extends Resource
 {
     protected static ?string $model = SettingPlayerStream::class;
 
+    protected static ?string $navigationGroup = 'Streaming';
+
     protected static ?string $navigationLabel = 'SettingPlayerStream';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

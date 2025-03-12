@@ -97,14 +97,14 @@
                         <p>Home</p>
                     </a>
                     <div class="dropdown">
-                        <a class="link dropText" id="dropdown-toggle">Media & Program<i class="arrow-down"></i></a>
+                        <a class="link dropText" id="dropdown-toggle">Info & Other<i class="arrow-down"></i></a>
                         <div class="dropdown-content" id="dropdown-menu">
-                            @if (Request::is('/') || Request::is('/home'))
+                            {{-- @if (Request::is('/') || Request::is('/home'))
                                 <a href="#program">Program</a>
                             @else
                                 <a href="{{ url('/') }}#program">Program</a>
-                            @endif
-                            <div class="line"></div>
+                            @endif --}}
+                            {{-- <div class="line"></div> --}}
                             <a href="/infoNews">Info News</a>
                             <div class="line"></div>
                             {{-- <a href="/event">Event</a>
@@ -164,12 +164,12 @@
                 &times; <!-- Symbol for 'X' close button -->
             </div>
             <div class="area-menu-mobile">
-                <a class="link-mobile" href="#home">Home</a>
-                @if (Request::is('/') || Request::is('/home'))
+                <a class="link-mobile" href="/">Home</a>
+                {{-- @if (Request::is('/') || Request::is('/home'))
                     <a class="link-mobile" href="#program">Program</a>
                 @else
                     <a class="link-mobile" href="{{ url('home') }}#program">Program</a>
-                @endif
+                @endif --}}
                 <a class="link-mobile" href="/info-news">Info News</a>
                 {{-- <a class="link-mobile" href="/event">Event</a> --}}
                 <a class="link-mobile" href="/ardan-youtube">Playlist Youtube</a>
