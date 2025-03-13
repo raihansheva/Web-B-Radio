@@ -2256,17 +2256,17 @@ swiper-slide .image-announcer {
 .box-announcer {
     flex: 0 0 calc(20% - 16px);
     /* max-width: calc(25% - 15px); */
-    height: 325px;
+    height: 266px;
     /* background-color: #f0f0f0; */
     /* border-radius: 50%; */
     margin: 0;
-    border-radius: 9999px;
+    /* border-radius: 9999px; */
     box-sizing: border-box;
 }
 
 .image-announcer {
     object-fit: cover;
-    border-radius: 9999px;
+    /* border-radius: 9999px; */
     /* border: 1px black solid; */
     transition: 0.3s ease;
     cursor: pointer;

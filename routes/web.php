@@ -96,7 +96,7 @@ Route::get('/infoNews', [HomeController::class, 'info']);
 Route::get('/infoTag/{tag}', [HomeController::class, 'tagInfo']);
 Route::get('/infoNews/{slug}', [HomeController::class, 'detailInfo']);
 
-Route::get('/ardanYoutube', [HomeController::class, 'youtube']);
+Route::get('/bradioYoutube', [HomeController::class, 'youtube']);
 
 Route::get('/api/playlists', [PlaylistController::class, 'getPlaylists']);
 Route::get('/api/videos/{playlist_name}', [PlaylistController::class, 'getVideosByPlaylist']);

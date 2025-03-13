@@ -848,7 +848,7 @@
                         </div>
                     </div>
                     <div class="link-text-video">
-                        <a href="/ardanYoutube">
+                        <a href="/bradioYoutube">
                             <h1 class="text-video">See more</h1>
                         </a>
                     </div>

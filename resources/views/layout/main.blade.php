@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <!-- Untuk memastikan halaman merespons layar iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <link rel="canonical" href="{{ url()->current() }}">
     <!-- Mencegah highlight biru pada elemen klik -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -109,7 +109,7 @@
                             <div class="line"></div>
                             {{-- <a href="/event">Event</a>
                             <div class="line"></div> --}}
-                            <a href="/ardanYoutube">Playlist Youtube</a>
+                            <a href="/bradioYoutube">Playlist Youtube</a>
                             <div class="line"></div>
                             <a href="/podcast">Podcast</a>
                             <div class="line"></div>
