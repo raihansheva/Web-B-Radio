@@ -4315,8 +4315,16 @@
         font-size: 14px;
     }
 
+    .text-watchS i{
+        font-size: 18px;
+    }
+
     .text-watchS-B {
         font-size: 14px;
+    }
+
+    .text-watchS-B i{
+        font-size: 18px;
     }
 
     .title-streaming {
@@ -9528,7 +9536,7 @@
     }
 
     .title-event {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .timer {
@@ -11010,7 +11018,7 @@
     }
 
     .title-event {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .timer {
